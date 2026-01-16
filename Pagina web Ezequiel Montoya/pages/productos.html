@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link de css de boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- enlace a estilos de css -->
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Productos</title>
+</head>
+<body>
+    <header>
+        <!--imagen de mi logo-->
+        <img src="../img/Logo copia.png" alt="logo del emprenmidimiento DM Desingc">
+            <!--menu de navegacion-->
+            <nav>
+                <ul>
+                    <!--enlaces de navegacion-->
+                    <li><a href="../index.html">Volver a Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+    </header>
+    
+    <!-- contenido principal -->
+    <main>
+        <h1>Bienvenidos a MOD Creaciones</h1>
+        <p> La creatividad empieza cuando te animás a intentar.</p>
+        <!-- secciones para productos destacados -->
+        <section class="container my-4">
+            <div class="row g-4 justify-content-center">
+
+                    <!-- CATEGORÍAS -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="card categoria-card h-100 shadow-sm">
+                        <img src="../img/papeleria-creativa.png" class="card-img-top categoria-card__img" alt="Papelería creativa">
+                            <div class="card-body text-center">
+                                <p class="card-title mb-0 categoria-card__title">Papelería Creativa</p>
+                            </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="card categoria-card h-100 shadow-sm">
+                        <img src="../img/vela-de-soja.png" class="card-img-top categoria-card__img" alt="Velas de soja">
+                            <div class="card-body text-center d-flex flex-column gap-2">
+                                <p class="card-title mb-0 categoria-card__title">Velas de Soja</p>
+                                <a class="btn btn-sm btn-outline-dark mt-auto" href="../pages/velas-de-soja.html">Ver más</a>
+                            </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="card categoria-card h-100 shadow-sm">
+                        <img src="../img/sticker.png" class="card-img-top categoria-card__img" alt="Stickers">
+                            <div class="card-body text-center">
+                                <p class="card-title mb-0 categoria-card__title">Stickers</p>
+                            </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="card categoria-card h-100 shadow-sm">
+                        <img src="../img/agenda.png" class="card-img-top categoria-card__img" alt="Agendas">
+                            <div class="card-body text-center">
+                                <p class="card-title mb-0 categoria-card__title">Agendas</p>
+                            </div>
+                    </article>
+                </div>
+
+                <!-- PRÓXIMAMENTE -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card producto producto--proximamente h-100 shadow-sm">
+                        <div class="producto__badge">Próximamente</div>
+                            <img src="../img/piezas-de-yeso-ceramico.jpeg" class="card-img-top producto__img" alt="Piezas de yeso cerámico">
+                                <div class="card-body d-flex flex-column text-center">
+                                    <h2 class="h6 mb-2 producto__title">Piezas de yeso cerámico</h2>
+                                    <p class="mb-3 producto__desc">Piezas decorativas para sumar detalle y calidez a tu hogar u oficina.</p>
+                                    <button class="btn btn-secondary mt-auto" disabled>Comprar</button>
+                                </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card producto producto--proximamente h-100 shadow-sm">
+                        <div class="producto__badge">Próximamente</div>
+                            <img src="../img/difusor-de-varilla.jpeg" class="card-img-top producto__img" alt="Difusor de varilla">
+                                <div class="card-body d-flex flex-column text-center">
+                                    <h2 class="h6 mb-2 producto__title">Difusor de varilla</h2>
+                                    <p class="mb-3 producto__desc">Fragancia continua y suave para perfumar y decorar tus espacios.</p>
+                                    <button class="btn btn-secondary mt-auto" disabled>Comprar</button>
+                                </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- pie de pagina -->
+    <footer>
+        <p>Todos los derechos reservados Ezequiel Montoya.</p>
+    </footer>
+
+    <!-- link de js de boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
