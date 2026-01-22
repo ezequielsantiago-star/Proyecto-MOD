@@ -1,5 +1,12 @@
+/* =========================================================
+   MOD Creaciones — estilos.css
+   Orden: Reset → Variables → Base → Layout → Navbar/Offcanvas
+          → Footer → Home → Productos → Velas → Contacto → Responsive
+   ========================================================= */
+
+
 /* ===========================
-   RESET
+   1) RESET
    =========================== */
 *{
   margin: 0;
@@ -7,13 +14,34 @@
   box-sizing: border-box;
 }
 
+
 /* ===========================
-   BASE GLOBAL
+   2) VARIABLES (paleta)
+   =========================== */
+:root{
+  --bg-page: whitesmoke;
+
+  --cream: #FFFBEF;     /* fondo nav + footer + rellenos */
+  --pink:  #D16BA5;     /* texto/iconos nav + acentos */
+  --lilac: #997DA2;     /* fondo offcanvas */
+
+  --text:  #111;
+  --muted: #6b5a6b;
+
+  --radius-sm: 12px;
+  --radius-lg: 22px;
+}
+
+
+/* ===========================
+   3) BASE GLOBAL
    =========================== */
 body{
-  background-color: #white;
-  font-family: Arial, sans-serif;
+  background-color: var(--bg-page);
+  font-family: "Segoe UI", "Segoe UI Variable", Arial, sans-serif;
+  color: var(--text);
 }
+
 
 img{
   max-width: 100%;
@@ -21,107 +49,212 @@ img{
   display: block;
 }
 
+
 /* ===========================
-   LAYOUT GLOBAL
+   4) LAYOUT GENERAL
    =========================== */
-header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  padding: 0.5rem 1rem;
-  background-color: #FFFBEF;
-}
-
-header img{
-  height: 4.5rem;
-}
-
-header nav ul{
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  text-align: center;
-}
-
-header nav ul li a{
-  text-decoration: none;
-  color: #D16BA5;
-  margin: 0 0.45rem;
-}
-
-header nav ul li a:hover{
-  color: black;
-}
-
 main h1,
 main > p{
   text-align: center;
 }
 
 main h1{
-  color: #000;
+  color: var(--text);
   padding: 1rem;
 }
 
 main p{
-  color: #9f19a3;
+  color: var(--text);
 }
 
+
+/* ===========================
+   5) HEADER + NAVBAR
+   (Componente estable para TODAS las páginas)
+   =========================== */
+.site-header{
+  padding: 0;
+  background-color: transparent;
+}
+
+.site-header img{
+  height: 4.5rem;
+}
+
+/* Fondo del nav */
+.navcolor-custom{
+  background-color: var(--cream) !important;
+}
+
+/* Links del navbar (por si los usás fuera del offcanvas) */
+.navbar .nav-link{
+  color: var(--pink) !important;
+}
+
+/* Íconos derecha: soporta ambos casos:
+   - <a class="nav-icon"><i class="bi ..."></i></a>
+   - <i class="bi ..."></i> */
+.nav-icon,
+.nav-icon i,
+.navbar i.bi{
+  color: var(--pink) !important;
+}
+
+/* Evita que text-white de Bootstrap gane dentro del navbar */
+.navbar a.text-white,
+.navbar i.text-white{
+  color: var(--pink) !important;
+}
+
+/* ===========================
+   5.1) Botón “Menú” (hamburguesa + texto)
+   - Sin borde / sin caja
+   - Solo 3 líneas
+   - Texto “Menú” al lado
+   - Estado abierto y focus: rosa (sin violeta)
+   =========================== */
+
+/* El botón no debe tener borde ni fondo */
+.navbar .navbar-toggler{
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: var(--pink) !important;
+}
+
+/* Quita el outline/halo violeta típico */
+.navbar .navbar-toggler:focus,
+.navbar .navbar-toggler:active{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Cuando el offcanvas está abierto, Bootstrap pone aria-expanded="true" */
+.navbar .navbar-toggler[aria-expanded="true"]{
+  color: var(--pink) !important;
+}
+
+/* Texto “Menú” al lado */
+.menu-label{
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--pink);
+}
+
+/* Ícono hamburguesa: 3 líneas rosas (sin fondo) */
+.navbar-toggler-icon{
+  background-image: none !important;
+  width: 1.6em;
+  height: 1.6em;
+  position: relative;
+}
+
+.navbar-toggler-icon::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(var(--pink), var(--pink)) 0 25%/100% 2px no-repeat,
+    linear-gradient(var(--pink), var(--pink)) 0 50%/100% 2px no-repeat,
+    linear-gradient(var(--pink), var(--pink)) 0 75%/100% 2px no-repeat;
+}
+
+/* (Opcional) hit-area cómoda para click sin “borde visual” */
+.navbar .navbar-toggler{
+  min-height: 44px;
+  min-width: 44px;
+}
+
+
+/* ===========================
+   6) OFFCANVAS (MENÚ)
+   =========================== */
+.offcanvas{
+  background-color: var(--lilac) !important;
+  color: var(--cream) !important;
+}
+
+.offcanvas .offcanvas-title,
+.offcanvas h5{
+  color: var(--cream) !important;
+}
+
+.offcanvas .nav-link{
+  color: var(--cream) !important;
+  font-weight: 600;
+}
+
+.offcanvas .nav-link:hover{
+  opacity: .85;
+}
+
+/* Botón cerrar visible en fondo oscuro */
+.offcanvas .btn-close{
+  filter: invert(1) grayscale(100%);
+}
+
+
+/* ===========================
+   7) FOOTER
+   =========================== */
 footer{
-  background-color: #E6ACC6;
-  color: #FFFBEF;
+  background-color: var(--cream) !important;
+  color: var(--pink) !important;
   text-align: center;
   padding: 0.7rem;
 }
 
-/* ===========================
-   SECCIONES
-   =========================== */
-main section.imagenes1{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+footer p{
+  margin: 0;
 }
 
-.cards1{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cards1 img{
-  height: 25rem;
-  object-fit: cover;
-}
 
 /* ===========================
-   COMPONENTES / UTILITIES
+   8) UTILITIES
    =========================== */
 .object-fit-cover{
   object-fit: cover;
 }
 
-.producto-img{
-  height: 160px;
-  object-fit: cover;
-  width: 100%;
+
+/* ===========================
+   9) HOME — CARRUSEL CATEGORÍAS
+   =========================== */
+.categorias-home{
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* lista alineada a la izquierda en uso de velas */
-.uso-lista{
-  padding-left: 1.2rem;
-  margin: 0;
+#carouselCategorias .card{
+  border-radius: var(--radius-sm);
+  overflow: hidden;
 }
 
-.uso-lista li{
-  text-align: left;
-  margin-bottom: .4rem;
+/* Imagen del home: no recorta, evita “zoom” */
+#carouselCategorias .categoria-card__img{
+  width: 100% !important;
+  height: 320px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: var(--cream);
+  display: block !important;
 }
 
-/* Cards de categorías */
+#carouselCategorias .carousel-control-prev,
+#carouselCategorias .carousel-control-next{
+  width: 6%;
+}
+
+
+/* ===========================
+   10) PRODUCTOS — CATEGORÍAS
+   =========================== */
+/* En grilla de productos sí recortamos prolijo */
 .categoria-card__img{
   height: 240px;
   object-fit: cover;
@@ -130,9 +263,13 @@ main section.imagenes1{
 .categoria-card__title{
   color: #9f19a3;
   font-weight: 600;
+  text-align: center;
 }
 
-/* Cards de productos "próximamente" */
+
+/* ===========================
+   11) PRODUCTOS — PRÓXIMAMENTE
+   =========================== */
 .producto{
   position: relative;
   overflow: hidden;
@@ -177,8 +314,33 @@ main section.imagenes1{
   color: #555;
 }
 
+
 /* ===========================
-   CONTACTO
+   12) VELAS — LISTAS / AJUSTES
+   =========================== */
+.uso-lista{
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.uso-lista li{
+  text-align: left;
+  margin-bottom: .4rem;
+}
+
+/* Si usás <ul> directo en el acordeón del modal */
+.accordion-body ul{
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.accordion-body li{
+  margin-bottom: .35rem;
+}
+
+
+/* ===========================
+   13) CONTACTO — LAYOUT
    =========================== */
 .contact-main{
   max-width: 1100px;
@@ -194,18 +356,17 @@ main section.imagenes1{
 .contact-hero h1{
   margin: 0;
   padding: 0.5rem 0;
-  color: #000;
+  color: var(--text);
 }
 
 .contact-hero p{
   margin: 0.25rem 0 0;
-  color: #6b5a6b;
+  color: var(--muted);
 }
 
-/* Card con grid-areas */
 .contact-card{
   background: #fff;
-  border-radius: 22px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 18px 45px rgba(0,0,0,0.10);
   padding: 1.5rem;
 
@@ -215,20 +376,11 @@ main section.imagenes1{
     "media  title"
     "media  content";
   gap: 1.25rem;
-  align-items: start;
 }
 
 .contact-card__title{ grid-area: title; }
 .contact-card__media{ grid-area: media; }
 .contact-card__content{ grid-area: content; }
-
-.contact-card__title{
-  margin: 0;
-  color: #3b2b3b;
-  font-weight: 800;
-  font-size: 1.7rem;
-  line-height: 1.05;
-}
 
 .contact-card__media{
   display: flex;
@@ -240,71 +392,106 @@ main section.imagenes1{
   max-width: 520px;
   border-radius: 18px;
   object-fit: cover;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.10);
 }
 
+/* Textos dentro de la card */
 .contact-card__text{
-  margin: 0.5rem 0 1rem;
-  color: #6b5a6b;
-  line-height: 1.45;
+  margin: 0 0 .75rem;
+  color: #333;
 }
 
 .contact-card__label{
-  margin: 0 0 0.75rem;
+  margin: 0 0 .5rem;
   font-weight: 700;
-  color: #3b2b3b;
+  color: var(--text);
 }
 
+
+/* ===========================
+   14) CONTACTO — BOTONES (chips/pills)
+   =========================== */
 .contact-actions{
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 1rem 0;
+  gap: .6rem;
+  margin: .25rem 0 1rem;
 }
 
 .contact-action__btn{
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .45rem .85rem;
   border-radius: 999px;
-  padding: 0.55rem 1.1rem;
+
+  text-decoration: none;
   font-weight: 700;
-  border: 2px solid #F2AED0;
-  color: #8a2c6a;
-  background: #fff;
-  display: inline-block;
-  transition: 0.2s ease;
+  font-size: .95rem;
+
+  background: var(--cream);
+  color: var(--pink);
+  border: 1px solid rgba(209, 107, 165, 0.35);
+
+  transition: transform .08s ease, opacity .15s ease, box-shadow .15s ease;
 }
 
 .contact-action__btn:hover{
-  background: #fff5fb;
+  opacity: .9;
   transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
 }
 
+.contact-action__btn:focus{
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 2px;
+}
+
+/* Variantes suaves por canal */
 .contact-action__btn--wa{
-  border-color: #c4719b;
+  border-color: rgba(37, 211, 102, 0.45);
 }
 
-.contact-info p{
-  margin: 0.25rem 0;
-  color: #5a4d5a;
+.contact-action__btn--ig{
+  border-color: rgba(209, 107, 165, 0.45);
 }
+
+.contact-action__btn--mail{
+  border-color: rgba(153, 125, 162, 0.45);
+}
+
+/* Info zona/pedidos */
+.contact-info p{
+  margin: 0 0 .35rem;
+  color: #333;
+}
+
+.contact-info strong{
+  color: var(--text);
+}
+
 
 /* ===========================
-   RESPONSIVE
+   15) RESPONSIVE
    =========================== */
-@media (min-width: 1400px){
-  main{
-    max-width: 1400px;
-    margin: 0 auto;
+
+/* ===========================
+   Desktop grande
+   =========================== */
+@media (min-width: 992px){
+  /* Home: carrusel un poco más alto */
+  #carouselCategorias .categoria-card__img{
+    height: 380px !important;
   }
 }
 
-@media (max-width: 1024px){
-  header{
-    padding: 0.5rem 1rem;
-  }
-}
 
-@media (max-width: 992px){
+/* ===========================
+   Tablet + Mobile
+   =========================== */
+@media (max-width: 991.98px){
+
+  /* Contacto: apila contenido */
   .contact-card{
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -317,36 +504,22 @@ main section.imagenes1{
   .contact-actions{
     justify-content: center;
   }
-}
 
-@media (max-width: 768px){
-  header{
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  header nav ul{
-    flex-direction: column;
-    align-items: center;
-  }
-
-  main{
-    font-size: 0.9rem;
-  }
-
-  footer{
-    font-size: 0.9rem;
+  /* Offcanvas: ancho 40% en mobile y tablet */
+  .offcanvas.offcanvas-start{
+    width: 40vw !important;
+    min-width: 260px; /* evita que quede demasiado fino */
   }
 }
 
-@media (max-width: 520px){
-  .contact-actions{
-    flex-direction: column;
-    align-items: stretch;
-  }
 
+/* ===========================
+   Mobile chico
+   =========================== */
+@media (max-width: 576px){
+
+  /* Botones de contacto ocupan todo el ancho */
   .contact-action__btn{
     width: 100%;
-    text-align: center;
   }
 }
