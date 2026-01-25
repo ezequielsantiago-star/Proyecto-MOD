@@ -1,0 +1,109 @@
+@use "../utilities/variables" as *;
+
+/* Imagen de categoría en grilla */
+.categoria-card__img {
+  height: 240px;
+  object-fit: cover;
+}
+
+/* Título de categoría */
+.categoria-card__title {
+  color: $pink;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Card producto */
+.producto {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.producto__img {
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Efecto “próximamente”*/
+.producto--proximamente::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.03);
+  pointer-events: none;
+}
+
+/* Badge “Próximamente” */
+.producto__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #c4719b;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  z-index: 2;
+}
+
+.producto__title {
+  color: #c4719b;
+  font-weight: 700;
+}
+
+.producto__desc {
+  color: #555;
+}
+
+/* Botonera de contacto */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: .25rem 0 1rem;
+}
+
+/* Botón base */
+.contact-action__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .55rem 1rem;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+
+  background: $cream;
+  color: $pink;
+
+  border: 1px solid rgba(209, 107, 165, 0.35);
+
+  transition: transform .08s ease, opacity .15s ease, box-shadow .15s ease;
+
+  &:hover {
+    opacity: .92;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  }
+
+  &:focus {
+    outline: 2px solid rgba(209, 107, 165, 0.45);
+    outline-offset: 2px;
+  }
+}
+
+/* Variantes suaves por canal */
+.contact-action__btn--wa { border-color: rgba(37, 211, 102, 0.45); }
+.contact-action__btn--ig { border-color: rgba(209, 107, 165, 0.45); }
+.contact-action__btn--mail { border-color: rgba(153, 125, 162, 0.45); }
+
+/* En cards de productos, el botón ocupa todo el ancho */
+.producto .contact-action__btn {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}

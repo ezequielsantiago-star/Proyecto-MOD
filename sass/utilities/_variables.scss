@@ -1,0 +1,49 @@
+//paleta de colores
+    // fondos
+  $bg-page: rgb(255, 255, 255);
+  // colores principales
+  $cream: #FFFBEF;     
+  //fondo nav + footer + rellenos
+  $pink:  #D16BA5;     
+  //texto/iconos nav + acentos
+  $lila: #997DA2;     
+  //fondo offcanvas
+
+  //textos
+  $text:  #111;
+  $muted: #6b5a6b;
+//botones
+  $radius-sm: 12px;
+  $radius-lg: 22px;
+
+//tipografías
+    $font-body: 'Montserrat', sans-serif;
+
+    .text-thin-italic {
+    font-family: $font-body;
+    font-weight: 100;
+    font-style: italic;
+    line-height: 1.6;
+}
+ 
+    $font-title: 'Libre Bodoni', sans-serif;
+
+    .text-bodoni-italic {
+    font-family: $font-title;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+    $font-nav: 'Poppins', sans-serif; 
+    .nav-text-thin {
+    font-family: $font-nav;
+    font-weight: 100;
+    letter-spacing: 0.4px;
+}
+
+//helpers
+ /* Helper para recortar imágenes sin deformar */
+    .object-fit-cover {
+      object-fit: cover;
+}

@@ -1,0 +1,23 @@
+@use "../utilities/variables" as *;
+
+@media (max-width: 991.98px) {
+  /* Contacto: apila contenido */
+  .contact-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "media"
+      "content";
+    text-align: center;
+  }
+
+  .contact-actions {
+    justify-content: center;
+  }
+
+  /* Offcanvas: ancho en tablet/mobile */
+  .offcanvas.offcanvas-start {
+    width: 40vw !important;
+    min-width: 260px;
+  }
+}

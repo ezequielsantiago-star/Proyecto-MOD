@@ -1,0 +1,46 @@
+// ==TIPOGRAFIA — MOD==
+
+// Trae variables del UTILITIES
+@use "../utilities/variables" as *;
+
+// Base tipográfica del sitio
+body {  
+  font-family: $font-body;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+}
+
+// Títulos
+h1 {
+  font-family: $font-title;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.2px;
+}
+
+// Todo el resto de headings MONSERRAT
+h2, h3, h4, h5, h6 {
+  font-family: $font-body;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+// Texto general
+p, li, span, small {
+  font-family: $font-body;
+  line-height: 1.6;
+}
+
+// Footer
+footer {
+  font-family: $font-body;
+}
+
+// Menú (hamburguesa / navegación) — Poppins
+.navbar,
+.offcanvas,
+.menu-label,
+.offcanvas .nav-link,
+.navbar .nav-link {
+  font-family: $font-nav;
+}

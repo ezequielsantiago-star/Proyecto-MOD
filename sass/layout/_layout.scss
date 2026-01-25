@@ -1,0 +1,20 @@
+@use "../utilities/variables" as *;
+
+
+// ==LAYOUT GENERAL==
+
+main {
+  h1,
+  > p {
+    text-align: center;
+  }
+
+  h1 {
+    color: $text;
+    padding: 1rem;
+  }
+
+  p {
+    color: $text;
+  }
+}

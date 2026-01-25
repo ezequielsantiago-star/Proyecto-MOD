@@ -1,0 +1,6 @@
+/* Ajuste del carrusel en desktop grande */
+@media (min-width: 992px) {
+  #carouselCategorias .categoria-card__img {
+    height: 380px !important;
+  }
+}

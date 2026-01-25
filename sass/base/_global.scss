@@ -1,0 +1,14 @@
+@use "../utilities/variables" as *;
+
+// ==BASE GLOBAL==
+
+body {
+  background-color: $bg-page;
+  color: $text;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

@@ -1,299 +1,291 @@
-/* =========================================================
-   MOD Creaciones — estilos.css
-   Orden: Reset → Variables → Base → Layout → Navbar/Offcanvas
-          → Footer → Home → Productos → Velas → Contacto → Responsive
-   ========================================================= */
+@charset "UTF-8";
+/* Utilities */
+.text-thin-italic {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  line-height: 1.6;
+}
 
+.text-bodoni-italic {
+  font-family: "Libre Bodoni", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+}
 
-/* ===========================
-   1) RESET
-   =========================== */
-*{
+.nav-text-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.4px;
+}
+
+/* Helper para recortar imágenes sin deformar */
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* Base */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-/* ===========================
-   2) VARIABLES (paleta)
-   =========================== */
-:root{
-  --bg-page: whitesmoke;
-
-  --cream: #FFFBEF;     /* fondo nav + footer + rellenos */
-  --pink:  #D16BA5;     /* texto/iconos nav + acentos */
-  --lilac: #997DA2;     /* fondo offcanvas */
-
-  --text:  #111;
-  --muted: #6b5a6b;
-
-  --radius-sm: 12px;
-  --radius-lg: 22px;
+/* Utilities */
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
 }
 
-
-/* ===========================
-   3) BASE GLOBAL
-   =========================== */
-body{
-  background-color: var(--bg-page);
-  font-family: "Segoe UI", "Segoe UI Variable", Arial, sans-serif;
-  color: var(--text);
+h1 {
+  font-family: "Libre Bodoni", sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.2px;
 }
 
+h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+}
 
-img{
+p, li, span, small {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+}
+
+footer {
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar,
+.offcanvas,
+.menu-label,
+.offcanvas .nav-link,
+.navbar .nav-link {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Utilities */
+body {
+  background-color: rgb(255, 255, 255);
+  color: #111;
+}
+
+img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-
-/* ===========================
-   4) LAYOUT GENERAL
-   =========================== */
+/* Layout */
+/* Utilities */
 main h1,
-main > p{
+main > p {
   text-align: center;
 }
-
-main h1{
-  color: var(--text);
+main h1 {
+  color: #111;
   padding: 1rem;
 }
-
-main p{
-  color: var(--text);
+main p {
+  color: #111;
 }
 
-
-/* ===========================
-   5) HEADER + NAVBAR
-   (Componente estable para TODAS las páginas)
-   =========================== */
-.site-header{
+/* Utilities */
+/* Header general del sitio */
+.site-header {
   padding: 0;
   background-color: transparent;
+  /* Logo */
 }
-
-.site-header img{
+.site-header img {
   height: 4.5rem;
 }
 
-/* Fondo del nav */
-.navcolor-custom{
-  background-color: var(--cream) !important;
+/* Color de fondo del navbar */
+.navcolor-custom {
+  background-color: #FFFBEF !important;
 }
 
-/* Links del navbar (por si los usás fuera del offcanvas) */
-.navbar .nav-link{
-  color: var(--pink) !important;
+/* Color de los links del menú */
+.navbar .nav-link {
+  color: #D16BA5 !important;
 }
 
-/* Íconos derecha: soporta ambos casos:
-   - <a class="nav-icon"><i class="bi ..."></i></a>
-   - <i class="bi ..."></i> */
+/* Color de iconos del navbar (login, carrito, etc.) */
 .nav-icon,
 .nav-icon i,
-.navbar i.bi{
-  color: var(--pink) !important;
+.navbar i.bi {
+  color: #D16BA5 !important;
 }
 
-/* Evita que text-white de Bootstrap gane dentro del navbar */
+/* Evita que Bootstrap fuerce texto blanco */
 .navbar a.text-white,
-.navbar i.text-white{
-  color: var(--pink) !important;
+.navbar i.text-white {
+  color: #D16BA5 !important;
 }
 
-/* ===========================
-   5.1) Botón “Menú” (hamburguesa + texto)
-   - Sin borde / sin caja
-   - Solo 3 líneas
-   - Texto “Menú” al lado
-   - Estado abierto y focus: rosa (sin violeta)
-   =========================== */
-
-/* El botón no debe tener borde ni fondo */
-.navbar .navbar-toggler{
+/* Botón hamburguesa */
+.navbar .navbar-toggler {
   border: 0 !important;
   padding: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
   display: inline-flex;
   align-items: center;
-  gap: .55rem;
-  color: var(--pink) !important;
-}
-
-/* Quita el outline/halo violeta típico */
-.navbar .navbar-toggler:focus,
-.navbar .navbar-toggler:active{
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* Cuando el offcanvas está abierto, Bootstrap pone aria-expanded="true" */
-.navbar .navbar-toggler[aria-expanded="true"]{
-  color: var(--pink) !important;
-}
-
-/* Texto “Menú” al lado */
-.menu-label{
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1;
-  color: var(--pink);
-}
-
-/* Ícono hamburguesa: 3 líneas rosas (sin fondo) */
-.navbar-toggler-icon{
-  background-image: none !important;
-  width: 1.6em;
-  height: 1.6em;
-  position: relative;
-}
-
-.navbar-toggler-icon::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(var(--pink), var(--pink)) 0 25%/100% 2px no-repeat,
-    linear-gradient(var(--pink), var(--pink)) 0 50%/100% 2px no-repeat,
-    linear-gradient(var(--pink), var(--pink)) 0 75%/100% 2px no-repeat;
-}
-
-/* (Opcional) hit-area cómoda para click sin “borde visual” */
-.navbar .navbar-toggler{
+  gap: 0.55rem;
+  color: #D16BA5 !important;
+  /* Área cómoda para tocar en mobile */
   min-height: 44px;
   min-width: 44px;
 }
 
-
-/* ===========================
-   6) OFFCANVAS (MENÚ)
-   =========================== */
-.offcanvas{
-  background-color: var(--lilac) !important;
-  color: var(--cream) !important;
+/* Quita borde al hacer focus o click */
+.navbar .navbar-toggler:focus,
+.navbar .navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
+/* Color del botón cuando el menú está abierto */
+.navbar .navbar-toggler[aria-expanded=true] {
+  color: #D16BA5 !important;
+}
+
+/* Texto "Menú" al lado del icono */
+.menu-label {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  color: #D16BA5;
+}
+
+/* Icono hamburguesa (3 líneas) */
+.navbar-toggler-icon {
+  background-image: none !important;
+  width: 1.6em;
+  height: 1.6em;
+  position: relative;
+  /* Líneas del icono */
+}
+.navbar-toggler-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#D16BA5, #D16BA5) 0 25%/100% 2px no-repeat, linear-gradient(#D16BA5, #D16BA5) 0 50%/100% 2px no-repeat, linear-gradient(#D16BA5, #D16BA5) 0 75%/100% 2px no-repeat;
+}
+
+/* Utilities */
+/* Menú lateral (offcanvas) */
+.offcanvas {
+  background-color: #997DA2 !important;
+  color: #FFFBEF !important;
+  /* Título del offcanvas */
+}
 .offcanvas .offcanvas-title,
-.offcanvas h5{
-  color: var(--cream) !important;
+.offcanvas h5 {
+  color: #FFFBEF !important;
 }
-
-.offcanvas .nav-link{
-  color: var(--cream) !important;
+.offcanvas {
+  /* Links del menú */
+}
+.offcanvas .nav-link {
+  color: #FFFBEF !important;
   font-weight: 600;
 }
-
-.offcanvas .nav-link:hover{
-  opacity: .85;
+.offcanvas .nav-link:hover {
+  opacity: 0.85;
 }
-
-/* Botón cerrar visible en fondo oscuro */
-.offcanvas .btn-close{
+.offcanvas {
+  /* Botón cerrar visible en fondo oscuro */
+}
+.offcanvas .btn-close {
   filter: invert(1) grayscale(100%);
 }
 
-
-/* ===========================
-   7) FOOTER
-   =========================== */
-footer{
-  background-color: var(--cream) !important;
-  color: var(--pink) !important;
+/* Utilities */
+/* Footer general del sitio */
+footer {
+  background-color: #FFFBEF !important;
+  color: #D16BA5 !important;
   text-align: center;
   padding: 0.7rem;
 }
-
-footer p{
+footer p {
   margin: 0;
 }
 
-
-/* ===========================
-   8) UTILITIES
-   =========================== */
-.object-fit-cover{
-  object-fit: cover;
-}
-
-
-/* ===========================
-   9) HOME — CARRUSEL CATEGORÍAS
-   =========================== */
-.categorias-home{
+/* Pages */
+/* Utilities */
+/* Contenedor del carrusel en Home */
+.categorias-home {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-#carouselCategorias .card{
-  border-radius: var(--radius-sm);
+/* Card dentro del carrusel */
+#carouselCategorias .card {
+  border-radius: 12px;
   overflow: hidden;
 }
 
-/* Imagen del home: no recorta, evita “zoom” */
-#carouselCategorias .categoria-card__img{
+/* Imagen del carrusel: no recorta, evita “zoom” */
+#carouselCategorias .categoria-card__img {
   width: 100% !important;
   height: 320px !important;
   object-fit: contain !important;
   object-position: center !important;
-  background: var(--cream);
+  background: #FFFBEF;
   display: block !important;
 }
 
+/* Flechas del carrusel */
 #carouselCategorias .carousel-control-prev,
-#carouselCategorias .carousel-control-next{
+#carouselCategorias .carousel-control-next {
   width: 6%;
 }
 
-
-/* ===========================
-   10) PRODUCTOS — CATEGORÍAS
-   =========================== */
-/* En grilla de productos sí recortamos prolijo */
-.categoria-card__img{
+/* Utilities */
+/* Imagen de categoría en grilla */
+.categoria-card__img {
   height: 240px;
   object-fit: cover;
 }
 
-.categoria-card__title{
-  color: #9f19a3;
+/* Título de categoría */
+.categoria-card__title {
+  color: #D16BA5;
   font-weight: 600;
   text-align: center;
 }
 
-
-/* ===========================
-   11) PRODUCTOS — PRÓXIMAMENTE
-   =========================== */
-.producto{
+/* Card producto */
+.producto {
   position: relative;
   overflow: hidden;
   border: 1px solid #eee;
 }
 
-.producto__img{
+.producto__img {
   height: 260px;
   object-fit: cover;
 }
 
-.producto--proximamente{
-  opacity: 0.92;
-}
-
-.producto--proximamente::after{
+/* Efecto “próximamente”*/
+.producto--proximamente::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.03);
+  background: rgba(0, 0, 0, 0.03);
   pointer-events: none;
 }
 
-.producto__badge{
+/* Badge “Próximamente” */
+.producto__badge {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -305,221 +297,198 @@ footer p{
   z-index: 2;
 }
 
-.producto__title{
+.producto__title {
   color: #c4719b;
   font-weight: 700;
 }
 
-.producto__desc{
+.producto__desc {
   color: #555;
 }
 
+/* Botonera de contacto */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.25rem 0 1rem;
+}
 
-/* ===========================
-   12) VELAS — LISTAS / AJUSTES
-   =========================== */
-.uso-lista{
+/* Botón base */
+.contact-action__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  background: #FFFBEF;
+  color: #D16BA5;
+  border: 1px solid rgba(209, 107, 165, 0.35);
+  transition: transform 0.08s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+.contact-action__btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+.contact-action__btn:focus {
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 2px;
+}
+
+/* Variantes suaves por canal */
+.contact-action__btn--wa {
+  border-color: rgba(37, 211, 102, 0.45);
+}
+
+.contact-action__btn--ig {
+  border-color: rgba(209, 107, 165, 0.45);
+}
+
+.contact-action__btn--mail {
+  border-color: rgba(153, 125, 162, 0.45);
+}
+
+/* En cards de productos, el botón ocupa todo el ancho */
+.producto .contact-action__btn {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+/* Lista de uso / recomendaciones */
+.uso-lista {
   padding-left: 1.2rem;
   margin: 0;
 }
-
-.uso-lista li{
+.uso-lista li {
   text-align: left;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
 }
 
-/* Si usás <ul> directo en el acordeón del modal */
-.accordion-body ul{
+/* Si usás listas dentro del accordion */
+.accordion-body ul {
   padding-left: 1.2rem;
   margin: 0;
 }
 
-.accordion-body li{
-  margin-bottom: .35rem;
+.accordion-body li {
+  margin-bottom: 0.35rem;
 }
 
-
-/* ===========================
-   13) CONTACTO — LAYOUT
-   =========================== */
-.contact-main{
+/* Utilities */
+/* Contenedor principal de contacto */
+.contact-main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1rem 3rem;
 }
 
-.contact-hero{
+/* Cabecera de contacto */
+.contact-hero {
   text-align: center;
   margin-bottom: 1.5rem;
 }
-
-.contact-hero h1{
+.contact-hero h1 {
   margin: 0;
   padding: 0.5rem 0;
-  color: var(--text);
+  color: #111;
 }
-
-.contact-hero p{
+.contact-hero p {
   margin: 0.25rem 0 0;
-  color: var(--muted);
+  color: #6b5a6b;
 }
 
-.contact-card{
+/* Card de contacto (grid) */
+.contact-card {
   background: #fff;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 18px 45px rgba(0,0,0,0.10);
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  grid-template-areas:
-    "media  title"
-    "media  content";
+  grid-template-areas: "media  title" "media  content";
   gap: 1.25rem;
 }
 
-.contact-card__title{ grid-area: title; }
-.contact-card__media{ grid-area: media; }
-.contact-card__content{ grid-area: content; }
+.contact-card__title {
+  grid-area: title;
+}
 
-.contact-card__media{
+.contact-card__media {
+  grid-area: media;
+}
+
+.contact-card__content {
+  grid-area: content;
+}
+
+.contact-card__media {
   display: flex;
   justify-content: center;
 }
 
-.contact-card__img{
+.contact-card__img {
   width: 100%;
   max-width: 520px;
   border-radius: 18px;
   object-fit: cover;
 }
 
-/* Textos dentro de la card */
-.contact-card__text{
-  margin: 0 0 .75rem;
+/* Texto dentro de la card */
+.contact-card__text {
+  margin: 0 0 0.75rem;
   color: #333;
 }
 
-.contact-card__label{
-  margin: 0 0 .5rem;
+.contact-card__label {
+  margin: 0 0 0.5rem;
   font-weight: 700;
-  color: var(--text);
-}
-
-
-/* ===========================
-   14) CONTACTO — BOTONES (chips/pills)
-   =========================== */
-.contact-actions{
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-  margin: .25rem 0 1rem;
-}
-
-.contact-action__btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: .45rem .85rem;
-  border-radius: 999px;
-
-  text-decoration: none;
-  font-weight: 700;
-  font-size: .95rem;
-
-  background: var(--cream);
-  color: var(--pink);
-  border: 1px solid rgba(209, 107, 165, 0.35);
-
-  transition: transform .08s ease, opacity .15s ease, box-shadow .15s ease;
-}
-
-.contact-action__btn:hover{
-  opacity: .9;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
-}
-
-.contact-action__btn:focus{
-  outline: 2px solid rgba(209, 107, 165, 0.45);
-  outline-offset: 2px;
-}
-
-/* Variantes suaves por canal */
-.contact-action__btn--wa{
-  border-color: rgba(37, 211, 102, 0.45);
-}
-
-.contact-action__btn--ig{
-  border-color: rgba(209, 107, 165, 0.45);
-}
-
-.contact-action__btn--mail{
-  border-color: rgba(153, 125, 162, 0.45);
+  color: #111;
 }
 
 /* Info zona/pedidos */
-.contact-info p{
-  margin: 0 0 .35rem;
+.contact-info p {
+  margin: 0 0 0.35rem;
   color: #333;
 }
 
-.contact-info strong{
-  color: var(--text);
+.contact-info strong {
+  color: #111;
 }
 
-
-/* ===========================
-   15) RESPONSIVE
-   =========================== */
-
-/* ===========================
-   Desktop grande
-   =========================== */
-@media (min-width: 992px){
-  /* Home: carrusel un poco más alto */
-  #carouselCategorias .categoria-card__img{
+/* Responsive */
+/* Ajuste del carrusel en desktop grande */
+@media (min-width: 992px) {
+  #carouselCategorias .categoria-card__img {
     height: 380px !important;
   }
 }
-
-
-/* ===========================
-   Tablet + Mobile
-   =========================== */
-@media (max-width: 991.98px){
-
+/* Utilities */
+@media (max-width: 991.98px) {
   /* Contacto: apila contenido */
-  .contact-card{
+  .contact-card {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "media"
-      "content";
+    grid-template-areas: "title" "media" "content";
     text-align: center;
   }
-
-  .contact-actions{
+  .contact-actions {
     justify-content: center;
   }
-
-  /* Offcanvas: ancho 40% en mobile y tablet */
-  .offcanvas.offcanvas-start{
+  /* Offcanvas: ancho en tablet/mobile */
+  .offcanvas.offcanvas-start {
     width: 40vw !important;
-    min-width: 260px; /* evita que quede demasiado fino */
+    min-width: 260px;
   }
 }
-
-
-/* ===========================
-   Mobile chico
-   =========================== */
-@media (max-width: 576px){
-
-  /* Botones de contacto ocupan todo el ancho */
-  .contact-action__btn{
+@media (max-width: 576px) {
+  /* Botones ocupan todo el ancho */
+  .contact-action__btn {
     width: 100%;
   }
 }
+
+/*# sourceMappingURL=estilos.css.map */

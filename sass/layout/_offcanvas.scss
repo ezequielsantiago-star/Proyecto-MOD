@@ -1,0 +1,28 @@
+@use "../utilities/variables" as *;
+
+/* Menú lateral (offcanvas) */
+.offcanvas {
+  background-color: $lila !important;
+  color: $cream !important;
+
+  /* Título del offcanvas */
+  .offcanvas-title,
+  h5 {
+    color: $cream !important;
+  }
+
+  /* Links del menú */
+  .nav-link {
+    color: $cream !important;
+    font-weight: 600;
+
+    &:hover {
+      opacity: .85;
+    }
+  }
+
+  /* Botón cerrar visible en fondo oscuro */
+  .btn-close {
+    filter: invert(1) grayscale(100%);
+  }
+}

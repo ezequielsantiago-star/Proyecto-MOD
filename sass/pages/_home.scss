@@ -1,0 +1,29 @@
+@use "../utilities/variables" as *;
+
+/* Contenedor del carrusel en Home */
+.categorias-home {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card dentro del carrusel */
+#carouselCategorias .card {
+  border-radius: $radius-sm;
+  overflow: hidden;
+}
+
+/* Imagen del carrusel: no recorta, evita “zoom” */
+#carouselCategorias .categoria-card__img {
+  width: 100% !important;
+  height: 320px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: $cream;
+  display: block !important;
+}
+
+/* Flechas del carrusel */
+#carouselCategorias .carousel-control-prev,
+#carouselCategorias .carousel-control-next {
+  width: 6%;
+}

@@ -1,0 +1,20 @@
+/* Lista de uso / recomendaciones */
+.uso-lista {
+  padding-left: 1.2rem;
+  margin: 0;
+
+  li {
+    text-align: left;
+    margin-bottom: .4rem;
+  }
+}
+
+/* Si usás listas dentro del accordion */
+.accordion-body ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.accordion-body li {
+  margin-bottom: .35rem;
+}

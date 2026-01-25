@@ -1,0 +1,92 @@
+@use "../utilities/variables" as *;
+
+/* Header general del sitio */
+.site-header {
+  padding: 0;
+  background-color: transparent;
+
+  /* Logo */
+  img {
+    height: 4.5rem;
+  }
+}
+
+/* Color de fondo del navbar */
+.navcolor-custom {
+  background-color: $cream !important;
+}
+
+/* Color de los links del menú */
+.navbar .nav-link {
+  color: $pink !important;
+}
+
+/* Color de iconos del navbar (login, carrito, etc.) */
+.nav-icon,
+.nav-icon i,
+.navbar i.bi {
+  color: $pink !important;
+}
+
+/* Evita que Bootstrap fuerce texto blanco */
+.navbar a.text-white,
+.navbar i.text-white {
+  color: $pink !important;
+}
+
+/* Botón hamburguesa */
+.navbar .navbar-toggler {
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+
+  color: $pink !important;
+
+  /* Área cómoda para tocar en mobile */
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Quita borde al hacer focus o click */
+.navbar .navbar-toggler:focus,
+.navbar .navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Color del botón cuando el menú está abierto */
+.navbar .navbar-toggler[aria-expanded="true"] {
+  color: $pink !important;
+}
+
+/* Texto "Menú" al lado del icono */
+.menu-label {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  color: $pink;
+}
+
+/* Icono hamburguesa (3 líneas) */
+.navbar-toggler-icon {
+  background-image: none !important;
+  width: 1.6em;
+  height: 1.6em;
+  position: relative;
+
+  /* Líneas del icono */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient($pink, $pink) 0 25%/100% 2px no-repeat,
+      linear-gradient($pink, $pink) 0 50%/100% 2px no-repeat,
+      linear-gradient($pink, $pink) 0 75%/100% 2px no-repeat;
+  }
+}

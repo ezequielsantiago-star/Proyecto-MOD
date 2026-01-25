@@ -1,0 +1,13 @@
+@use "../utilities/variables" as *;
+
+/* Footer general del sitio */
+footer {
+  background-color: $cream !important;
+  color: $pink !important;
+  text-align: center;
+  padding: 0.7rem;
+
+  p {
+    margin: 0;
+  }
+}
