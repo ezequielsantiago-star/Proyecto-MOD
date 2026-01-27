@@ -1,0 +1,60 @@
+@use "../utilities/variables" as *;
+
+/* ===========================
+   BOTÓN BASE — MOD
+   =========================== */
+
+.btn-mod {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .6rem 1.2rem;
+  border-radius: 999px;
+
+  font-family: $font-nav;
+  font-weight: 500;
+  font-size: .95rem;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  background-color: $cream;
+  color: $pink;
+
+  border: 1px solid rgba(209, 107, 165, .45);
+
+  transition: 
+    transform .15s ease,
+    box-shadow .15s ease,
+    opacity .15s ease;
+}
+
+.btn-mod:hover {
+  opacity: .9;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+}
+
+.btn-mod:focus {
+  outline: 2px solid rgba(209, 107, 165, .45);
+  outline-offset: 2px;
+}
+
+/* ===========================
+   Tamaños
+   =========================== */
+
+.btn-mod--sm {
+  padding: .45rem 1rem;
+  font-size: .85rem;
+}
+
+.btn-mod--md {
+  padding: .6rem 1.2rem;
+}
+
+.btn-mod--lg {
+  padding: .75rem 1.6rem;
+  font-size: 1rem;
+}

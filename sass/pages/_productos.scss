@@ -107,3 +107,14 @@
   position: relative;
   z-index: 3;
 }
+
+/* ===========================
+   Productos — botones
+   =========================== */
+
+.producto-actions {
+  display: flex;
+  gap: .6rem;
+  justify-content: center;
+  margin-top: .75rem;
+}

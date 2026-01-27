@@ -14,6 +14,9 @@
 @use "layout/offcanvas";
 @use "layout/footer";
 
+/* Components */
+@use "components/buttons";
+
 /* Pages */
 @use "pages/home";
 @use "pages/productos";

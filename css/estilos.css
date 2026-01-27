@@ -219,27 +219,109 @@ footer p {
   margin: 0;
 }
 
+/* Components */
+/* Utilities */
+/* ===========================
+   BOTÓN BASE — MOD
+   =========================== */
+.btn-mod {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #FFFBEF;
+  color: #D16BA5;
+  border: 1px solid rgba(209, 107, 165, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-mod:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.btn-mod:focus {
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 2px;
+}
+
+/* ===========================
+   Tamaños
+   =========================== */
+.btn-mod--sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+}
+
+.btn-mod--md {
+  padding: 0.6rem 1.2rem;
+}
+
+.btn-mod--lg {
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
+}
+
 /* Pages */
 /* Utilities */
-/* Contenedor del carrusel en Home */
+/* ===========================
+   HOME — Carrusel categorías
+   =========================== */
+/* Contenedor general del carrusel */
 .categorias-home {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Card dentro del carrusel */
+/* Carrusel base */
+#carouselCategorias {
+  background: transparent !important;
+}
+#carouselCategorias .carousel-inner,
+#carouselCategorias .carousel-item {
+  background: transparent !important;
+}
+#carouselCategorias {
+  /* card */
+}
 #carouselCategorias .card {
-  border-radius: 12px;
-  overflow: hidden;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible;
+}
+#carouselCategorias {
+  /* card body */
+}
+#carouselCategorias .card-body {
+  padding: 0 !important;
+  background: transparent !important;
+}
+#carouselCategorias {
+  /* textos */
+}
+#carouselCategorias .categoria-card__title,
+#carouselCategorias .card-title,
+#carouselCategorias .card-text {
+  display: none !important;
+  margin: 0 !important;
 }
 
-/* Imagen del carrusel: no recorta, evita “zoom” */
+/* Imagen del carrusel */
 #carouselCategorias .categoria-card__img {
   width: 100% !important;
   height: 320px !important;
   object-fit: contain !important;
   object-position: center !important;
-  background: #FFFBEF;
+  background: transparent !important;
   display: block !important;
 }
 
@@ -247,6 +329,28 @@ footer p {
 #carouselCategorias .carousel-control-prev,
 #carouselCategorias .carousel-control-next {
   width: 6%;
+}
+
+/* ===========================
+  Flechas carrusel limpias
+   =========================== */
+#carouselCategorias .carousel-control-prev,
+#carouselCategorias .carousel-control-next {
+  width: 7%;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+#carouselCategorias .carousel-control-prev:hover,
+#carouselCategorias .carousel-control-next:hover {
+  opacity: 0.7;
+}
+#carouselCategorias .carousel-control-prev-icon,
+#carouselCategorias .carousel-control-next-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  /* flecha blanca, simple */
+  filter: invert(1);
+  background-size: 60%;
 }
 
 /* Utilities */
@@ -357,6 +461,16 @@ footer p {
   width: 100%;
   position: relative;
   z-index: 3;
+}
+
+/* ===========================
+   Productos — botones
+   =========================== */
+.producto-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 0.75rem;
 }
 
 /* Lista de uso / recomendaciones */

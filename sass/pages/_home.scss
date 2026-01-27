@@ -1,24 +1,55 @@
 @use "../utilities/variables" as *;
 
-/* Contenedor del carrusel en Home */
+/* ===========================
+   HOME — Carrusel categorías
+   =========================== */
+
+/* Contenedor general del carrusel */
 .categorias-home {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Card dentro del carrusel */
-#carouselCategorias .card {
-  border-radius: $radius-sm;
-  overflow: hidden;
+/* Carrusel base */
+#carouselCategorias {
+  background: transparent !important;
+
+  .carousel-inner,
+  .carousel-item {
+    background: transparent !important;
+  }
+
+  /* card */
+  .card {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    overflow: visible;
+  }
+
+  /* card body */
+  .card-body {
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  /* textos */
+  .categoria-card__title,
+  .card-title,
+  .card-text {
+    display: none !important;
+    margin: 0 !important;
+  }
 }
 
-/* Imagen del carrusel: no recorta, evita “zoom” */
+/* Imagen del carrusel */
 #carouselCategorias .categoria-card__img {
   width: 100% !important;
   height: 320px !important;
   object-fit: contain !important;
   object-position: center !important;
-  background: $cream;
+  background: transparent !important;
   display: block !important;
 }
 
@@ -26,4 +57,33 @@
 #carouselCategorias .carousel-control-prev,
 #carouselCategorias .carousel-control-next {
   width: 6%;
+}
+
+/* ===========================
+  Flechas carrusel limpias
+   =========================== */
+
+#carouselCategorias {
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 7%;
+    opacity: 0.35;
+    transition: opacity .2s ease;
+  }
+
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    opacity: 0.7;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+
+    /* flecha blanca, simple */
+    filter: invert(1);
+    background-size: 60%;
+  }
 }
