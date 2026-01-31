@@ -2,6 +2,7 @@
 /* Utilities */
 @use "utilities/variables";
 @use "utilities/mixin";
+@use "utilities/helpers";
 
 /* Base */
 @use "base/reset";
@@ -20,8 +21,11 @@
 /* Pages */
 @use "pages/home";
 @use "pages/productos";
-@use "pages/velas-recipiente";
+
+@use "pages/velas-shared";
+@use "pages/velas-recipientes";
 @use "pages/velas-moldes";
+
 @use "pages/contacto";
 
 /* Responsive */

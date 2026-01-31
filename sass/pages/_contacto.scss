@@ -1,5 +1,9 @@
 @use "../utilities/variables" as *;
 
+/* ===========================
+   CONTACTO — Layout
+   =========================== */
+
 /* Contenedor principal de contacto */
 .contact-main {
   max-width: 1100px;
@@ -75,4 +79,16 @@
 
 .contact-info strong {
   color: $text;
+}
+
+/* ===========================
+   CONTACTO — Botonera (solo layout)
+   =========================== */
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: .25rem 0 1rem;
+  justify-content: center;
 }

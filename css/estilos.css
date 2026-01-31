@@ -1,26 +1,9 @@
 @charset "UTF-8";
 /* Utilities */
-.text-thin-italic {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-  line-height: 1.6;
-}
-
-.text-bodoni-italic {
-  font-family: "Libre Bodoni", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.2;
-}
-
-.nav-text-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  letter-spacing: 0.4px;
-}
-
-/* Helper para recortar imágenes sin deformar */
+/* ===========================
+   MIXINS — MOD
+   =========================== */
+/* Helper */
 .object-fit-cover {
   object-fit: cover;
 }
@@ -32,7 +15,26 @@
   box-sizing: border-box;
 }
 
-/* Utilities */
+.nav-text-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.4px;
+}
+
+.text-bodoni-italic {
+  font-family: "Libre Bodoni", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.text-thin-italic {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  line-height: 1.6;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.55;
@@ -69,7 +71,6 @@ footer {
   font-family: "Poppins", sans-serif;
 }
 
-/* Utilities */
 body {
   background-color: rgb(255, 255, 255);
   color: #111;
@@ -82,7 +83,6 @@ img {
 }
 
 /* Layout */
-/* Utilities */
 main h1,
 main > p {
   text-align: center;
@@ -95,7 +95,6 @@ main p {
   color: #111;
 }
 
-/* Utilities */
 /* Header general del sitio */
 .site-header {
   padding: 0;
@@ -179,7 +178,6 @@ main p {
   background: linear-gradient(#D16BA5, #D16BA5) 0 25%/100% 2px no-repeat, linear-gradient(#D16BA5, #D16BA5) 0 50%/100% 2px no-repeat, linear-gradient(#D16BA5, #D16BA5) 0 75%/100% 2px no-repeat;
 }
 
-/* Utilities */
 /* Menú lateral (offcanvas) */
 .offcanvas {
   background-color: #997DA2 !important;
@@ -207,7 +205,6 @@ main p {
   filter: invert(1) grayscale(100%);
 }
 
-/* Utilities */
 /* Footer general del sitio */
 footer {
   background-color: #FFFBEF !important;
@@ -222,34 +219,39 @@ footer p {
 /* Components */
 /* Utilities */
 /* ===========================
-   BOTÓN BASE — MOD
+   BOTONES — MOD
    =========================== */
 .btn-mod {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   padding: 0.6rem 1.2rem;
   border-radius: 999px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 0.95rem;
+  line-height: 1;
   text-decoration: none;
   cursor: pointer;
+  user-select: none;
   background-color: #FFFBEF;
   color: #D16BA5;
   border: 1px solid rgba(209, 107, 165, 0.45);
   transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
 }
-
 .btn-mod:hover {
-  opacity: 0.9;
+  opacity: 0.92;
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
-
 .btn-mod:focus {
   outline: 2px solid rgba(209, 107, 165, 0.45);
   outline-offset: 2px;
+}
+.btn-mod[aria-disabled=true], .btn-mod:disabled {
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 /* ===========================
@@ -269,8 +271,42 @@ footer p {
   font-size: 1rem;
 }
 
+/* ===========================
+   Modificadores
+   =========================== */
+.btn-mod--block {
+  width: 100%;
+}
+
+/* Variantes por canal (solo cambia borde, mantiene identidad) */
+.btn-mod--wa {
+  border-color: rgba(37, 211, 102, 0.45);
+}
+
+.btn-mod--ig {
+  border-color: rgba(209, 107, 165, 0.55);
+}
+
+.btn-mod--mail {
+  border-color: rgba(153, 125, 162, 0.55);
+}
+
+/* ===========================
+   Reset para botones "técnicos"
+   =========================== */
+.btn-reset {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
 /* Pages */
-/* Utilities */
 /* ===========================
    HOME — Carrusel categorías
    =========================== */
@@ -353,7 +389,9 @@ footer p {
   background-size: 60%;
 }
 
-/* Utilities */
+/* ===========================
+   PRODUCTOS — Cards / Categorías
+   =========================== */
 /* Imagen de categoría en grilla */
 .categoria-card__img {
   height: 240px;
@@ -379,7 +417,7 @@ footer p {
   object-fit: cover;
 }
 
-/* Efecto “próximamente”*/
+/* Efecto “próximamente” */
 .producto--proximamente::after {
   content: "";
   position: absolute;
@@ -410,70 +448,212 @@ footer p {
   color: #555;
 }
 
-/* Botonera de contacto */
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin: 0.25rem 0 1rem;
-}
-
-/* Botón base */
-.contact-action__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.55rem 1rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1rem;
-  background: #FFFBEF;
-  color: #D16BA5;
-  border: 1px solid rgba(209, 107, 165, 0.35);
-  transition: transform 0.08s ease, opacity 0.15s ease, box-shadow 0.15s ease;
-}
-.contact-action__btn:hover {
-  opacity: 0.92;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-}
-.contact-action__btn:focus {
-  outline: 2px solid rgba(209, 107, 165, 0.45);
-  outline-offset: 2px;
-}
-
-/* Variantes suaves por canal */
-.contact-action__btn--wa {
-  border-color: rgba(37, 211, 102, 0.45);
-}
-
-.contact-action__btn--ig {
-  border-color: rgba(209, 107, 165, 0.45);
-}
-
-.contact-action__btn--mail {
-  border-color: rgba(153, 125, 162, 0.45);
-}
-
-/* En cards de productos, el botón ocupa todo el ancho */
-.producto .contact-action__btn {
-  width: 100%;
-  position: relative;
-  z-index: 3;
-}
-
 /* ===========================
-   Productos — botones
+   PRODUCTOS — Layout de botones
    =========================== */
+/* Contenedor para 2 botones (RECIPIENTES / MOLDES) */
 .producto-actions {
   display: flex;
   gap: 0.6rem;
   justify-content: center;
   margin-top: 0.75rem;
+  flex-wrap: wrap;
 }
 
-/* Lista de uso / recomendaciones */
+/* Si un botón está dentro de una card de producto y quiero que ocupe todo el ancho */
+.producto .btn-mod--block {
+  position: relative;
+  z-index: 3;
+}
+
+/*si también uso botones de contacto dentro de productos, este contenedor sirve igual */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.25rem 0 1rem;
+  justify-content: center;
+}
+
+/* ===========================
+   MOD — VELAS (SHARED)
+   Identidad común para:
+   - Grid / wrapper
+   - Cards clickeables
+   - Modales
+   - Carruseles
+   - Select / Accordion
+   - Listas de uso
+   =========================== */
+/* Wrapper para que las cards no se estiren en pantallas grandes */
+.velas-grid {
+  max-width: 1100px;
+}
+
+/* ===========================
+   CARD clickeable que abre modal
+   =========================== */
+.velas-card {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(209, 107, 165, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  /* micro-interacción */
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.velas-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.12);
+}
+.velas-card {
+  /* Soporta img directo o Bootstrap .card-img-top */
+}
+.velas-card img,
+.velas-card .card-img-top {
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  width: 100%;
+}
+.velas-card .card-body {
+  background: #FFFBEF;
+}
+.velas-card h2 {
+  color: #111;
+}
+.velas-card p {
+  color: #6b5a6b;
+}
+
+/* ===========================
+   MODAL container
+   =========================== */
+.modal-content.mod-modal {
+  border-radius: 22px;
+  border: 1px solid rgba(209, 107, 165, 0.2);
+  box-shadow: 0 26px 65px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+/* Header modal */
+.mod-modal .modal-header {
+  background: #FFFBEF;
+  border-bottom: 1px solid rgba(209, 107, 165, 0.18);
+}
+.mod-modal .modal-header .modal-title {
+  color: #111;
+}
+.mod-modal .modal-header .btn-close {
+  opacity: 0.6;
+}
+.mod-modal .modal-header .btn-close:hover {
+  opacity: 0.9;
+}
+
+/* Body modal */
+.mod-modal .modal-body {
+  background: #fff;
+}
+.mod-modal .modal-body .mod-desc {
+  color: #6b5a6b;
+  margin-bottom: 1rem;
+}
+.mod-modal .modal-body .mod-hint {
+  color: #6b5a6b;
+}
+
+/* ===========================
+   Carrusel dentro del modal
+   =========================== */
+.mod-modal .carousel {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(209, 107, 165, 0.18);
+  background: #FFFBEF;
+}
+
+.mod-modal .carousel img {
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  width: 100%;
+}
+
+/* Flechas del carrusel — visibles en fondos claros */
+.mod-modal .carousel-control-prev,
+.mod-modal .carousel-control-next {
+  width: 14%;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+
+.mod-modal .carousel-control-prev:hover,
+.mod-modal .carousel-control-next:hover {
+  opacity: 0.95;
+}
+
+/* Iconos Bootstrap → invertimos */
+.mod-modal .carousel-control-prev-icon,
+.mod-modal .carousel-control-next-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: 65%;
+  filter: invert(1) grayscale(1);
+}
+
+.mod-modal .carousel-control-prev:focus-visible,
+.mod-modal .carousel-control-next:focus-visible {
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 2px;
+}
+
+/* ===========================
+   Select MOD
+   =========================== */
+.mod-modal .form-select {
+  border-radius: 14px;
+  border: 1px solid rgba(209, 107, 165, 0.25);
+  color: #111;
+}
+.mod-modal .form-select:focus {
+  border-color: rgba(209, 107, 165, 0.55);
+  box-shadow: 0 0 0 0.2rem rgba(209, 107, 165, 0.15);
+}
+
+.mod-modal .form-label {
+  color: #111;
+}
+
+/* ===========================
+   Accordion MOD
+   =========================== */
+.mod-modal .accordion-item {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(209, 107, 165, 0.18);
+}
+
+.mod-modal .accordion-button {
+  background: #FFFBEF;
+  color: #111;
+  font-weight: 600;
+}
+.mod-modal .accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(209, 107, 165, 0.12);
+}
+.mod-modal .accordion-button:not(.collapsed) {
+  background: #FFFBEF;
+  color: #111;
+}
+
+.mod-modal .accordion-body {
+  background: #fff;
+}
+
+/* ===========================
+   Lista de uso / recomendaciones
+   =========================== */
 .uso-lista {
   padding-left: 1.2rem;
   margin: 0;
@@ -483,7 +663,7 @@ footer p {
   margin-bottom: 0.4rem;
 }
 
-/* Si usás listas dentro del accordion */
+/*listas dentro del accordion */
 .accordion-body ul {
   padding-left: 1.2rem;
   margin: 0;
@@ -493,7 +673,21 @@ footer p {
   margin-bottom: 0.35rem;
 }
 
-/* Utilities */
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 576px) {
+  .velas-card img,
+  .velas-card .card-img-top {
+    height: 260px;
+  }
+  .mod-modal .carousel img {
+    height: 260px;
+  }
+}
+/* ===========================
+   CONTACTO — Layout
+   =========================== */
 /* Contenedor principal de contacto */
 .contact-main {
   max-width: 1100px;
@@ -574,6 +768,17 @@ footer p {
   color: #111;
 }
 
+/* ===========================
+   CONTACTO — Botonera (solo layout)
+   =========================== */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.25rem 0 1rem;
+  justify-content: center;
+}
+
 /* Responsive */
 /* Ajuste del carrusel en desktop grande */
 @media (min-width: 992px) {
@@ -581,9 +786,8 @@ footer p {
     height: 380px !important;
   }
 }
-/* Utilities */
-@media (max-width: 991.98px) {
-  /* Contacto: apila contenido */
+@media (max-width: 991px) {
+  /* Contacto */
   .contact-card {
     grid-template-columns: 1fr;
     grid-template-areas: "title" "media" "content";
@@ -600,7 +804,7 @@ footer p {
 }
 @media (max-width: 576px) {
   /* Botones ocupan todo el ancho */
-  .contact-action__btn {
+  .btn-mod {
     width: 100%;
   }
 }

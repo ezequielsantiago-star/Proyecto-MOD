@@ -1,7 +1,7 @@
 @use "../utilities/variables" as *;
 
-@media (max-width: 991.98px) {
-  /* Contacto: apila contenido */
+@media (max-width: 991px) {
+  /* Contacto */
   .contact-card {
     grid-template-columns: 1fr;
     grid-template-areas:

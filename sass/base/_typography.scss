@@ -3,6 +3,29 @@
 // Trae variables del UTILITIES
 @use "../utilities/variables" as *;
 
+//estilos de tipografía
+.nav-text-thin {
+    font-family: $font-nav;
+    font-weight: 100;
+    letter-spacing: 0.4px;
+}
+
+    .text-bodoni-italic {
+    font-family: $font-title;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+ .text-thin-italic {
+    font-family: $font-body;
+    font-weight: 100;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+
+
 // Base tipográfica del sitio
 body {  
   font-family: $font-body;

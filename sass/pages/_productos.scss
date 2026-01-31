@@ -1,5 +1,9 @@
 @use "../utilities/variables" as *;
 
+/* ===========================
+   PRODUCTOS — Cards / Categorías
+   =========================== */
+
 /* Imagen de categoría en grilla */
 .categoria-card__img {
   height: 240px;
@@ -25,7 +29,7 @@
   object-fit: cover;
 }
 
-/* Efecto “próximamente”*/
+/* Efecto “próximamente” */
 .producto--proximamente::after {
   content: "";
   position: absolute;
@@ -56,65 +60,30 @@
   color: #555;
 }
 
-/* Botonera de contacto */
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-  margin: .25rem 0 1rem;
-}
-
-/* Botón base */
-.contact-action__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: .55rem 1rem;
-  border-radius: 999px;
-
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1rem;
-
-  background: $cream;
-  color: $pink;
-
-  border: 1px solid rgba(209, 107, 165, 0.35);
-
-  transition: transform .08s ease, opacity .15s ease, box-shadow .15s ease;
-
-  &:hover {
-    opacity: .92;
-    transform: translateY(-1px);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-  }
-
-  &:focus {
-    outline: 2px solid rgba(209, 107, 165, 0.45);
-    outline-offset: 2px;
-  }
-}
-
-/* Variantes suaves por canal */
-.contact-action__btn--wa { border-color: rgba(37, 211, 102, 0.45); }
-.contact-action__btn--ig { border-color: rgba(209, 107, 165, 0.45); }
-.contact-action__btn--mail { border-color: rgba(153, 125, 162, 0.45); }
-
-/* En cards de productos, el botón ocupa todo el ancho */
-.producto .contact-action__btn {
-  width: 100%;
-  position: relative;
-  z-index: 3;
-}
-
 /* ===========================
-   Productos — botones
+   PRODUCTOS — Layout de botones
    =========================== */
 
+/* Contenedor para 2 botones (RECIPIENTES / MOLDES) */
 .producto-actions {
   display: flex;
   gap: .6rem;
   justify-content: center;
   margin-top: .75rem;
+  flex-wrap: wrap;
+}
+
+/* Si un botón está dentro de una card de producto y quiero que ocupe todo el ancho */
+.producto .btn-mod--block {
+  position: relative;
+  z-index: 3;
+}
+
+/*si también uso botones de contacto dentro de productos, este contenedor sirve igual */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: .25rem 0 1rem;
+  justify-content: center;
 }
