@@ -1,217 +1,221 @@
 @use "../utilities/variables" as *;
 
-/* ===========================
-   MOD — VELAS (SHARED)
-   Identidad común para:
-   - Grid / wrapper
-   - Cards clickeables
-   - Modales
-   - Carruseles
-   - Select / Accordion
-   - Listas de uso
-   =========================== */
+/* =========================================================
+   VELAS — SHARED
+   Base compartida para Recipientes y Moldes
+   ========================================================= */
 
-/* Wrapper para que las cards no se estiren en pantallas grandes */
-.velas-grid{
+.velas-grid {
   max-width: 1100px;
+  margin: 0 auto;
 }
 
 /* ===========================
-   CARD clickeable que abre modal
+   CARD clickeable
    =========================== */
+
 .velas-card {
+  background: #fff;
   border-radius: $radius-lg;
   overflow: hidden;
-  border: 1px solid rgba(209, 107, 165, .18);
-  box-shadow: 0 18px 40px rgba(0,0,0,.08);
-  background: #fff;
 
-  /* micro-interacción */
-  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  border: 1px solid rgba($pink, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 
-  &:hover{
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  will-change: transform;
+
+  &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 26px 60px rgba(0,0,0,.12);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.12);
   }
 
-  /* Soporta img directo o Bootstrap .card-img-top */
-  img,
-  .card-img-top {
-    height: 320px;
-    object-fit: cover;
-    display: block;
+  /* Si la card se abre con button/link*/
+  &:focus-within {
+    outline: 2px solid rgba($pink, 0.35);
+    outline-offset: 4px;
+  }
+
+  /* Imagen */
+  .card-img-top,
+  img {
     width: 100%;
+    height: 320px; 
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    user-select: none;
   }
 
   .card-body {
     background: $cream;
   }
 
-  h2 { color: $text; }
-  p  { color: $muted; }
+  /* Jerarquía interna */
+  h2 {
+    color: $text;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    color: $muted;
+    margin: 0;
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .velas-card {
+    transition: none;
+
+    &:hover {
+      transform: none;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    }
+  }
 }
 
 /* ===========================
-   MODAL container
+   MODAL
    =========================== */
+
 .modal-content.mod-modal {
   border-radius: $radius-lg;
-  border: 1px solid rgba(209, 107, 165, .20);
-  box-shadow: 0 26px 65px rgba(0,0,0,.18);
   overflow: hidden;
+
+  border: 1px solid rgba($pink, 0.20);
+  box-shadow: 0 26px 65px rgba(0, 0, 0, 0.18);
 }
 
-/* Header modal */
-.mod-modal .modal-header {
-  background: $cream;
-  border-bottom: 1px solid rgba(209, 107, 165, .18);
-
-  .modal-title { color: $text; }
-
-  .btn-close {
-    opacity: .6;
-    &:hover { opacity: .9; }
-  }
-}
-
-/* Body modal */
-.mod-modal .modal-body {
-  background: #fff;
-
-  .mod-desc {
-    color: $muted;
-    margin-bottom: 1rem;
-  }
-
-  .mod-hint {
-    color: $muted;
-  }
-}
-
-/* ===========================
-   Carrusel dentro del modal
-   =========================== */
-.mod-modal .carousel {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(209, 107, 165, .18);
-  background: $cream;
-}
-
-.mod-modal .carousel img {
-  height: 360px;
-  object-fit: cover;
-  display: block;
-  width: 100%;
-}
-
-/* Flechas del carrusel — visibles en fondos claros */
-.mod-modal .carousel-control-prev,
-.mod-modal .carousel-control-next {
-  width: 14%;
-  opacity: .55;
-  transition: opacity .2s ease;
-}
-
-.mod-modal .carousel-control-prev:hover,
-.mod-modal .carousel-control-next:hover {
-  opacity: .95;
-}
-
-/* Iconos Bootstrap → invertimos */
-.mod-modal .carousel-control-prev-icon,
-.mod-modal .carousel-control-next-icon {
-  width: 2rem;
-  height: 2rem;
-  background-size: 65%;
-  filter: invert(1) grayscale(1);
-}
-
-.mod-modal .carousel-control-prev:focus-visible,
-.mod-modal .carousel-control-next:focus-visible {
-  outline: 2px solid rgba(209, 107, 165, .45);
-  outline-offset: 2px;
-}
-
-/* ===========================
-   Select MOD
-   =========================== */
-.mod-modal .form-select {
-  border-radius: 14px;
-  border: 1px solid rgba(209, 107, 165, .25);
-  color: $text;
-
-  &:focus {
-    border-color: rgba(209, 107, 165, .55);
-    box-shadow: 0 0 0 .2rem rgba(209, 107, 165, .15);
-  }
-}
-
-.mod-modal .form-label { color: $text; }
-
-/* ===========================
-   Accordion MOD
-   =========================== */
-.mod-modal .accordion-item {
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(209, 107, 165, .18);
-}
-
-.mod-modal .accordion-button {
-  background: $cream;
-  color: $text;
-  font-weight: 600;
-
-  &:focus {
-    box-shadow: 0 0 0 .2rem rgba(209, 107, 165, .12);
-  }
-
-  &:not(.collapsed) {
+/* Agrupamos todo el scope del modal para no repetir */
+.mod-modal {
+  .modal-header {
     background: $cream;
-    color: $text;
-  }
-}
+    border-bottom: 1px solid rgba($pink, 0.18);
 
-.mod-modal .accordion-body {
-  background: #fff;
-}
+    .modal-title {
+      color: $text;
+    }
 
-/* ===========================
-   Lista de uso / recomendaciones
-   =========================== */
-.uso-lista {
-  padding-left: 1.2rem;
-  margin: 0;
+    .btn-close {
+      opacity: 0.6;
 
-  li {
-    text-align: left;
-    margin-bottom: .4rem;
-  }
-}
-
-/*listas dentro del accordion */
-.accordion-body ul {
-  padding-left: 1.2rem;
-  margin: 0;
-}
-
-.accordion-body li {
-  margin-bottom: .35rem;
-}
-
-/* ===========================
-   Responsive
-   =========================== */
-@media (max-width: 576px) {
-  .velas-card {
-    img,
-    .card-img-top {
-      height: 260px;
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
 
-  .mod-modal .carousel img {
-    height: 260px;
+  .modal-body {
+    background: #fff;
+
+    .mod-desc,
+    .mod-hint {
+      color: $muted;
+      margin-bottom: 0.75rem;
+    }
+
+    .mod-hint {
+      margin-bottom: 0;
+    }
+  }
+
+  /* ===========================
+     Carrusel dentro del modal
+     =========================== */
+
+  .carousel {
+    border-radius: 18px;
+    overflow: hidden;
+
+    border: 1px solid rgba($pink, 0.18);
+    background: $cream;
+  }
+
+  /* Bootstrap: imagen suele estar dentro de .carousel-item */
+  .carousel-item img {
+    width: 100%;
+    height: 360px; 
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+    user-select: none;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 14%;
+    opacity: 0.55;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.95;
+    }
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 2rem;
+    height: 2rem;
+
+    background-size: 65%;
+    filter: invert(1) grayscale(1);
+  }
+
+  /* ===========================
+     Select / Accordion
+     =========================== */
+
+  .form-select {
+    border-radius: 14px;
+    border: 1px solid rgba($pink, 0.25);
+    color: $text;
+
+    &:focus {
+      border-color: rgba($pink, 0.55);
+      box-shadow: 0 0 0 0.2rem rgba($pink, 0.15);
+    }
+  }
+
+  .accordion-item {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba($pink, 0.18);
+  }
+
+  .accordion-button {
+    background: $cream;
+    color: $text;
+    font-weight: 600;
+  }
+
+  .accordion-body {
+    background: #fff;
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* Reduce motion (modal controls) */
+@media (prefers-reduced-motion: reduce) {
+  .mod-modal {
+    .carousel-control-prev,
+    .carousel-control-next {
+      transition: none;
+    }
   }
 }

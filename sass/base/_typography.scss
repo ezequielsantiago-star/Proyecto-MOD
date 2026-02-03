@@ -1,39 +1,59 @@
-// ==TIPOGRAFIA — MOD==
-
-// Trae variables del UTILITIES
+// == TIPOGRAFÍA — MOD ==
 @use "../utilities/variables" as *;
 
-//estilos de tipografía
+// ---------------------------------------------------------
+// Utilidades tipográficas (clases)
+// ---------------------------------------------------------
+
+// Texto fino para navbar / etiquetas
 .nav-text-thin {
-    font-family: $font-nav;
-    font-weight: 100;
-    letter-spacing: 0.4px;
+  font-family: $font-nav;
+  font-weight: 300;
+  letter-spacing: 0.4px;
 }
 
-    .text-bodoni-italic {
-    font-family: $font-title;
-    font-weight: 400;
-    font-style: italic;
-    line-height: 1.2;
+// Títulos Bodoni italic (hero / títulos destacados)
+.text-bodoni-italic {
+  font-family: $font-title;
+  font-style: italic;
+  line-height: 1.2;
 }
 
- .text-thin-italic {
-    font-family: $font-body;
-    font-weight: 100;
-    font-style: italic;
-    line-height: 1.6;
-}
-
-
-
-// Base tipográfica del sitio
-body {  
+// Texto fino italic (descripciones / citas)
+.text-thin-italic {
   font-family: $font-body;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+// ---------------------------------------------------------
+// Base tipográfica global
+// ---------------------------------------------------------
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-body;
+  font-weight: 400;
   line-height: 1.55;
   text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-kerning: normal;
 }
 
-// Títulos
+// Headings: jerarquía limpia (sin tocar tamaños de Bootstrap)
+:where(h1, h2, h3, h4, h5, h6) {
+  line-height: 1.25;
+  margin: 0;
+}
+
 h1 {
   font-family: $font-title;
   font-weight: 700;
@@ -41,25 +61,23 @@ h1 {
   letter-spacing: 0.2px;
 }
 
-// Todo el resto de headings MONSERRAT
+// h2..h6 mantienen identidad con Montserrat (más “marca”)
 h2, h3, h4, h5, h6 {
   font-family: $font-body;
   font-weight: 700;
-  line-height: 1.25;
 }
 
-// Texto general
-p, li, span, small {
-  font-family: $font-body;
+// Texto general (hereda font-family desde body)
+p, li {
+  margin: 0;
   line-height: 1.6;
 }
 
-// Footer
-footer {
-  font-family: $font-body;
+small {
+  line-height: 1.4;
 }
 
-// Menú (hamburguesa / navegación) — Poppins
+// Navegación / offcanvas con Poppins (identidad consistente)
 .navbar,
 .offcanvas,
 .menu-label,

@@ -1,48 +1,224 @@
 @charset "UTF-8";
-/* Utilities */
-/* ===========================
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   MOD Creaciones — Variables globales (TOKENS)
+   ========================================================= */
+/* =========================
+   1) Colores base (compat)
+   ========================= */
+/* =========================
+   2) Radios (compat)
+   ========================= */
+/* =========================
+   3) Tipografías (compat)
+   ========================= */
+/* =========================================================
+   4) TOKENS PRO (recomendados)
+   ========================================================= */
+/* -------------------------
+   a) Paleta extendida
+   ------------------------- */
+/* -------------------------
+   b) Sombras
+   (mismo lenguaje visual en todo el sitio)
+   ------------------------- */
+/* -------------------------
+   c) Spacing (escala)
+   Usás estos para margin/padding
+   ------------------------- */
+/* -------------------------
+   d) Tipografía (escala)
+   - para jerarquía consistente
+   ------------------------- */
+/* -------------------------
+   e) Transiciones / motion
+   ------------------------- */
+/* -------------------------
+   f) Breakpoints (Bootstrap-like)
+   (para tus @media sin magia)
+   ------------------------- */
+/* -------------------------
+   g) Layout / container
+   ------------------------- */
+/* -------------------------
+   h) Component tokens
+   ------------------------- */
+/* =========================
+   Breakpoints (Bootstrap)
+   ========================= */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
    MIXINS — MOD
-   =========================== */
-/* Helper */
+   - Reutilizables y consistentes con tokens
+   ========================================================= */
+/* =========================
+   Accesibilidad: Focus ring
+   ========================= */
+/* =========================
+   Motion: reduce motion
+   ========================= */
+/* =========================
+   Botón base (MOD)
+   ========================= */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   HELPERS — MOD
+   Utilidades reutilizables (clases chicas)
+   ========================================================= */
+/* Imágenes */
 .object-fit-cover {
   object-fit: cover;
 }
 
-/* Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.object-fit-contain {
+  object-fit: contain;
 }
 
+.object-center {
+  object-position: center;
+}
+
+/* Bordes rápidos */
+.rounded-sm {
+  border-radius: 12px;
+}
+
+.rounded-lg {
+  border-radius: 22px;
+}
+
+.u-object-cover,
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.u-object-contain,
+.object-fit-contain {
+  object-fit: contain;
+}
+
+.u-object-center,
+.object-center {
+  object-position: center;
+}
+
+.u-rounded-sm,
+.rounded-sm {
+  border-radius: 12px;
+}
+
+.u-rounded-lg,
+.rounded-lg {
+  border-radius: 22px;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+/* Texto */
+.text-center {
+  text-align: center;
+}
+
+/* Box sizing global */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Heredan box-sizing + reset suave */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Reset de márgenes base (controlado) */
+body {
+  margin: 0;
+}
+
+/* Media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Formularios heredan fuente (mejor consistencia visual) */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Evita desbordes por palabras largas */
+p,
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Motion: respeta accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 .nav-text-thin {
   font-family: "Poppins", sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 0.4px;
 }
 
 .text-bodoni-italic {
-  font-family: "Libre Bodoni", sans-serif;
-  font-weight: 400;
+  font-family: "Libre Bodoni", serif;
   font-style: italic;
   line-height: 1.2;
 }
 
 .text-thin-italic {
   font-family: "Montserrat", sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: italic;
   line-height: 1.6;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   line-height: 1.55;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  line-height: 1.25;
+  margin: 0;
 }
 
 h1 {
-  font-family: "Libre Bodoni", sans-serif;
+  font-family: "Libre Bodoni", serif;
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: 0.2px;
@@ -51,16 +227,15 @@ h1 {
 h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  line-height: 1.25;
 }
 
-p, li, span, small {
-  font-family: "Montserrat", sans-serif;
+p, li {
+  margin: 0;
   line-height: 1.6;
 }
 
-footer {
-  font-family: "Montserrat", sans-serif;
+small {
+  line-height: 1.4;
 }
 
 .navbar,
@@ -71,156 +246,430 @@ footer {
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  background-color: rgb(255, 255, 255);
-  color: #111;
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-img {
+body {
+  background-color: #ffffff;
+  color: #111111;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Layout */
-main h1,
-main > p {
-  text-align: center;
-}
-main h1 {
-  color: #111;
-  padding: 1rem;
-}
-main p {
-  color: #111;
+img {
+  user-select: none;
 }
 
-/* Header general del sitio */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   LAYOUT GENERAL — MOD
+   Reglas globales de estructura del sitio
+   ========================================================= */
+/* Patrón reutilizable para cabeceras de página */
+.page-hero {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 1rem;
+}
+.page-hero h1 {
+  margin: 0;
+  color: #111111;
+  letter-spacing: 0.2px;
+}
+.page-hero p {
+  margin: 0.35rem auto 0;
+  max-width: 60ch;
+  color: #6b5a6b;
+}
+
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   NAVIGATION / HEADER — MOD
+   Navbar + íconos + botón hamburguesa
+   ========================================================= */
 .site-header {
   padding: 0;
-  background-color: transparent;
-  /* Logo */
-}
-.site-header img {
-  height: 4.5rem;
+  background: transparent;
 }
 
-/* Color de fondo del navbar */
+/* Fondo navbar */
 .navcolor-custom {
-  background-color: #FFFBEF !important;
+  background-color: #FFFBEF;
 }
 
-/* Color de los links del menú */
+/* Logo  */
+.brand-logo {
+  height: 48px; /* base */
+  width: auto;
+  display: block;
+}
+
+.navbar {
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  /* Links */
+}
 .navbar .nav-link {
-  color: #D16BA5 !important;
+  color: #D16BA5;
+  transition: opacity 0.15s ease;
 }
-
-/* Color de iconos del navbar (login, carrito, etc.) */
-.nav-icon,
-.nav-icon i,
-.navbar i.bi {
-  color: #D16BA5 !important;
+.navbar .nav-link:hover {
+  opacity: 0.85;
 }
-
-/* Evita que Bootstrap fuerce texto blanco */
+.navbar .nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.navbar .nav-link:focus-visible {
+  outline: 2px solid rgba(209, 107, 165, 0.35);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+.navbar {
+  /* Íconos (derecha) */
+}
+.navbar .nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: #D16BA5;
+  border-radius: 12px;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.navbar .nav-icon i,
+.navbar .nav-icon .bi {
+  color: inherit;
+}
+.navbar .nav-icon:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.navbar .nav-icon:focus-visible {
+  outline: 2px solid rgba(209, 107, 165, 0.35);
+  outline-offset: 3px;
+}
+.navbar {
+  /* Por si Bootstrap aplica text-white en algo */
+}
 .navbar a.text-white,
 .navbar i.text-white {
-  color: #D16BA5 !important;
+  color: #D16BA5;
 }
-
-/* Botón hamburguesa */
+.navbar {
+  /* Toggler */
+}
 .navbar .navbar-toggler {
-  border: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: #D16BA5 !important;
-  /* Área cómoda para tocar en mobile */
+  color: #D16BA5;
   min-height: 44px;
   min-width: 44px;
 }
-
-/* Quita borde al hacer focus o click */
-.navbar .navbar-toggler:focus,
-.navbar .navbar-toggler:active {
-  outline: none !important;
-  box-shadow: none !important;
+.navbar .navbar-toggler:focus, .navbar .navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
 }
-
-/* Color del botón cuando el menú está abierto */
-.navbar .navbar-toggler[aria-expanded=true] {
-  color: #D16BA5 !important;
+.navbar .navbar-toggler:focus-visible {
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 4px;
+  border-radius: 12px;
 }
-
-/* Texto "Menú" al lado del icono */
-.menu-label {
+.navbar {
+  /* Texto "Menú" */
+}
+.navbar .menu-label {
   font-weight: 700;
   font-size: 1rem;
   line-height: 1;
   color: #D16BA5;
 }
-
-/* Icono hamburguesa (3 líneas) */
-.navbar-toggler-icon {
-  background-image: none !important;
+.navbar {
+  /* Icono hamburguesa (3 líneas custom) */
+}
+.navbar .navbar-toggler-icon {
+  background-image: none;
   width: 1.6em;
   height: 1.6em;
   position: relative;
-  /* Líneas del icono */
 }
-.navbar-toggler-icon::before {
+.navbar .navbar-toggler-icon::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(#D16BA5, #D16BA5) 0 25%/100% 2px no-repeat, linear-gradient(#D16BA5, #D16BA5) 0 50%/100% 2px no-repeat, linear-gradient(#D16BA5, #D16BA5) 0 75%/100% 2px no-repeat;
 }
 
-/* Menú lateral (offcanvas) */
-.offcanvas {
-  background-color: #997DA2 !important;
-  color: #FFFBEF !important;
-  /* Título del offcanvas */
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar .nav-link,
+  .navbar .nav-icon {
+    transition: none;
+  }
+  .navbar .nav-icon:hover {
+    transform: none;
+  }
 }
-.offcanvas .offcanvas-title,
-.offcanvas h5 {
-  color: #FFFBEF !important;
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   OFFCANVAS — MOD
+   Menú lateral (Bootstrap Offcanvas)
+   ========================================================= */
+.offcanvas {
+  background-color: #997DA2;
+  color: #FFFBEF;
+  /* Header */
+}
+.offcanvas .offcanvas-header {
+  border-bottom: 1px solid rgba(255, 251, 239, 0.12);
+}
+.offcanvas .offcanvas-title {
+  color: #FFFBEF;
 }
 .offcanvas {
-  /* Links del menú */
+  /* Links */
 }
 .offcanvas .nav-link {
-  color: #FFFBEF !important;
+  color: #FFFBEF;
   font-weight: 600;
+  /* Área táctil + look */
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.85rem;
+  border-radius: 12px;
+  transition: background-color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
 }
 .offcanvas .nav-link:hover {
-  opacity: 0.85;
+  background-color: rgba(255, 251, 239, 0.1);
+  opacity: 0.95;
+  transform: translateX(2px);
+}
+.offcanvas .nav-link.active {
+  background-color: rgba(255, 251, 239, 0.14);
+}
+.offcanvas .nav-link:focus-visible {
+  outline: 2px solid rgba(255, 251, 239, 0.6);
+  outline-offset: 3px;
 }
 .offcanvas {
-  /* Botón cerrar visible en fondo oscuro */
+  /* Botón cerrar (visible en fondo oscuro) */
 }
 .offcanvas .btn-close {
   filter: invert(1) grayscale(100%);
+  opacity: 0.9;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.offcanvas .btn-close:hover {
+  opacity: 1;
+  transform: rotate(2deg);
+}
+.offcanvas .btn-close:focus-visible {
+  outline: 2px solid rgba(255, 251, 239, 0.6);
+  outline-offset: 3px;
+  border-radius: 12px;
 }
 
-/* Footer general del sitio */
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .offcanvas .nav-link,
+  .offcanvas .btn-close {
+    transition: none;
+  }
+  .offcanvas .nav-link:hover {
+    transform: none;
+  }
+  .offcanvas .btn-close:hover {
+    transform: none;
+  }
+}
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   LAYOUT / FOOTER — MOD
+   - Layout + Social card + Tooltip
+   ========================================================= */
 footer {
-  background-color: #FFFBEF !important;
-  color: #D16BA5 !important;
-  text-align: center;
+  background-color: #FFFBEF;
+  color: #D16BA5;
   padding: 0.7rem;
+  text-align: center;
+}
+footer .footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 footer p {
   margin: 0;
+  font-size: 0.85rem;
+}
+footer .footer-social {
+  display: flex;
+  justify-content: center;
+}
+footer .social-card {
+  display: inline-flex;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 14px rgba(255, 255, 255, 0.22), 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+@supports (backdrop-filter: blur(12px)) {
+  footer .social-card {
+    backdrop-filter: blur(12px);
+  }
+}
+footer .social-card > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+footer .social-card > ul > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer .iso-pro {
+  --size: 46px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+footer .iso-pro > span {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.22), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+footer .iso-pro:hover > span:nth-child(1) {
+  opacity: 0.15;
+}
+footer .iso-pro:hover > span:nth-child(2) {
+  opacity: 0.3;
+  transform: translate(3px, -3px);
+}
+footer .iso-pro:hover > span:nth-child(3) {
+  opacity: 0.45;
+  transform: translate(6px, -6px);
+}
+footer .iso-pro:hover .social-link {
+  transform: translate(5px, -5px);
+}
+footer .iso-pro:hover .social-text, footer .iso-pro:focus-within .social-text {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-6px) skew(-5deg);
+}
+footer .social-link {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: #D16BA5;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.25), 0 3px 6px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+footer .social-link:focus-visible {
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 4px;
+}
+footer .social-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+footer .social-text {
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  background-color: #FFFBEF;
+  color: #D16BA5;
+  opacity: 0;
+  white-space: nowrap;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+footer .social-ig {
+  color: #D16BA5;
+}
+footer .social-wa {
+  color: #25D366;
+}
+footer .social-mail {
+  color: #D16BA5;
+}
+@media (prefers-reduced-motion: reduce) {
+  footer .iso-pro,
+  footer .iso-pro > span,
+  footer .social-link,
+  footer .social-text {
+    transition: none !important;
+  }
+  footer .iso-pro:hover .social-link {
+    transform: none;
+  }
+  footer .iso-pro:hover > span:nth-child(2),
+  footer .iso-pro:hover > span:nth-child(3) {
+    transform: none;
+  }
+  footer .iso-pro:hover .social-text,
+  footer .iso-pro:focus-within .social-text {
+    transform: translateX(-50%);
+  }
 }
 
-/* Components */
-/* Utilities */
-/* ===========================
-   BOTONES — MOD
-   =========================== */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   COMPONENTS / BUTTONS — MOD
+   - Botón principal del sistema
+   - Tamaños + modificadores + variantes por canal
+   ========================================================= */
 .btn-mod {
   display: inline-flex;
   align-items: center;
@@ -238,7 +687,7 @@ footer p {
   background-color: #FFFBEF;
   color: #D16BA5;
   border: 1px solid rgba(209, 107, 165, 0.45);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
 }
 .btn-mod:hover {
   opacity: 0.92;
@@ -246,54 +695,93 @@ footer p {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 .btn-mod:focus {
-  outline: 2px solid rgba(209, 107, 165, 0.45);
-  outline-offset: 2px;
+  outline: none;
 }
-.btn-mod[aria-disabled=true], .btn-mod:disabled {
+.btn-mod:focus-visible {
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+.btn-mod {
+  /* Disabled: button o enlace */
+}
+.btn-mod[aria-disabled=true], .btn-mod:disabled, .btn-mod.disabled {
   opacity: 0.55;
   pointer-events: none;
+  cursor: not-allowed;
 }
-
-/* ===========================
-   Tamaños
-   =========================== */
+@media (prefers-reduced-motion: reduce) {
+  .btn-mod {
+    transition: none !important;
+    animation: none !important;
+  }
+  .btn-mod:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+.btn-mod {
+  /* ===========================
+     Tamaños
+     =========================== */
+}
 .btn-mod--sm {
   padding: 0.45rem 1rem;
   font-size: 0.85rem;
 }
-
 .btn-mod--md {
   padding: 0.6rem 1.2rem;
 }
-
 .btn-mod--lg {
   padding: 0.75rem 1.6rem;
   font-size: 1rem;
 }
-
-/* ===========================
-   Modificadores
-   =========================== */
+.btn-mod {
+  /* ===========================
+     Modificadores
+     =========================== */
+}
 .btn-mod--block {
   width: 100%;
 }
-
-/* Variantes por canal (solo cambia borde, mantiene identidad) */
+.btn-mod {
+  /* =========================================================
+     Variantes por canal (solo borde + foco)
+     - Cambie borde / focus para comunicar canal
+     ========================================================= */
+}
 .btn-mod--wa {
   border-color: rgba(37, 211, 102, 0.45);
 }
-
+.btn-mod--wa:hover {
+  border-color: rgba(37, 211, 102, 0.75);
+}
+.btn-mod--wa:focus-visible {
+  outline-color: rgba(37, 211, 102, 0.55);
+}
 .btn-mod--ig {
   border-color: rgba(209, 107, 165, 0.55);
 }
-
+.btn-mod--ig:hover {
+  border-color: rgba(209, 107, 165, 0.85);
+}
+.btn-mod--ig:focus-visible {
+  outline-color: rgba(209, 107, 165, 0.65);
+}
 .btn-mod--mail {
   border-color: rgba(153, 125, 162, 0.55);
 }
+.btn-mod--mail:hover {
+  border-color: rgba(153, 125, 162, 0.85);
+}
+.btn-mod--mail:focus-visible {
+  outline-color: rgba(153, 125, 162, 0.65);
+}
 
-/* ===========================
-   Reset para botones "técnicos"
-   =========================== */
+/* =========================================================
+   Reset para botones “técnicos”
+   - Para usar <button> como wrapper clickeable (cards, etc.)
+   ========================================================= */
 .btn-reset {
   appearance: none;
   background: transparent;
@@ -306,70 +794,94 @@ footer p {
   cursor: pointer;
 }
 
-/* Pages */
-/* ===========================
-   HOME — Carrusel categorías
-   =========================== */
-/* Contenedor general del carrusel */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   HOME — Carrusel categorías (BASE)
+   ========================================================= */
 .categorias-home {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Carrusel base */
 #carouselCategorias {
-  background: transparent !important;
+  background: transparent;
 }
 #carouselCategorias .carousel-inner,
 #carouselCategorias .carousel-item {
-  background: transparent !important;
+  background: transparent;
 }
 #carouselCategorias {
-  /* card */
+  /* Click area: el slide entero es un link */
+}
+#carouselCategorias .carousel-item > a {
+  display: block;
+  text-decoration: none;
+}
+#carouselCategorias .carousel-item > a:focus-visible {
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+#carouselCategorias {
+  /* Card limpia (neutraliza Bootstrap) */
 }
 #carouselCategorias .card {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  overflow: visible;
-}
-#carouselCategorias {
-  /* card body */
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: hidden;
 }
 #carouselCategorias .card-body {
-  padding: 0 !important;
-  background: transparent !important;
+  padding: 0;
+  background: transparent;
 }
 #carouselCategorias {
-  /* textos */
+  /* Oculta textos si aparecieran */
 }
 #carouselCategorias .categoria-card__title,
 #carouselCategorias .card-title,
 #carouselCategorias .card-text {
-  display: none !important;
-  margin: 0 !important;
+  display: none;
+  margin: 0;
 }
-
-/* Imagen del carrusel */
+#carouselCategorias {
+  /* ===========================
+     Imagen del carrusel (BASE)
+     =========================== */
+}
 #carouselCategorias .categoria-card__img {
-  width: 100% !important;
-  height: 320px !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  background: transparent !important;
-  display: block !important;
+  width: 100%;
+  height: 320px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  user-select: none;
+  transition: transform 0.25s ease;
 }
-
-/* Flechas del carrusel */
-#carouselCategorias .carousel-control-prev,
-#carouselCategorias .carousel-control-next {
-  width: 6%;
+#carouselCategorias {
+  /* Micro feedback en hover (no cambia layout) */
 }
-
-/* ===========================
-  Flechas carrusel limpias
-   =========================== */
+#carouselCategorias:hover .categoria-card__img {
+  transform: scale(1.01);
+}
+#carouselCategorias {
+  /* Respeta reduce motion */
+}
+@media (prefers-reduced-motion: reduce) {
+  #carouselCategorias .categoria-card__img {
+    transition: none;
+  }
+  #carouselCategorias:hover .categoria-card__img {
+    transform: none;
+  }
+}
+#carouselCategorias {
+  /* ===========================
+     Controles (flechas)
+     =========================== */
+}
 #carouselCategorias .carousel-control-prev,
 #carouselCategorias .carousel-control-next {
   width: 7%;
@@ -380,49 +892,91 @@ footer p {
 #carouselCategorias .carousel-control-next:hover {
   opacity: 0.7;
 }
+#carouselCategorias .carousel-control-prev,
+#carouselCategorias .carousel-control-next {
+  /* Foco accesible teclado */
+}
+#carouselCategorias .carousel-control-prev:focus-visible,
+#carouselCategorias .carousel-control-next:focus-visible {
+  opacity: 0.9;
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
 #carouselCategorias .carousel-control-prev-icon,
 #carouselCategorias .carousel-control-next-icon {
   width: 1.8rem;
   height: 1.8rem;
-  /* flecha blanca, simple */
   filter: invert(1);
   background-size: 60%;
 }
 
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   PRODUCTOS — Cards / Categorías (BASE)
+   ========================================================= */
 /* ===========================
-   PRODUCTOS — Cards / Categorías
+   Categorías (grilla)
    =========================== */
-/* Imagen de categoría en grilla */
 .categoria-card__img {
+  width: 100%;
   height: 240px;
+  display: block;
   object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  user-select: none;
 }
 
-/* Título de categoría */
+/* Si el título está abajo de la imagen, esto da identidad */
 .categoria-card__title {
   color: #D16BA5;
   font-weight: 600;
   text-align: center;
 }
 
-/* Card producto */
+/* ===========================
+   Card de producto
+   =========================== */
 .producto {
   position: relative;
   overflow: hidden;
-  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* “pro feel”: sombra leve por defecto + hover más lindo */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.producto:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.1);
+}
+.producto:focus-within {
+  outline: 2px solid rgba(209, 107, 165, 0.35);
+  outline-offset: 4px;
 }
 
 .producto__img {
+  width: 100%;
   height: 260px;
+  display: block;
   object-fit: cover;
+  object-position: center;
+  user-select: none;
 }
 
-/* Efecto “próximamente” */
+/* ===========================
+   Estado “próximamente”
+   =========================== */
+.producto--proximamente .producto__img {
+  filter: saturate(0.85);
+}
 .producto--proximamente::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.04);
   pointer-events: none;
 }
 
@@ -431,118 +985,136 @@ footer p {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #c4719b;
+  z-index: 2;
+  background: #D16BA5;
   color: #fff;
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 0.8rem;
-  z-index: 2;
-}
-
-.producto__title {
-  color: #c4719b;
-  font-weight: 700;
-}
-
-.producto__desc {
-  color: #555;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  /*sombra mínima para legibilidad sobre imagen */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* ===========================
-   PRODUCTOS — Layout de botones
+   Textos
    =========================== */
-/* Contenedor para 2 botones (RECIPIENTES / MOLDES) */
-.producto-actions {
-  display: flex;
-  gap: 0.6rem;
-  justify-content: center;
-  margin-top: 0.75rem;
-  flex-wrap: wrap;
+.producto__title {
+  color: #D16BA5;
+  font-weight: 700;
+  margin-bottom: 0.25rem; /* jerarquía visual */
 }
 
-/* Si un botón está dentro de una card de producto y quiero que ocupe todo el ancho */
+.producto__desc {
+  color: #6b5a6b;
+  margin: 0;
+}
+
+/* ===========================
+   Acciones dentro de productos
+   =========================== */
+.producto-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+/* Si usás botones full-width dentro de una card */
 .producto .btn-mod--block {
   position: relative;
   z-index: 3;
 }
 
-/*si también uso botones de contacto dentro de productos, este contenedor sirve igual */
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin: 0.25rem 0 1rem;
-  justify-content: center;
-}
-
-/* ===========================
-   MOD — VELAS (SHARED)
-   Identidad común para:
-   - Grid / wrapper
-   - Cards clickeables
-   - Modales
-   - Carruseles
-   - Select / Accordion
-   - Listas de uso
-   =========================== */
-/* Wrapper para que las cards no se estiren en pantallas grandes */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   VELAS — SHARED
+   Base compartida para Recipientes y Moldes
+   ========================================================= */
 .velas-grid {
   max-width: 1100px;
+  margin: 0 auto;
 }
 
 /* ===========================
-   CARD clickeable que abre modal
+   CARD clickeable
    =========================== */
 .velas-card {
+  background: #fff;
   border-radius: 22px;
   overflow: hidden;
   border: 1px solid rgba(209, 107, 165, 0.18);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-  background: #fff;
-  /* micro-interacción */
-  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  will-change: transform;
 }
 .velas-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.12);
 }
 .velas-card {
-  /* Soporta img directo o Bootstrap .card-img-top */
+  /* Si la card se abre con button/link*/
 }
-.velas-card img,
-.velas-card .card-img-top {
-  height: 320px;
-  object-fit: cover;
-  display: block;
+.velas-card:focus-within {
+  outline: 2px solid rgba(209, 107, 165, 0.35);
+  outline-offset: 4px;
+}
+.velas-card {
+  /* Imagen */
+}
+.velas-card .card-img-top,
+.velas-card img {
   width: 100%;
+  height: 320px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
 }
 .velas-card .card-body {
   background: #FFFBEF;
 }
+.velas-card {
+  /* Jerarquía interna */
+}
 .velas-card h2 {
-  color: #111;
+  color: #111111;
+  margin-bottom: 0.25rem;
 }
 .velas-card p {
   color: #6b5a6b;
+  margin: 0;
 }
 
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .velas-card {
+    transition: none;
+  }
+  .velas-card:hover {
+    transform: none;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  }
+}
 /* ===========================
-   MODAL container
+   MODAL
    =========================== */
 .modal-content.mod-modal {
   border-radius: 22px;
+  overflow: hidden;
   border: 1px solid rgba(209, 107, 165, 0.2);
   box-shadow: 0 26px 65px rgba(0, 0, 0, 0.18);
-  overflow: hidden;
 }
 
-/* Header modal */
+/* Agrupamos todo el scope del modal para no repetir */
 .mod-modal .modal-header {
   background: #FFFBEF;
   border-bottom: 1px solid rgba(209, 107, 165, 0.18);
 }
 .mod-modal .modal-header .modal-title {
-  color: #111;
+  color: #111111;
 }
 .mod-modal .modal-header .btn-close {
   opacity: 0.6;
@@ -550,50 +1122,49 @@ footer p {
 .mod-modal .modal-header .btn-close:hover {
   opacity: 0.9;
 }
-
-/* Body modal */
 .mod-modal .modal-body {
   background: #fff;
 }
-.mod-modal .modal-body .mod-desc {
-  color: #6b5a6b;
-  margin-bottom: 1rem;
-}
+.mod-modal .modal-body .mod-desc,
 .mod-modal .modal-body .mod-hint {
   color: #6b5a6b;
+  margin-bottom: 0.75rem;
 }
-
-/* ===========================
-   Carrusel dentro del modal
-   =========================== */
+.mod-modal .modal-body .mod-hint {
+  margin-bottom: 0;
+}
+.mod-modal {
+  /* ===========================
+     Carrusel dentro del modal
+     =========================== */
+}
 .mod-modal .carousel {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(209, 107, 165, 0.18);
   background: #FFFBEF;
 }
-
-.mod-modal .carousel img {
-  height: 360px;
-  object-fit: cover;
-  display: block;
-  width: 100%;
+.mod-modal {
+  /* Bootstrap: imagen suele estar dentro de .carousel-item */
 }
-
-/* Flechas del carrusel — visibles en fondos claros */
+.mod-modal .carousel-item img {
+  width: 100%;
+  height: 360px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+}
 .mod-modal .carousel-control-prev,
 .mod-modal .carousel-control-next {
   width: 14%;
   opacity: 0.55;
   transition: opacity 0.2s ease;
 }
-
 .mod-modal .carousel-control-prev:hover,
 .mod-modal .carousel-control-next:hover {
   opacity: 0.95;
 }
-
-/* Iconos Bootstrap → invertimos */
 .mod-modal .carousel-control-prev-icon,
 .mod-modal .carousel-control-next-icon {
   width: 2rem;
@@ -601,101 +1172,61 @@ footer p {
   background-size: 65%;
   filter: invert(1) grayscale(1);
 }
-
-.mod-modal .carousel-control-prev:focus-visible,
-.mod-modal .carousel-control-next:focus-visible {
-  outline: 2px solid rgba(209, 107, 165, 0.45);
-  outline-offset: 2px;
+.mod-modal {
+  /* ===========================
+     Select / Accordion
+     =========================== */
 }
-
-/* ===========================
-   Select MOD
-   =========================== */
 .mod-modal .form-select {
   border-radius: 14px;
   border: 1px solid rgba(209, 107, 165, 0.25);
-  color: #111;
+  color: #111111;
 }
 .mod-modal .form-select:focus {
   border-color: rgba(209, 107, 165, 0.55);
   box-shadow: 0 0 0 0.2rem rgba(209, 107, 165, 0.15);
 }
-
-.mod-modal .form-label {
-  color: #111;
-}
-
-/* ===========================
-   Accordion MOD
-   =========================== */
 .mod-modal .accordion-item {
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(209, 107, 165, 0.18);
 }
-
 .mod-modal .accordion-button {
   background: #FFFBEF;
-  color: #111;
+  color: #111111;
   font-weight: 600;
 }
-.mod-modal .accordion-button:focus {
-  box-shadow: 0 0 0 0.2rem rgba(209, 107, 165, 0.12);
-}
-.mod-modal .accordion-button:not(.collapsed) {
-  background: #FFFBEF;
-  color: #111;
-}
-
 .mod-modal .accordion-body {
   background: #fff;
 }
-
-/* ===========================
-   Lista de uso / recomendaciones
-   =========================== */
-.uso-lista {
+.mod-modal .accordion-body ul {
   padding-left: 1.2rem;
   margin: 0;
 }
-.uso-lista li {
-  text-align: left;
-  margin-bottom: 0.4rem;
-}
-
-/*listas dentro del accordion */
-.accordion-body ul {
-  padding-left: 1.2rem;
-  margin: 0;
-}
-
-.accordion-body li {
+.mod-modal .accordion-body li {
   margin-bottom: 0.35rem;
 }
+.mod-modal .accordion-body li:last-child {
+  margin-bottom: 0;
+}
 
-/* ===========================
-   Responsive
-   =========================== */
-@media (max-width: 576px) {
-  .velas-card img,
-  .velas-card .card-img-top {
-    height: 260px;
-  }
-  .mod-modal .carousel img {
-    height: 260px;
+/* Reduce motion (modal controls) */
+@media (prefers-reduced-motion: reduce) {
+  .mod-modal .carousel-control-prev,
+  .mod-modal .carousel-control-next {
+    transition: none;
   }
 }
-/* ===========================
-   CONTACTO — Layout
-   =========================== */
-/* Contenedor principal de contacto */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   CONTACTO — Página (base)
+   ========================================================= */
 .contact-main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1rem 3rem;
 }
 
-/* Cabecera de contacto */
 .contact-hero {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -703,25 +1234,28 @@ footer p {
 .contact-hero h1 {
   margin: 0;
   padding: 0.5rem 0;
-  color: #111;
+  color: #111111;
 }
 .contact-hero p {
   margin: 0.25rem 0 0;
   color: #6b5a6b;
 }
 
-/* Card de contacto (grid) */
+/* Card principal (desktop base: 2 columnas) */
 .contact-card {
   background: #fff;
   border-radius: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   grid-template-areas: "media  title" "media  content";
   gap: 1.25rem;
+  align-items: start;
 }
 
+/* Áreas del grid */
 .contact-card__title {
   grid-area: title;
 }
@@ -734,6 +1268,7 @@ footer p {
   grid-area: content;
 }
 
+/* Media */
 .contact-card__media {
   display: flex;
   justify-content: center;
@@ -746,31 +1281,31 @@ footer p {
   object-fit: cover;
 }
 
-/* Texto dentro de la card */
+/* Texto */
 .contact-card__text {
   margin: 0 0 0.75rem;
-  color: #333;
+  color: #111111;
+  opacity: 0.9;
 }
 
 .contact-card__label {
   margin: 0 0 0.5rem;
   font-weight: 700;
-  color: #111;
+  color: #111111;
 }
 
 /* Info zona/pedidos */
 .contact-info p {
   margin: 0 0 0.35rem;
-  color: #333;
+  color: #111111;
+  opacity: 0.9;
 }
-
 .contact-info strong {
-  color: #111;
+  color: #111111;
+  font-weight: 700;
 }
 
-/* ===========================
-   CONTACTO — Botonera (solo layout)
-   =========================== */
+/* Botonera */
 .contact-actions {
   display: flex;
   flex-wrap: wrap;
@@ -779,15 +1314,51 @@ footer p {
   justify-content: center;
 }
 
-/* Responsive */
-/* Ajuste del carrusel en desktop grande */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   LAYOUT — DESKTOP
+   Breakpoint: >= $bp-lg
+   ========================================================= */
 @media (min-width: 992px) {
   #carouselCategorias .categoria-card__img {
-    height: 380px !important;
+    height: 380px;
+  }
+  #carouselCategorias .carousel-control-prev,
+  #carouselCategorias .carousel-control-next {
+    width: 6%;
+  }
+  .brand-logo {
+    height: 44px;
+  }
+  footer .footer-inner {
+    gap: 1.25rem;
   }
 }
-@media (max-width: 991px) {
-  /* Contacto */
+/* Desktop grande (>= $bp-xl) */
+@media (min-width: 1200px) {
+  #carouselCategorias .categoria-card__img {
+    height: 420px;
+  }
+  #carouselCategorias .carousel-control-prev,
+  #carouselCategorias .carousel-control-next {
+    width: 5.5%;
+  }
+}
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   TABLET / MOBILE LARGE ( < $bp-lg )
+   Ajustes para pantallas medianas
+   ========================================================= */
+@media (max-width: calc(992px - 0.02px)) {
+  /* HOME */
+  #carouselCategorias .categoria-card__img {
+    height: 280px;
+  }
+  #carouselCategorias .carousel-control-prev,
+  #carouselCategorias .carousel-control-next {
+    width: 10%;
+  }
+  /* CONTACTO */
   .contact-card {
     grid-template-columns: 1fr;
     grid-template-areas: "title" "media" "content";
@@ -796,16 +1367,67 @@ footer p {
   .contact-actions {
     justify-content: center;
   }
-  /* Offcanvas: ancho en tablet/mobile */
+  /* OFFCANVAS */
   .offcanvas.offcanvas-start {
-    width: 40vw !important;
+    width: 40vw;
     min-width: 260px;
   }
+  /* VELAS */
+  .velas-card img,
+  .velas-card .card-img-top {
+    height: 280px;
+  }
+  .mod-modal .carousel img {
+    height: 300px;
+  }
+  .mod-modal .carousel-control-prev,
+  .mod-modal .carousel-control-next {
+    width: 18%;
+  }
 }
-@media (max-width: 576px) {
-  /* Botones ocupan todo el ancho */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   MOBILE ( < $bp-sm )
+   Ajustes para pantallas chicas
+   ========================================================= */
+@media (max-width: calc(576px - 0.02px)) {
+  /* BOTONES */
   .btn-mod {
     width: 100%;
+  }
+  /* HOME */
+  #carouselCategorias .categoria-card__img {
+    height: 220px;
+  }
+  #carouselCategorias .carousel-control-prev,
+  #carouselCategorias .carousel-control-next {
+    width: 14%;
+    opacity: 0.55;
+  }
+  #carouselCategorias .carousel-control-prev:hover,
+  #carouselCategorias .carousel-control-next:hover {
+    opacity: 0.8;
+  }
+  /* HEADER */
+  .brand-logo {
+    height: 42px;
+  }
+  /* OFFCANVAS */
+  .offcanvas.offcanvas-start {
+    width: 80vw;
+  }
+  /* VELAS */
+  .velas-card img,
+  .velas-card .card-img-top {
+    height: 240px;
+  }
+  .mod-modal .carousel img {
+    height: 240px;
+  }
+  .mod-modal .carousel-control-prev,
+  .mod-modal .carousel-control-next {
+    width: 22%;
+    opacity: 0.8;
   }
 }
 

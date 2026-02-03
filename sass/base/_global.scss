@@ -1,14 +1,49 @@
 @use "../utilities/variables" as *;
 
-// ==BASE GLOBAL==
+// =========================================================
+// BASE GLOBAL — MOD
+// Reglas base compartidas por todo el sitio
+// =========================================================
+
+html {
+  // Mejora legibilidad + evita zooms raros en mobile
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   background-color: $bg-page;
   color: $text;
+
+  // Fallback + mejora en mobile moderno
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  // Layout base para que el footer pueda “bajar” si el contenido es corto
+  display: flex;
+  flex-direction: column;
+
+  // Evita scroll horizontal por desbordes accidentales
+  overflow-x: hidden;
 }
 
-img {
+// Si usás <main> esencialmente para el contenido principal
+main {
+  flex: 1;
+}
+
+// Medios responsivos (no solo img)
+img,
+picture,
+video,
+canvas,
+svg {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+// Si querés que no se “seleccionen” imágenes al arrastrar
+img {
+  user-select: none;
 }

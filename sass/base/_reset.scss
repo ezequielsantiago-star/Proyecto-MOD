@@ -1,6 +1,61 @@
-//reset
-*{
-  margin: 0;
-  padding: 0;
+// =========================================================
+// RESET — MOD
+// =========================================================
+
+/* Box sizing global */
+html {
   box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Heredan box-sizing + reset suave */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Reset de márgenes base (controlado) */
+body {
+  margin: 0;
+}
+
+/* Media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Formularios heredan fuente (mejor consistencia visual) */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Evita desbordes por palabras largas */
+p,
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Motion: respeta accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
 }

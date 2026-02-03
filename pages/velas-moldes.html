@@ -4,17 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- SEO básico -->
+  <meta name="description" content="Velas de soja en moldes: elegí tu modelo y fragancia. Consultas y pedidos por WhatsApp en MOD Creaciones." />
+
+  <title>Velas de Moldes | MOD Creaciones</title>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Tu CSS -->
-  <link rel="stylesheet" href="../css/estilos.css" />
+  <!-- Font Awesome (icons footer) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <title>Velas Moldes | MOD</title>
+  <!-- Tu CSS (compilado desde SCSS) -->
+  <link rel="stylesheet" href="../css/estilos.css" />
 </head>
+
 <body>
 
   <!-- ================= HEADER ================= -->
@@ -22,40 +29,45 @@
     <nav class="navbar navbar-light navcolor-custom">
       <div class="container d-flex align-items-center justify-content-between">
 
+        <!-- Botón menú (Offcanvas) -->
         <button class="navbar-toggler" type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#menuMOD"
           aria-controls="menuMOD"
           aria-label="Abrir menú">
           <span class="navbar-toggler-icon" aria-hidden="true"></span>
-          <span class="menu-label">Menú</span>
+          <span class="menu-label nav-text-thin">Menú</span>
         </button>
 
+        <!-- Logo / Marca -->
         <a class="navbar-brand mx-auto position-absolute start-50 translate-middle-x"
-           href="../index.html" aria-label="Ir al inicio">
-          <img src="../img/mod-creaciones-logo.png" alt="Logo MOD" style="height:48px;">
+           href="../index.html"
+           aria-label="Ir al inicio">
+          <img src="../img/mod-creaciones-logo.png" alt="Logo MOD" class="brand-logo">
         </a>
 
+        <!-- Accesos rápidos -->
         <div class="d-flex gap-3">
           <a href="#" class="nav-icon text-decoration-none" aria-label="Iniciar sesión">
-            <i class="bi bi-person fs-4"></i>
+            <i class="bi bi-person fs-4" aria-hidden="true"></i>
           </a>
           <a href="#" class="nav-icon text-decoration-none" aria-label="Carrito">
-            <i class="bi bi-cart fs-4"></i>
+            <i class="bi bi-cart fs-4" aria-hidden="true"></i>
           </a>
         </div>
 
+        <!-- Offcanvas (menú lateral) -->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="menuMOD" aria-labelledby="menuMODLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="menuMODLabel">Menú</h5>
+            <h5 class="offcanvas-title nav-text-thin" id="menuMODLabel">Menú</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
           </div>
 
           <div class="offcanvas-body">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-              <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-              <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+              <li class="nav-item nav-text-thin"><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li class="nav-item nav-text-thin"><a class="nav-link" href="productos.html">Productos</a></li>
+              <li class="nav-item nav-text-thin"><a class="nav-link" href="contacto.html">Contacto</a></li>
             </ul>
           </div>
         </div>
@@ -64,70 +76,90 @@
     </nav>
   </header>
 
-  <!-- ================= CONTENIDO ================= -->
-  <main class="container my-5 velas-grid">
+  <!-- ================= MAIN ================= -->
+  <main>
 
-    <h1 class="mb-3 text-bodoni-italic">Velas de Moldes</h1>
-    <p class="text-muted mb-4 text-thin-italic">
-      Conocé los moldes disponibles y elegí tu fragancia favorita.
-    </p>
+    <!-- Hero de página -->
+    <section class="page-hero">
+      <h1 class="text-bodoni-italic">Velas de Moldes</h1>
+      <p class="text-thin-italic">
+        Conocé los moldes disponibles y elegí tu fragancia favorita.
+      </p>
+    </section>
 
-    <div class="row g-4 justify-content-center">
+    <!-- Grid de velas -->
+    <section class="container my-5 velas-grid" aria-label="Listado de velas en moldes">
+      <div class="row g-4 justify-content-center">
 
-      <!-- CARD 1: Bubble -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <button class="btn-reset w-100 text-start"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#modalBubble"
-          aria-label="Ver detalles Vela Bubble">
+        <!-- CARD 1: Bubble -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <button
+            class="btn-reset w-100 text-start"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#modalBubble"
+            aria-label="Ver detalles de la Vela de soja Bubble"
+          >
+            <article class="card velas-card h-100">
+              <img
+                src="../img/vela-de-molde-bubble.jpeg"
+                class="card-img-top"
+                alt="Vela de soja Bubble"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="card-body text-center">
+                <h2 class="h6 fw-bold text-bodoni-italic mb-1">Vela de soja Bubble</h2>
+                <p class="mb-0 text-thin-italic">Ver detalles</p>
+              </div>
+            </article>
+          </button>
+        </div>
 
-          <article class="card velas-card h-100">
-            <img src="../img/vela-de-molde-bubble.jpeg"
-                 class="card-img-top"
-                 alt="Vela de soja Bubble">
+        <!-- CARD 2: Corazón -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <button
+            class="btn-reset w-100 text-start"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#modalCorazon"
+            aria-label="Ver detalles de la Vela de soja Corazón"
+          >
+            <article class="card velas-card h-100">
+              <img
+                src="../img/vela-de-molde-bubble-corazon.jpeg"
+                class="card-img-top"
+                alt="Vela de soja Corazón"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="card-body text-center">
+                <h2 class="h6 fw-bold text-bodoni-italic mb-1">Vela de soja Corazón</h2>
+                <p class="mb-0 text-thin-italic">Ver detalles</p>
+              </div>
+            </article>
+          </button>
+        </div>
 
-            <div class="card-body text-center">
-              <h2 class="h6 fw-bold text-bodoni-italic mb-1">Vela de soja Bubble</h2>
-              <p class="mb-0 text-thin-italic">Ver detalles</p>
-            </div>
-          </article>
-
-        </button>
       </div>
+    </section>
 
-      <!-- CARD 2: Corazón -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <button class="btn-reset w-100 text-start"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#modalCorazon"
-          aria-label="Ver detalles Vela Corazón">
-
-          <article class="card velas-card h-100">
-            <img src="../img/vela-de-molde-bubble-corazon.jpeg"
-                 class="card-img-top"
-                 alt="Vela de soja Corazón">
-
-            <div class="card-body text-center">
-              <h2 class="h6 fw-bold text-bodoni-italic mb-1">Vela de soja Corazón</h2>
-              <p class="mb-0 text-thin-italic">Ver detalles</p>
-            </div>
-          </article>
-
-        </button>
-      </div>
-
-    </div>
   </main>
 
   <!-- ================= MODAL 1: Bubble ================= -->
-  <div class="modal fade" id="modalBubble" tabindex="-1" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="modalBubble"
+    tabindex="-1"
+    aria-labelledby="modalBubbleTitle"
+    aria-describedby="modalBubbleDesc"
+    aria-hidden="true"
+  >
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content mod-modal">
 
         <div class="modal-header">
-          <h5 class="modal-title text-bodoni-italic">Vela de soja en molde Bubble</h5>
+          <h2 class="modal-title h5 text-bodoni-italic" id="modalBubbleTitle">Vela de soja en molde Bubble</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
 
@@ -135,13 +167,25 @@
           <div class="row g-4">
 
             <div class="col-md-6">
-              <div id="carouselBubble" class="carousel slide">
+              <div id="carouselBubble" class="carousel slide" data-bs-ride="carousel" aria-label="Galería Bubble">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="../img/vela-de-molde-bubble.jpeg" class="d-block w-100" alt="Vela Bubble exterior">
+                    <img
+                      src="../img/vela-de-molde-bubble.jpeg"
+                      class="d-block w-100"
+                      alt="Vela Bubble exterior"
+                      loading="lazy"
+                      decoding="async"
+                    >
                   </div>
                   <div class="carousel-item">
-                    <img src="../img/vela-de-molde-bubble.jpeg" class="d-block w-100" alt="Vela Bubble detalle">
+                    <img
+                      src="../img/vela-de-molde-bubble.jpeg"
+                      class="d-block w-100"
+                      alt="Vela Bubble detalle"
+                      loading="lazy"
+                      decoding="async"
+                    >
                   </div>
                 </div>
 
@@ -157,15 +201,15 @@
 
             <div class="col-md-6">
 
-              <p class="text-muted text-thin-italic mod-desc">
+              <p class="text-muted text-thin-italic mod-desc" id="modalBubbleDesc">
                 Vela vegetal de soja en molde Bubble.<br>
                 8.5 cm de diámetro y 8 cm de alto.<br>
                 Vela decorativa: no incluye recipiente.
               </p>
 
               <div class="mb-3">
-                <label class="form-label fw-semibold nav-text-thin">Fragancia</label>
-                <select class="form-select nav-text-thin">
+                <label class="form-label fw-semibold nav-text-thin" for="fragBubble">Fragancia</label>
+                <select class="form-select nav-text-thin" id="fragBubble">
                   <option selected>Seleccionar fragancia</option>
                   <option>Almendra</option>
                   <option>Coco Vainilla</option>
@@ -175,21 +219,22 @@
                 </select>
               </div>
 
-              <div class="accordion">
+              <div class="accordion" id="accBubble">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
+                  <h3 class="accordion-header" id="accBubbleHeading">
                     <button class="accordion-button collapsed nav-text-thin"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#usoBubble"
-                      aria-controls="usoBubble">
+                      aria-controls="usoBubble"
+                      aria-expanded="false">
                       Instrucciones de uso
                     </button>
-                  </h2>
+                  </h3>
 
-                  <div id="usoBubble" class="accordion-collapse collapse">
+                  <div id="usoBubble" class="accordion-collapse collapse" data-bs-parent="#accBubble">
                     <div class="accordion-body">
-                      <ul class="uso-lista nav-text-thin">
+                      <ul class="uso-lista nav-text-thin mb-0">
                         <li>Las velas de moldes son decorativas: al encender, usá un recipiente debajo para evitar derrames.</li>
                         <li>Mantener fuera del alcance de niños y mascotas.</li>
                       </ul>
@@ -201,8 +246,10 @@
               <a
                 href="https://wa.me/5491130619003?text=Hola!%20Quisiera%20consultar%20por%20la%20Vela%20de%20Molde%20Bubble."
                 target="_blank"
-                rel="noopener"
-                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-2">
+                rel="noopener noreferrer"
+                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-2"
+                aria-label="Consultar por WhatsApp sobre Vela Bubble"
+              >
                 Consultar por WhatsApp
               </a>
 
@@ -219,12 +266,19 @@
   </div>
 
   <!-- ================= MODAL 2: Corazón ================= -->
-  <div class="modal fade" id="modalCorazon" tabindex="-1" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="modalCorazon"
+    tabindex="-1"
+    aria-labelledby="modalCorazonTitle"
+    aria-describedby="modalCorazonDesc"
+    aria-hidden="true"
+  >
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content mod-modal">
 
         <div class="modal-header">
-          <h5 class="modal-title text-bodoni-italic">Vela de soja en molde Corazón</h5>
+          <h2 class="modal-title h5 text-bodoni-italic" id="modalCorazonTitle">Vela de soja en molde Corazón</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
 
@@ -232,13 +286,25 @@
           <div class="row g-4">
 
             <div class="col-md-6">
-              <div id="carouselCorazon" class="carousel slide">
+              <div id="carouselCorazon" class="carousel slide" data-bs-ride="carousel" aria-label="Galería Corazón">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="../img/vela-de-molde-bubble-corazon.jpeg" class="d-block w-100" alt="Vela Corazón exterior">
+                    <img
+                      src="../img/vela-de-molde-bubble-corazon.jpeg"
+                      class="d-block w-100"
+                      alt="Vela Corazón exterior"
+                      loading="lazy"
+                      decoding="async"
+                    >
                   </div>
                   <div class="carousel-item">
-                    <img src="../img/vela-de-molde-bubble-corazon.jpeg" class="d-block w-100" alt="Vela Corazón detalle">
+                    <img
+                      src="../img/vela-de-molde-bubble-corazon.jpeg"
+                      class="d-block w-100"
+                      alt="Vela Corazón detalle"
+                      loading="lazy"
+                      decoding="async"
+                    >
                   </div>
                 </div>
 
@@ -254,15 +320,15 @@
 
             <div class="col-md-6">
 
-              <p class="text-muted text-thin-italic mod-desc">
+              <p class="text-muted text-thin-italic mod-desc" id="modalCorazonDesc">
                 Vela vegetal de soja en molde Corazón.<br>
                 8.5 cm de diámetro y 8 cm de alto.<br>
                 Vela decorativa: no incluye recipiente.
               </p>
 
               <div class="mb-3">
-                <label class="form-label fw-semibold nav-text-thin">Fragancia</label>
-                <select class="form-select nav-text-thin">
+                <label class="form-label fw-semibold nav-text-thin" for="fragCorazon">Fragancia</label>
+                <select class="form-select nav-text-thin" id="fragCorazon">
                   <option selected>Seleccionar fragancia</option>
                   <option>Almendra</option>
                   <option>Coco Vainilla</option>
@@ -272,21 +338,22 @@
                 </select>
               </div>
 
-              <div class="accordion">
+              <div class="accordion" id="accCorazon">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
+                  <h3 class="accordion-header" id="accCorazonHeading">
                     <button class="accordion-button collapsed nav-text-thin"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#usoCorazon"
-                      aria-controls="usoCorazon">
+                      aria-controls="usoCorazon"
+                      aria-expanded="false">
                       Instrucciones de uso
                     </button>
-                  </h2>
+                  </h3>
 
-                  <div id="usoCorazon" class="accordion-collapse collapse">
+                  <div id="usoCorazon" class="accordion-collapse collapse" data-bs-parent="#accCorazon">
                     <div class="accordion-body">
-                      <ul class="uso-lista nav-text-thin">
+                      <ul class="uso-lista nav-text-thin mb-0">
                         <li>Las velas de moldes son decorativas: al encender, usá un recipiente debajo para evitar derrames.</li>
                         <li>Mantener fuera del alcance de niños y mascotas.</li>
                       </ul>
@@ -298,8 +365,10 @@
               <a
                 href="https://wa.me/5491130619003?text=Hola!%20Quisiera%20consultar%20por%20la%20Vela%20de%20Molde%20Coraz%C3%B3n."
                 target="_blank"
-                rel="noopener"
-                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-2">
+                rel="noopener noreferrer"
+                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-2"
+                aria-label="Consultar por WhatsApp sobre Vela Corazón"
+              >
                 Consultar por WhatsApp
               </a>
 
@@ -316,10 +385,66 @@
   </div>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="mt-5">
-    <p class="text-center">© MOD Creaciones</p>
+  <footer class="text-thin-italic">
+    <div class="footer-inner">
+
+      <p>© MOD Creaciones</p>
+
+      <div class="footer-social">
+        <div class="social-card">
+          <ul>
+
+            <!-- Instagram -->
+            <li class="iso-pro">
+              <span></span><span></span><span></span>
+              <a
+                class="social-link social-ig"
+                href="https://www.instagram.com/creaciones.dai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram social-icon" aria-hidden="true"></i>
+              </a>
+              <div class="social-text">Instagram</div>
+            </li>
+
+            <!-- WhatsApp -->
+            <li class="iso-pro">
+              <span></span><span></span><span></span>
+              <a
+                class="social-link social-wa"
+                href="https://wa.me/5491130619003"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <i class="fa-brands fa-whatsapp social-icon" aria-hidden="true"></i>
+              </a>
+              <div class="social-text">WhatsApp</div>
+            </li>
+
+            <!-- Mail -->
+            <li class="iso-pro">
+              <span></span><span></span><span></span>
+              <a
+                class="social-link social-mail"
+                href="mailto:creacionesdai@gmail.com"
+                aria-label="Mail"
+              >
+                <i class="fa-regular fa-envelope social-icon" aria-hidden="true"></i>
+              </a>
+              <div class="social-text">Mail</div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,41 +1,86 @@
 @use "../utilities/variables" as *;
 
+/* =========================================================
+   PRODUCTOS — Cards / Categorías (BASE)
+   ========================================================= */
+
 /* ===========================
-   PRODUCTOS — Cards / Categorías
+   Categorías (grilla)
    =========================== */
 
-/* Imagen de categoría en grilla */
 .categoria-card__img {
+  width: 100%;
   height: 240px;
+  display: block;
+
   object-fit: cover;
+  object-position: center;
+
+  border-radius: $radius-sm;
+  user-select: none;
 }
 
-/* Título de categoría */
+/* Si el título está abajo de la imagen, esto da identidad */
 .categoria-card__title {
   color: $pink;
   font-weight: 600;
   text-align: center;
 }
 
-/* Card producto */
+/* ===========================
+   Card de producto
+   =========================== */
+
 .producto {
   position: relative;
   overflow: hidden;
-  border: 1px solid #eee;
+
+  background: #fff;
+  border-radius: $radius-sm;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  /* “pro feel”: sombra leve por defecto + hover más lindo */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.10);
+  }
+
+  &:focus-within {
+    outline: 2px solid rgba($pink, 0.35);
+    outline-offset: 4px;
+  }
 }
 
 .producto__img {
+  width: 100%;
   height: 260px;
+  display: block;
+
   object-fit: cover;
+  object-position: center;
+
+  user-select: none;
 }
 
-/* Efecto “próximamente” */
-.producto--proximamente::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.03);
-  pointer-events: none;
+/* ===========================
+   Estado “próximamente”
+   =========================== */
+
+.producto--proximamente {
+  .producto__img {
+    filter: saturate(0.85);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.04);
+    pointer-events: none;
+  }
 }
 
 /* Badge “Próximamente” */
@@ -43,47 +88,51 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #c4719b;
+  z-index: 2;
+
+  background: $pink;
   color: #fff;
+
   padding: 6px 10px;
   border-radius: 999px;
+
   font-size: 0.8rem;
-  z-index: 2;
-}
+  line-height: 1;
+  letter-spacing: 0.2px;
 
-.producto__title {
-  color: #c4719b;
-  font-weight: 700;
-}
-
-.producto__desc {
-  color: #555;
+  /*sombra mínima para legibilidad sobre imagen */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* ===========================
-   PRODUCTOS — Layout de botones
+   Textos
    =========================== */
 
-/* Contenedor para 2 botones (RECIPIENTES / MOLDES) */
-.producto-actions {
-  display: flex;
-  gap: .6rem;
-  justify-content: center;
-  margin-top: .75rem;
-  flex-wrap: wrap;
+.producto__title {
+  color: $pink;
+  font-weight: 700;
+  margin-bottom: 0.25rem; /* jerarquía visual */
 }
 
-/* Si un botón está dentro de una card de producto y quiero que ocupe todo el ancho */
+.producto__desc {
+  color: $muted;
+  margin: 0;
+}
+
+/* ===========================
+   Acciones dentro de productos
+   =========================== */
+
+.producto-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+/* Si usás botones full-width dentro de una card */
 .producto .btn-mod--block {
   position: relative;
   z-index: 3;
-}
-
-/*si también uso botones de contacto dentro de productos, este contenedor sirve igual */
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-  margin: .25rem 0 1rem;
-  justify-content: center;
 }

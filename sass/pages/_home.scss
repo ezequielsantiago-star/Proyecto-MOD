@@ -1,88 +1,113 @@
 @use "../utilities/variables" as *;
 
-/* ===========================
-   HOME — Carrusel categorías
-   =========================== */
+/* =========================================================
+   HOME — Carrusel categorías (BASE)
+   ========================================================= */
 
-/* Contenedor general del carrusel */
 .categorias-home {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Carrusel base */
 #carouselCategorias {
-  background: transparent !important;
+  background: transparent;
 
   .carousel-inner,
   .carousel-item {
-    background: transparent !important;
+    background: transparent;
   }
 
-  /* card */
+  /* Click area: el slide entero es un link */
+  .carousel-item > a {
+    display: block;
+    text-decoration: none;
+    &:focus-visible {
+      outline: 2px solid rgba($pink, 0.45);
+      outline-offset: 6px;
+      border-radius: $radius-sm;
+    }
+  }
+
+  /* Card limpia (neutraliza Bootstrap) */
   .card {
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    overflow: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: hidden;
   }
 
-  /* card body */
   .card-body {
-    padding: 0 !important;
-    background: transparent !important;
+    padding: 0;
+    background: transparent;
   }
 
-  /* textos */
+  /* Oculta textos si aparecieran */
   .categoria-card__title,
   .card-title,
   .card-text {
-    display: none !important;
-    margin: 0 !important;
+    display: none;
+    margin: 0;
   }
-}
 
-/* Imagen del carrusel */
-#carouselCategorias .categoria-card__img {
-  width: 100% !important;
-  height: 320px !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  background: transparent !important;
-  display: block !important;
-}
+  /* ===========================
+     Imagen del carrusel (BASE)
+     =========================== */
+  .categoria-card__img {
+    width: 100%;
+    height: 320px; // base desktop
+    display: block;
 
-/* Flechas del carrusel */
-#carouselCategorias .carousel-control-prev,
-#carouselCategorias .carousel-control-next {
-  width: 6%;
-}
+    object-fit: contain;
+    object-position: center;
 
-/* ===========================
-  Flechas carrusel limpias
-   =========================== */
+    background: transparent;
+    user-select: none;
 
-#carouselCategorias {
+    transition: transform 0.25s ease;
+  }
 
+  /* Micro feedback en hover (no cambia layout) */
+  &:hover .categoria-card__img {
+    transform: scale(1.01);
+  }
+
+  /* Respeta reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    .categoria-card__img {
+      transition: none;
+    }
+    &:hover .categoria-card__img {
+      transform: none;
+    }
+  }
+
+  /* ===========================
+     Controles (flechas)
+     =========================== */
   .carousel-control-prev,
   .carousel-control-next {
     width: 7%;
     opacity: 0.35;
-    transition: opacity .2s ease;
-  }
+    transition: opacity 0.2s ease;
 
-  .carousel-control-prev:hover,
-  .carousel-control-next:hover {
-    opacity: 0.7;
+    &:hover {
+      opacity: 0.7;
+    }
+
+    /* Foco accesible teclado */
+    &:focus-visible {
+      opacity: 0.9;
+      outline: 2px solid rgba($pink, 0.45);
+      outline-offset: 3px;
+      border-radius: $radius-sm;
+    }
   }
 
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     width: 1.8rem;
     height: 1.8rem;
-
-    /* flecha blanca, simple */
     filter: invert(1);
     background-size: 60%;
   }

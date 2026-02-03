@@ -4,16 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- SEO básico -->
+  <meta name="description" content="Explorá los productos de MOD Creaciones: velas de soja, papelería creativa, stickers y agendas. Próximos lanzamientos y consultas por WhatsApp." />
+
+  <title>Productos | MOD Creaciones</title>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Tu CSS -->
-  <link rel="stylesheet" href="../css/estilos.css" />
+  <!-- Font Awesome (icons footer) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <title>Productos | MOD</title>
+  <!-- Tu CSS (compilado desde SCSS) -->
+  <link rel="stylesheet" href="../css/estilos.css" />
 </head>
 
 <body>
@@ -23,45 +29,51 @@
     <nav class="navbar navbar-light navcolor-custom">
       <div class="container d-flex align-items-center justify-content-between">
 
-        <!-- IZQUIERDA: menú -->
+        <!-- Botón menú (Offcanvas) -->
         <button class="navbar-toggler" type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#menuMOD"
           aria-controls="menuMOD"
           aria-label="Abrir menú">
           <span class="navbar-toggler-icon" aria-hidden="true"></span>
-          <span class="menu-label">Menú</span>
+          <span class="menu-label nav-text-thin">Menú</span>
         </button>
 
-        <!-- CENTRO: logo -->
+        <!-- Logo / Marca -->
         <a class="navbar-brand mx-auto position-absolute start-50 translate-middle-x"
-           href="../index.html"
-           aria-label="Ir al inicio">
-          <img src="../img/mod-creaciones-logo.png" alt="Logo MOD" style="height:48px;">
+          href="../index.html"
+          aria-label="Ir al inicio">
+          <img src="../img/mod-creaciones-logo.png" alt="Logo MOD" class="brand-logo">
         </a>
 
-        <!-- DERECHA: iconos -->
+        <!-- Accesos rápidos -->
         <div class="d-flex gap-3">
           <a href="#" class="nav-icon text-decoration-none" aria-label="Iniciar sesión">
-            <i class="bi bi-person fs-4"></i>
+            <i class="bi bi-person fs-4" aria-hidden="true"></i>
           </a>
           <a href="#" class="nav-icon text-decoration-none" aria-label="Carrito">
-            <i class="bi bi-cart fs-4"></i>
+            <i class="bi bi-cart fs-4" aria-hidden="true"></i>
           </a>
         </div>
 
-        <!-- OFFCANVAS -->
+        <!-- Offcanvas (menú lateral) -->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="menuMOD" aria-labelledby="menuMODLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="menuMODLabel">Menú</h5>
+            <h5 class="offcanvas-title nav-text-thin" id="menuMODLabel">Menú</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
           </div>
 
           <div class="offcanvas-body">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-              <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-              <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+              <li class="nav-item nav-text-thin">
+                <a class="nav-link" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item nav-text-thin">
+                <a class="nav-link" href="productos.html" aria-current="page">Productos</a>
+              </li>
+              <li class="nav-item nav-text-thin">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -70,40 +82,55 @@
     </nav>
   </header>
 
-  <!-- ================= CONTENIDO ================= -->
+  <!-- ================= MAIN ================= -->
   <main>
-    <h1 class="text-bodoni-italic">Productos</h1>
-    <p class="text-thin-italic">Explorá nuestras categorías y próximos lanzamientos.</p>
 
-    <!-- CATEGORÍAS -->
-    <section class="container my-4">
+    <!-- Hero de página (consistente con Index) -->
+    <section class="page-hero">
+      <h1 class="text-bodoni-italic">Productos</h1>
+      <p class="text-thin-italic">Explorá nuestras categorías y próximos lanzamientos.</p>
+    </section>
+
+    <!-- ================= CATEGORÍAS ================= -->
+    <section class="container my-4" aria-label="Categorías de productos">
       <div class="row g-4 justify-content-center">
 
+        <!-- Papelería -->
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card categoria-card h-100 shadow-sm">
-            <img src="../img/papeleria-creativa.png"
-                 class="card-img-top categoria-card__img"
-                 alt="Papelería creativa">
+          <article class="card categoria-card h-100 shadow-sm position-relative">
+            <img
+              src="../img/papeleria-creativa.png"
+              class="card-img-top categoria-card__img"
+              alt="Papelería creativa"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="card-body text-center">
-              <p class="card-title mb-0 categoria-card__title">Papelería Creativa</p>
+              <h2 class="h6 mb-0 categoria-card__title">Papelería Creativa</h2>
+              <!-- Link preparado (cuando exista la página): podés cambiar a papeleria.html -->
+              <a href="#" class="stretched-link" aria-label="Ver Papelería Creativa (próximamente)"></a>
             </div>
           </article>
         </div>
 
+        <!-- Velas -->
         <div class="col-12 col-sm-6 col-lg-3">
           <article class="card categoria-card h-100 shadow-sm">
-            <img src="../img/vela-de-soja.png"
-                 class="card-img-top categoria-card__img"
-                 alt="Velas de soja">
+            <img
+              src="../img/vela-de-soja.png"
+              class="card-img-top categoria-card__img"
+              alt="Velas de soja"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="card-body text-center d-flex flex-column gap-2">
-              <p class="card-title mb-0 categoria-card__title">Velas de Soja</p>
+              <h2 class="h6 mb-0 categoria-card__title">Velas de Soja</h2>
 
               <div class="producto-actions">
-                <a href="velas-recipientes.html" class="btn-mod btn-mod--sm">
+                <a href="velas-recipientes.html" class="btn-mod btn-mod--sm" aria-label="Ver velas de soja en recipientes">
                   RECIPIENTES
                 </a>
-
-                <a href="velas-moldes.html" class="btn-mod btn-mod--sm">
+                <a href="velas-moldes.html" class="btn-mod btn-mod--sm" aria-label="Ver velas de soja en moldes">
                   MOLDES
                 </a>
               </div>
@@ -112,24 +139,38 @@
           </article>
         </div>
 
+        <!-- Stickers -->
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card categoria-card h-100 shadow-sm">
-            <img src="../img/sticker.png"
-                 class="card-img-top categoria-card__img"
-                 alt="Stickers">
+          <article class="card categoria-card h-100 shadow-sm position-relative">
+            <img
+              src="../img/sticker.png"
+              class="card-img-top categoria-card__img"
+              alt="Stickers"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="card-body text-center">
-              <p class="card-title mb-0 categoria-card__title">Stickers</p>
+              <h2 class="h6 mb-0 categoria-card__title">Stickers</h2>
+              <!-- Link preparado (cuando exista la página): podés cambiar a stickers.html -->
+              <a href="#" class="stretched-link" aria-label="Ver Stickers (próximamente)"></a>
             </div>
           </article>
         </div>
 
+        <!-- Agendas -->
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card categoria-card h-100 shadow-sm">
-            <img src="../img/agenda.png"
-                 class="card-img-top categoria-card__img"
-                 alt="Agendas">
+          <article class="card categoria-card h-100 shadow-sm position-relative">
+            <img
+              src="../img/agenda.png"
+              class="card-img-top categoria-card__img"
+              alt="Agendas"
+              loading="lazy"
+              decoding="async"
+            >
             <div class="card-body text-center">
-              <p class="card-title mb-0 categoria-card__title">Agendas</p>
+              <h2 class="h6 mb-0 categoria-card__title">Agendas</h2>
+              <!-- Link preparado (cuando exista la página): podés cambiar a agendas.html -->
+              <a href="#" class="stretched-link" aria-label="Ver Agendas (próximamente)"></a>
             </div>
           </article>
         </div>
@@ -137,31 +178,41 @@
       </div>
     </section>
 
-    <!-- PRÓXIMAMENTE -->
-    <section class="container my-5">
+    <!-- ================= PRÓXIMAMENTE ================= -->
+    <section class="container my-5" aria-label="Próximos lanzamientos">
+      <header class="text-center mb-4">
+        <h2 class="text-bodoni-italic mb-2">Próximamente</h2>
+        <p class="text-thin-italic mb-0">Lanzamientos en preparación. Consultá disponibilidad por WhatsApp.</p>
+      </header>
+
       <div class="row g-4 justify-content-center">
 
         <!-- YESO CERÁMICO -->
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card producto producto--proximamente h-100 shadow-sm">
-            <div class="producto__badge">Próximamente</div>
+            <div class="producto__badge" aria-label="Producto próximamente disponible">Próximamente</div>
 
-            <img src="../img/piezas-de-yeso-ceramico.jpeg"
-                 class="card-img-top producto__img"
-                 alt="Piezas de yeso cerámico">
+            <img
+              src="../img/piezas-de-yeso-ceramico.jpeg"
+              class="card-img-top producto__img"
+              alt="Piezas de yeso cerámico"
+              loading="lazy"
+              decoding="async"
+            >
 
             <div class="card-body d-flex flex-column text-center">
-              <h2 class="h6 mb-2 producto__title text-thin-italic">Piezas de yeso cerámico</h2>
+              <h3 class="h6 mb-2 producto__title text-thin-italic">Piezas de yeso cerámico</h3>
 
               <p class="mb-3 producto__desc text-thin-italic">
                 Piezas decorativas para sumar detalle y calidez a tu hogar u oficina.
               </p>
 
               <a
-                href="https://wa.me/5491130619003?text=Hola!%20Quisiera%20más%20información%20sobre%20las%20piezas%20de%20yeso%20cerámico%20y%20su%20disponibilidad."
+                href="https://wa.me/5491130619003?text=Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20piezas%20de%20yeso%20cer%C3%A1mico%20y%20su%20disponibilidad."
                 target="_blank"
-                rel="noopener"
-                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-auto">
+                rel="noopener noreferrer"
+                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-auto"
+                aria-label="Consultar por WhatsApp disponibilidad de piezas de yeso cerámico">
                 Consultar disponibilidad
               </a>
             </div>
@@ -171,24 +222,29 @@
         <!-- DIFUSOR -->
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card producto producto--proximamente h-100 shadow-sm">
-            <div class="producto__badge">Próximamente</div>
+            <div class="producto__badge" aria-label="Producto próximamente disponible">Próximamente</div>
 
-            <img src="../img/difusor-de-varilla.jpeg"
-                 class="card-img-top producto__img"
-                 alt="Difusor de varilla">
+            <img
+              src="../img/difusor-de-varilla.jpeg"
+              class="card-img-top producto__img"
+              alt="Difusor de varilla"
+              loading="lazy"
+              decoding="async"
+            >
 
             <div class="card-body d-flex flex-column text-center">
-              <h2 class="h6 mb-2 producto__title text-thin-italic">Difusor de varilla</h2>
+              <h3 class="h6 mb-2 producto__title text-thin-italic">Difusor de varilla</h3>
 
               <p class="mb-3 producto__desc text-thin-italic">
                 Fragancia continua y suave para perfumar y decorar tus espacios.
               </p>
 
               <a
-                href="https://wa.me/5491130619003?text=Hola!%20Quisiera%20más%20información%20sobre%20el%20difusor%20de%20varilla%20y%20su%20disponibilidad."
+                href="https://wa.me/5491130619003?text=Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20difusor%20de%20varilla%20y%20su%20disponibilidad."
                 target="_blank"
-                rel="noopener"
-                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-auto">
+                rel="noopener noreferrer"
+                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-auto"
+                aria-label="Consultar por WhatsApp disponibilidad de difusor de varilla">
                 Consultar disponibilidad
               </a>
             </div>
@@ -197,11 +253,67 @@
 
       </div>
     </section>
+
   </main>
 
   <!-- ================= FOOTER ================= -->
   <footer class="text-thin-italic">
-    <p>© MOD Creaciones</p>
+    <div class="footer-inner">
+
+      <p>© MOD Creaciones</p>
+
+      <div class="footer-social">
+        <div class="social-card">
+          <ul>
+
+            <!-- Instagram -->
+            <li class="iso-pro">
+              <span></span><span></span><span></span>
+              <a
+                class="social-link social-ig"
+                href="https://www.instagram.com/creaciones.dai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram social-icon" aria-hidden="true"></i>
+              </a>
+              <div class="social-text">Instagram</div>
+            </li>
+
+            <!-- WhatsApp -->
+            <li class="iso-pro">
+              <span></span><span></span><span></span>
+              <a
+                class="social-link social-wa"
+                href="https://wa.me/5491130619003"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <i class="fa-brands fa-whatsapp social-icon" aria-hidden="true"></i>
+              </a>
+              <div class="social-text">WhatsApp</div>
+            </li>
+
+            <!-- Mail -->
+            <li class="iso-pro">
+              <span></span><span></span><span></span>
+              <a
+                class="social-link social-mail"
+                href="mailto:creacionesdai@gmail.com"
+                aria-label="Mail"
+              >
+                <i class="fa-regular fa-envelope social-icon" aria-hidden="true"></i>
+              </a>
+              <div class="social-text">Mail</div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </footer>
 
   <!-- Bootstrap JS -->

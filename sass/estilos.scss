@@ -1,34 +1,45 @@
-// ==MOD==// 
-/* Utilities */
+/*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+
+// =========================
+// Utilities (variables, mixins, helpers)
+// =========================
 @use "utilities/variables";
 @use "utilities/mixin";
 @use "utilities/helpers";
 
-/* Base */
+// =========================
+// Base (reset + tipografías + global)
+// =========================
 @use "base/reset";
 @use "base/typography";
 @use "base/global";
 
-/* Layout */
+// =========================
+// Layout (estructura del sitio)
+// =========================
 @use "layout/layout";
 @use "layout/navigation";
 @use "layout/offcanvas";
 @use "layout/footer";
 
-/* Components */
+// =========================
+// Components (reutilizables)
+// =========================
 @use "components/buttons";
 
-/* Pages */
+// =========================
+// Pages (estilos específicos por página)
+// =========================
 @use "pages/home";
 @use "pages/productos";
-
 @use "pages/velas-shared";
 @use "pages/velas-recipientes";
 @use "pages/velas-moldes";
-
 @use "pages/contacto";
 
-/* Responsive */
+// =========================
+// Responsive (ajustes por breakpoint)
+// =========================
 @use "layout/desktop";
 @use "layout/tablet";
 @use "layout/mobile";

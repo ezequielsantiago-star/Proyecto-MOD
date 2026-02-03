@@ -1,13 +1,201 @@
 @use "../utilities/variables" as *;
 
-/* Footer general del sitio */
+/* =========================================================
+   LAYOUT / FOOTER — MOD
+   - Layout + Social card + Tooltip
+   ========================================================= */
+
 footer {
-  background-color: $cream !important;
-  color: $pink !important;
-  text-align: center;
+  background-color: $cream;
+  color: $pink;
   padding: 0.7rem;
+  text-align: center;
+
+  // Layout interno
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 
   p {
     margin: 0;
+    font-size: 0.85rem;
+  }
+
+  // =========================
+  // SOCIAL — Contenedor
+  // =========================
+  .footer-social {
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-card {
+    display: inline-flex;
+    border-radius: 16px;
+
+    // Fallback primero
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow:
+      inset 0 0 14px rgba(255, 255, 255, 0.22),
+      0 4px 10px rgba(0, 0, 0, 0.10);
+
+    // Si el navegador soporta blur, lo aplicamos
+    @supports (backdrop-filter: blur(12px)) {
+      backdrop-filter: blur(12px);
+    }
+
+    > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0.45rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+
+      > li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  // =========================
+  // ITEM SOCIAL
+  // =========================
+  .iso-pro {
+    --size: 46px;
+
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    // Capas isométricas
+    > span {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      box-shadow:
+        inset 0 0 12px rgba(255, 255, 255, 0.22),
+        0 3px 6px rgba(0, 0, 0, 0.10);
+    }
+
+    &:hover > span:nth-child(1) { opacity: 0.15; }
+    &:hover > span:nth-child(2) { opacity: 0.30; transform: translate(3px, -3px); }
+    &:hover > span:nth-child(3) { opacity: 0.45; transform: translate(6px, -6px); }
+
+    // LINK / ICONO (movimiento isométrico)
+    &:hover .social-link { transform: translate(5px, -5px); }
+
+    // Tooltip visible también con teclado
+    &:hover .social-text,
+    &:focus-within .social-text {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-6px) skew(-5deg);
+    }
+  }
+
+  .social-link {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.18);
+    color: $pink;
+
+    box-shadow:
+      inset 0 0 12px rgba(255, 255, 255, 0.25),
+      0 3px 6px rgba(0, 0, 0, 0.12);
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &:focus-visible {
+      outline: 2px solid rgba($pink, 0.45);
+      outline-offset: 4px;
+    }
+  }
+
+  .social-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  // =========================
+  // TOOLTIP
+  // =========================
+  .social-text {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+
+    background-color: $cream;
+    color: $pink;
+
+    opacity: 0;
+    white-space: nowrap;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 5;
+
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.10);
+  }
+
+  // =========================
+  // COLORES POR RED
+  // =========================
+  .social-ig   { color: $pink; }
+  .social-wa   { color: #25D366; }
+  .social-mail { color: $pink; }
+
+  // =========================
+  // Reduce motion
+  // =========================
+  @media (prefers-reduced-motion: reduce) {
+    .iso-pro,
+    .iso-pro > span,
+    .social-link,
+    .social-text {
+      transition: none !important;
+    }
+
+    .iso-pro:hover .social-link {
+      transform: none;
+    }
+
+    .iso-pro:hover > span:nth-child(2),
+    .iso-pro:hover > span:nth-child(3) {
+      transform: none;
+    }
+
+    .iso-pro:hover .social-text,
+    .iso-pro:focus-within .social-text {
+      transform: translateX(-50%);
+    }
   }
 }

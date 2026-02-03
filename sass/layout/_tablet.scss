@@ -1,7 +1,21 @@
 @use "../utilities/variables" as *;
 
-@media (max-width: 991px) {
-  /* Contacto */
+/* =========================================================
+   TABLET / MOBILE LARGE ( < $bp-lg )
+   Ajustes para pantallas medianas
+   ========================================================= */
+
+@media (max-width: calc(#{$bp-lg} - 0.02px)) {
+
+  /* HOME */
+  #carouselCategorias {
+    .categoria-card__img { height: 280px; }
+
+    .carousel-control-prev,
+    .carousel-control-next { width: 10%; }
+  }
+
+  /* CONTACTO */
   .contact-card {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -15,9 +29,22 @@
     justify-content: center;
   }
 
-  /* Offcanvas: ancho en tablet/mobile */
+  /* OFFCANVAS */
   .offcanvas.offcanvas-start {
-    width: 40vw !important;
+    width: 40vw;
     min-width: 260px;
+  }
+
+  /* VELAS */
+  .velas-card {
+    img,
+    .card-img-top { height: 280px; }
+  }
+
+  .mod-modal {
+    .carousel img { height: 300px; }
+
+    .carousel-control-prev,
+    .carousel-control-next { width: 18%; }
   }
 }

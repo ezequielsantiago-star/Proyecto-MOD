@@ -4,16 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- SEO básico -->
+  <meta name="description" content="Velas de soja en recipientes: elegí el envase y tu fragancia favorita. Consultas y pedidos por WhatsApp en MOD Creaciones." />
+
+  <title>Velas en Recipientes | MOD Creaciones</title>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Tu CSS -->
-  <link rel="stylesheet" href="../css/estilos.css" />
+  <!-- Font Awesome (icons footer) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <title>Velas Recipiente | MOD</title>
+  <!-- Tu CSS (compilado desde SCSS) -->
+  <link rel="stylesheet" href="../css/estilos.css" />
 </head>
 
 <body>
@@ -23,41 +29,45 @@
     <nav class="navbar navbar-light navcolor-custom">
       <div class="container d-flex align-items-center justify-content-between">
 
+        <!-- Botón menú (Offcanvas) -->
         <button class="navbar-toggler" type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#menuMOD"
           aria-controls="menuMOD"
           aria-label="Abrir menú">
           <span class="navbar-toggler-icon" aria-hidden="true"></span>
-          <span class="menu-label">Menú</span>
+          <span class="menu-label nav-text-thin">Menú</span>
         </button>
 
+        <!-- Logo / Marca -->
         <a class="navbar-brand mx-auto position-absolute start-50 translate-middle-x"
            href="../index.html"
            aria-label="Ir al inicio">
-          <img src="../img/mod-creaciones-logo.png" alt="Logo MOD" style="height:48px;">
+          <img src="../img/mod-creaciones-logo.png" alt="Logo MOD" class="brand-logo">
         </a>
 
+        <!-- Accesos rápidos -->
         <div class="d-flex gap-3">
           <a href="#" class="nav-icon text-decoration-none" aria-label="Iniciar sesión">
-            <i class="bi bi-person fs-4"></i>
+            <i class="bi bi-person fs-4" aria-hidden="true"></i>
           </a>
           <a href="#" class="nav-icon text-decoration-none" aria-label="Carrito">
-            <i class="bi bi-cart fs-4"></i>
+            <i class="bi bi-cart fs-4" aria-hidden="true"></i>
           </a>
         </div>
 
+        <!-- Offcanvas (menú lateral) -->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="menuMOD" aria-labelledby="menuMODLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="menuMODLabel">Menú</h5>
+            <h5 class="offcanvas-title nav-text-thin" id="menuMODLabel">Menú</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
           </div>
 
           <div class="offcanvas-body">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-              <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-              <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+              <li class="nav-item nav-text-thin"><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li class="nav-item nav-text-thin"><a class="nav-link" href="productos.html">Productos</a></li>
+              <li class="nav-item nav-text-thin"><a class="nav-link" href="contacto.html">Contacto</a></li>
             </ul>
           </div>
         </div>
@@ -66,71 +76,90 @@
     </nav>
   </header>
 
-  <!-- ================= CONTENIDO ================= -->
-  <main class="container my-5">
+  <!-- ================= MAIN ================= -->
+  <main>
 
-    <h1 class="fw-bold mb-3 text-bodoni-italic">Velas de Recipientes</h1>
-    <p class="text-muted mb-4 text-thin-italic">
-      Conocé los envases disponibles y elegí tu fragancia favorita.
-    </p>
+    <!-- Hero de página -->
+    <section class="page-hero">
+      <h1 class="text-bodoni-italic">Velas en Recipientes</h1>
+      <p class="text-thin-italic">
+        Conocé los envases disponibles y elegí tu fragancia favorita.
+      </p>
+    </section>
 
-    <!-- GRILLA -->
-    <div class="row g-4 justify-content-center">
+    <!-- Grilla de productos -->
+    <section class="container my-5" aria-label="Listado de velas en recipientes">
+      <div class="row g-4 justify-content-center">
 
-      <!-- CARD: Tennessee -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <button class="btn-reset w-100 text-start"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#modalTennessee"
-          aria-label="Ver detalles Vela Tennessee">
+        <!-- CARD: Tennessee -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <button
+            class="btn-reset w-100 text-start"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#modalTennessee"
+            aria-label="Ver detalles de la Vela de soja Tennessee"
+          >
+            <article class="card velas-card h-100">
+              <img
+                src="../img/Vela-de-soja-frente.jpeg"
+                class="card-img-top"
+                alt="Vela de soja Tennessee"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="card-body text-center">
+                <h2 class="h6 fw-bold text-bodoni-italic mb-1">Vela de soja Tennessee</h2>
+                <p class="mb-0 text-thin-italic">Ver detalles</p>
+              </div>
+            </article>
+          </button>
+        </div>
 
-          <article class="card velas-card h-100">
-            <img src="../img/Vela-de-soja-frente.jpeg"
-                 class="card-img-top"
-                 alt="Vela de soja Tennessee">
+        <!-- CARD: Ámbar -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <button
+            class="btn-reset w-100 text-start"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#modalAmbar"
+            aria-label="Ver detalles de la Vela de soja Ámbar"
+          >
+            <article class="card velas-card h-100">
+              <img
+                src="../img/vela-de-recipiente-ambar-interior.jpeg"
+                class="card-img-top"
+                alt="Vela de soja en recipiente ámbar"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="card-body text-center">
+                <h2 class="h6 fw-bold text-bodoni-italic mb-1">Vela de soja Ámbar</h2>
+                <p class="mb-0 text-thin-italic">Ver detalles</p>
+              </div>
+            </article>
+          </button>
+        </div>
 
-            <div class="card-body text-center">
-              <h2 class="h6 fw-bold text-bodoni-italic mb-1">Vela de soja Tennessee</h2>
-              <p class="mb-0 text-thin-italic">Ver detalles</p>
-            </div>
-          </article>
-
-        </button>
       </div>
+    </section>
 
-      <!-- CARD: Ámbar -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <button class="btn-reset w-100 text-start"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#modalAmbar"
-          aria-label="Ver detalles Vela Ámbar">
-
-          <article class="card velas-card h-100">
-            <img src="../img/vela-de-recipiente-ambar-interior.jpeg"
-                 class="card-img-top"
-                 alt="Vela de soja recipiente ámbar">
-
-            <div class="card-body text-center">
-              <h2 class="h6 fw-bold text-bodoni-italic mb-1">Vela de soja Ámbar</h2>
-              <p class="mb-0 text-thin-italic">Ver detalles</p>
-            </div>
-          </article>
-
-        </button>
-      </div>
-
-    </div>
   </main>
 
-  <!-- ================= MODAL Tennessee ================= -->
-  <div class="modal fade" id="modalTennessee" tabindex="-1" aria-hidden="true">
+  <!-- ================= MODAL: Tennessee ================= -->
+  <div
+    class="modal fade"
+    id="modalTennessee"
+    tabindex="-1"
+    aria-labelledby="modalTennesseeTitle"
+    aria-describedby="modalTennesseeDesc"
+    aria-hidden="true"
+  >
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content mod-modal">
 
         <div class="modal-header">
-          <h5 class="modal-title text-bodoni-italic">Vela de soja Tennessee</h5>
+          <h2 class="modal-title h5 text-bodoni-italic" id="modalTennesseeTitle">Vela de soja Tennessee</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
 
@@ -138,33 +167,33 @@
           <div class="row g-4">
 
             <div class="col-md-6">
-              <div id="carouselTennessee" class="carousel slide">
+              <div id="carouselTennessee" class="carousel slide" data-bs-ride="carousel" aria-label="Galería Tennessee">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="../img/Vela-de-soja-frente.jpeg"
-                         class="d-block w-100"
-                         alt="Vela Tennessee frente">
+                    <img
+                      src="../img/Vela-de-soja-frente.jpeg"
+                      class="d-block w-100"
+                      alt="Vela Tennessee frente"
+                      loading="lazy"
+                      decoding="async"
+                    >
                   </div>
                   <div class="carousel-item">
-                    <img src="../img/Vela-de-soja-interior.jpeg"
-                         class="d-block w-100"
-                         alt="Vela Tennessee interior">
+                    <img
+                      src="../img/Vela-de-soja-interior.jpeg"
+                      class="d-block w-100"
+                      alt="Vela Tennessee interior"
+                      loading="lazy"
+                      decoding="async"
+                    >
                   </div>
                 </div>
 
-                <button class="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carouselTennessee"
-                  data-bs-slide="prev"
-                  aria-label="Anterior">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTennessee" data-bs-slide="prev" aria-label="Anterior">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 </button>
 
-                <button class="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselTennessee"
-                  data-bs-slide="next"
-                  aria-label="Siguiente">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTennessee" data-bs-slide="next" aria-label="Siguiente">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 </button>
               </div>
@@ -172,15 +201,15 @@
 
             <div class="col-md-6">
 
-              <p class="text-muted text-thin-italic mod-desc">
+              <p class="text-muted text-thin-italic mod-desc" id="modalTennesseeDesc">
                 Vela vegetal de soja en recipiente de vidrio.<br>
                 8.5 cm de diámetro y 8 cm de alto.<br>
                 Duración estimada: 45 horas.
               </p>
 
               <div class="mb-3">
-                <label class="form-label fw-semibold nav-text-thin">Fragancia</label>
-                <select class="form-select nav-text-thin">
+                <label class="form-label fw-semibold nav-text-thin" for="fragTennessee">Fragancia</label>
+                <select class="form-select nav-text-thin" id="fragTennessee">
                   <option selected>Seleccionar fragancia</option>
                   <option>Almendra</option>
                   <option>Coco Vainilla</option>
@@ -190,21 +219,22 @@
                 </select>
               </div>
 
-              <div class="accordion">
+              <div class="accordion" id="accTennessee">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
+                  <h3 class="accordion-header" id="accTennesseeHeading">
                     <button class="accordion-button collapsed nav-text-thin"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#usoTennessee"
-                      aria-controls="usoTennessee">
+                      aria-controls="usoTennessee"
+                      aria-expanded="false">
                       Instrucciones de uso
                     </button>
-                  </h2>
+                  </h3>
 
-                  <div id="usoTennessee" class="accordion-collapse collapse">
+                  <div id="usoTennessee" class="accordion-collapse collapse" data-bs-parent="#accTennessee">
                     <div class="accordion-body">
-                      <ul class="uso-lista nav-text-thin">
+                      <ul class="uso-lista nav-text-thin mb-0">
                         <li>Encender al menos 30 minutos la primera vez.</li>
                         <li>Mantener fuera del alcance de niños y mascotas.</li>
                       </ul>
@@ -216,8 +246,10 @@
               <a
                 href="https://wa.me/5491130619003?text=Hola!%20Quisiera%20consultar%20por%20la%20Vela%20de%20Soja%20Tennessee."
                 target="_blank"
-                rel="noopener"
-                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-2">
+                rel="noopener noreferrer"
+                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-2"
+                aria-label="Consultar por WhatsApp sobre Vela Tennessee"
+              >
                 Consultar por WhatsApp
               </a>
 
@@ -233,13 +265,20 @@
     </div>
   </div>
 
-  <!-- ================= MODAL Ámbar ================= -->
-  <div class="modal fade" id="modalAmbar" tabindex="-1" aria-hidden="true">
+  <!-- ================= MODAL: Ámbar ================= -->
+  <div
+    class="modal fade"
+    id="modalAmbar"
+    tabindex="-1"
+    aria-labelledby="modalAmbarTitle"
+    aria-describedby="modalAmbarDesc"
+    aria-hidden="true"
+  >
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content mod-modal">
 
         <div class="modal-header">
-          <h5 class="modal-title text-bodoni-italic">Vela de soja Ámbar</h5>
+          <h2 class="modal-title h5 text-bodoni-italic" id="modalAmbarTitle">Vela de soja Ámbar</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
 
@@ -247,36 +286,36 @@
           <div class="row g-4">
 
             <div class="col-md-6">
-              <div id="carouselAmbar" class="carousel slide">
+              <div id="carouselAmbar" class="carousel slide" data-bs-ride="carousel" aria-label="Galería Ámbar">
                 <div class="carousel-inner">
 
                   <div class="carousel-item active">
-                    <img src="../img/vela-de-recipiente-ambar-interior.jpeg"
-                         class="d-block w-100"
-                         alt="Vela ámbar interior">
+                    <img
+                      src="../img/vela-de-recipiente-ambar-interior.jpeg"
+                      class="d-block w-100"
+                      alt="Vela ámbar interior"
+                      loading="lazy"
+                      decoding="async"
+                    >
                   </div>
 
                   <div class="carousel-item">
-                    <img src="../img/vela-de-recipiente-ambar-con-tapa.jpeg"
-                         class="d-block w-100"
-                         alt="Vela ámbar con tapa">
+                    <img
+                      src="../img/vela-de-recipiente-ambar-con-tapa.jpeg"
+                      class="d-block w-100"
+                      alt="Vela ámbar con tapa"
+                      loading="lazy"
+                      decoding="async"
+                    >
                   </div>
 
                 </div>
 
-                <button class="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carouselAmbar"
-                  data-bs-slide="prev"
-                  aria-label="Anterior">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAmbar" data-bs-slide="prev" aria-label="Anterior">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 </button>
 
-                <button class="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselAmbar"
-                  data-bs-slide="next"
-                  aria-label="Siguiente">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAmbar" data-bs-slide="next" aria-label="Siguiente">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 </button>
               </div>
@@ -284,15 +323,15 @@
 
             <div class="col-md-6">
 
-              <p class="text-muted text-thin-italic mod-desc">
+              <p class="text-muted text-thin-italic mod-desc" id="modalAmbarDesc">
                 Vela vegetal de soja en recipiente de vidrio ámbar.<br>
                 8 cm de diámetro y 9 cm de alto.<br>
                 Duración estimada: 45 horas.
               </p>
 
               <div class="mb-3">
-                <label class="form-label fw-semibold nav-text-thin">Fragancia</label>
-                <select class="form-select nav-text-thin">
+                <label class="form-label fw-semibold nav-text-thin" for="fragAmbar">Fragancia</label>
+                <select class="form-select nav-text-thin" id="fragAmbar">
                   <option selected>Seleccionar fragancia</option>
                   <option>Almendra</option>
                   <option>Coco Vainilla</option>
@@ -302,21 +341,22 @@
                 </select>
               </div>
 
-              <div class="accordion mb-2">
+              <div class="accordion mb-2" id="accAmbar">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
+                  <h3 class="accordion-header" id="accAmbarHeading">
                     <button class="accordion-button collapsed nav-text-thin"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#usoAmbar"
-                      aria-controls="usoAmbar">
+                      aria-controls="usoAmbar"
+                      aria-expanded="false">
                       Instrucciones de uso
                     </button>
-                  </h2>
+                  </h3>
 
-                  <div id="usoAmbar" class="accordion-collapse collapse">
+                  <div id="usoAmbar" class="accordion-collapse collapse" data-bs-parent="#accAmbar">
                     <div class="accordion-body">
-                      <ul class="uso-lista nav-text-thin">
+                      <ul class="uso-lista nav-text-thin mb-0">
                         <li>Encender al menos 30 minutos la primera vez.</li>
                         <li>Mantener fuera del alcance de niños y mascotas.</li>
                       </ul>
@@ -328,8 +368,10 @@
               <a
                 href="https://wa.me/5491130619003?text=Hola!%20Quisiera%20consultar%20por%20la%20Vela%20de%20Soja%20%C3%81mbar."
                 target="_blank"
-                rel="noopener"
-                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-2">
+                rel="noopener noreferrer"
+                class="btn-mod btn-mod--md btn-mod--block btn-mod--wa mt-2"
+                aria-label="Consultar por WhatsApp sobre Vela Ámbar"
+              >
                 Consultar por WhatsApp
               </a>
 
@@ -346,10 +388,66 @@
   </div>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="mt-5">
-    <p class="text-center">© MOD Creaciones</p>
+  <footer class="text-thin-italic">
+    <div class="footer-inner">
+
+      <p>© MOD Creaciones</p>
+
+      <div class="footer-social">
+        <div class="social-card">
+          <ul>
+
+            <!-- Instagram -->
+            <li class="iso-pro">
+              <span></span><span></span><span></span>
+              <a
+                class="social-link social-ig"
+                href="https://www.instagram.com/creaciones.dai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram social-icon" aria-hidden="true"></i>
+              </a>
+              <div class="social-text">Instagram</div>
+            </li>
+
+            <!-- WhatsApp -->
+            <li class="iso-pro">
+              <span></span><span></span><span></span>
+              <a
+                class="social-link social-wa"
+                href="https://wa.me/5491130619003"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <i class="fa-brands fa-whatsapp social-icon" aria-hidden="true"></i>
+              </a>
+              <div class="social-text">WhatsApp</div>
+            </li>
+
+            <!-- Mail -->
+            <li class="iso-pro">
+              <span></span><span></span><span></span>
+              <a
+                class="social-link social-mail"
+                href="mailto:creacionesdai@gmail.com"
+                aria-label="Mail"
+              >
+                <i class="fa-regular fa-envelope social-icon" aria-hidden="true"></i>
+              </a>
+              <div class="social-text">Mail</div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,28 +1,86 @@
 @use "../utilities/variables" as *;
 
-/* Menú lateral (offcanvas) */
-.offcanvas {
-  background-color: $lila !important;
-  color: $cream !important;
+/* =========================================================
+   OFFCANVAS — MOD
+   Menú lateral (Bootstrap Offcanvas)
+   ========================================================= */
 
-  /* Título del offcanvas */
-  .offcanvas-title,
-  h5 {
-    color: $cream !important;
+.offcanvas {
+  background-color: $lila;
+  color: $cream;
+
+  /* Header */
+  .offcanvas-header {
+    border-bottom: 1px solid rgba($cream, 0.12);
   }
 
-  /* Links del menú */
+  .offcanvas-title {
+    color: $cream;
+  }
+
+  /* Links */
   .nav-link {
-    color: $cream !important;
+    color: $cream;
     font-weight: 600;
 
+    /* Área táctil + look */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+
+    padding: 0.6rem 0.85rem;
+    border-radius: $radius-sm;
+
+    transition: background-color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+
     &:hover {
-      opacity: .85;
+      background-color: rgba($cream, 0.10);
+      opacity: 0.95;
+      transform: translateX(2px);
+    }
+
+    &.active {
+      background-color: rgba($cream, 0.14);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba($cream, 0.60);
+      outline-offset: 3px;
     }
   }
 
-  /* Botón cerrar visible en fondo oscuro */
+  /* Botón cerrar (visible en fondo oscuro) */
   .btn-close {
     filter: invert(1) grayscale(100%);
+    opacity: 0.9;
+
+    transition: opacity 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+      opacity: 1;
+      transform: rotate(2deg);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba($cream, 0.60);
+      outline-offset: 3px;
+      border-radius: $radius-sm;
+    }
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .offcanvas .nav-link,
+  .offcanvas .btn-close {
+    transition: none;
+  }
+
+  .offcanvas .nav-link:hover {
+    transform: none;
+  }
+
+  .offcanvas .btn-close:hover {
+    transform: none;
   }
 }

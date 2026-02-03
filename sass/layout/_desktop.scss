@@ -1,6 +1,39 @@
-/* Ajuste del carrusel en desktop grande */
-@media (min-width: 992px) {
-  #carouselCategorias .categoria-card__img {
-    height: 380px !important;
+@use "../utilities/variables" as *;
+
+/* =========================================================
+   LAYOUT — DESKTOP
+   Breakpoint: >= $bp-lg
+   ========================================================= */
+
+@media (min-width: $bp-lg) {
+
+  // HOME — Carrusel categorías
+  #carouselCategorias {
+
+    .categoria-card__img { height: 380px; }
+
+    .carousel-control-prev,
+    .carousel-control-next { width: 6%; }
+  }
+
+  // NAV — Logo
+  .brand-logo { height: 44px; }
+
+  // FOOTER — Separación extra
+  footer {
+    .footer-inner { gap: 1.25rem; }
+  }
+}
+
+/* Desktop grande (>= $bp-xl) */
+@media (min-width: $bp-xl) {
+
+  // HOME — un poco más de presencia en pantallas grandes
+  #carouselCategorias {
+    .categoria-card__img { height: 420px; }
+
+    // Flechas menos invasivas
+    .carousel-control-prev,
+    .carousel-control-next { width: 5.5%; }
   }
 }

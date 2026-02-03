@@ -1,49 +1,86 @@
 @use "../utilities/variables" as *;
-@use "../utilities/mixin";
+@use "../utilities/mixin" as *;
 
-/* ===========================
-   BOTONES — MOD
-   =========================== */
+/* =========================================================
+   COMPONENTS / BUTTONS — MOD
+   - Botón principal del sistema
+   - Tamaños + modificadores + variantes por canal
+   ========================================================= */
 
 .btn-mod {
-  @include mixin.btn-mod-base();
+  // Base del sistema (trae layout, tipografía, hover, focus, disabled, reduce-motion)
+  @include btn-mod-base();
+
+  /* ===========================
+     Tamaños
+     =========================== */
+  &--sm {
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  &--md {
+    padding: 0.6rem 1.2rem;
+  }
+
+  &--lg {
+    padding: 0.75rem 1.6rem;
+    font-size: 1rem;
+  }
+
+  /* ===========================
+     Modificadores
+     =========================== */
+  &--block {
+    width: 100%;
+  }
+
+  /* =========================================================
+     Variantes por canal (solo borde + foco)
+     - Cambie borde / focus para comunicar canal
+     ========================================================= */
+
+  &--wa {
+    border-color: rgba(37, 211, 102, 0.45);
+
+    &:hover {
+      border-color: rgba(37, 211, 102, 0.75);
+    }
+
+    &:focus-visible {
+      outline-color: rgba(37, 211, 102, 0.55);
+    }
+  }
+
+  &--ig {
+    border-color: rgba(209, 107, 165, 0.55);
+
+    &:hover {
+      border-color: rgba(209, 107, 165, 0.85);
+    }
+
+    &:focus-visible {
+      outline-color: rgba(209, 107, 165, 0.65);
+    }
+  }
+
+  &--mail {
+    border-color: rgba(153, 125, 162, 0.55);
+
+    &:hover {
+      border-color: rgba(153, 125, 162, 0.85);
+    }
+
+    &:focus-visible {
+      outline-color: rgba(153, 125, 162, 0.65);
+    }
+  }
 }
 
-/* ===========================
-   Tamaños
-   =========================== */
-
-.btn-mod--sm {
-  padding: .45rem 1rem;
-  font-size: .85rem;
-}
-
-.btn-mod--md {
-  padding: .6rem 1.2rem;
-}
-
-.btn-mod--lg {
-  padding: .75rem 1.6rem;
-  font-size: 1rem;
-}
-
-/* ===========================
-   Modificadores
-   =========================== */
-
-.btn-mod--block {
-  width: 100%;
-}
-
-/* Variantes por canal (solo cambia borde, mantiene identidad) */
-.btn-mod--wa { border-color: rgba(37, 211, 102, .45); }
-.btn-mod--ig { border-color: rgba(209, 107, 165, .55); }
-.btn-mod--mail { border-color: rgba(153, 125, 162, .55); }
-
-/* ===========================
-   Reset para botones "técnicos"
-   =========================== */
-
+/* =========================================================
+   Reset para botones “técnicos”
+   - Para usar <button> como wrapper clickeable (cards, etc.)
+   ========================================================= */
 .btn-reset {
   appearance: none;
   background: transparent;

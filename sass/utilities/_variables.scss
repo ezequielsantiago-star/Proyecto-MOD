@@ -1,23 +1,133 @@
-//paleta de colores
-    // fondos
-  $bg-page: rgb(255, 255, 255);
-  // colores principales
-  $cream: #FFFBEF;     
-  //fondo nav + footer + rellenos
-  $pink:  #D16BA5;     
-  //texto/iconos nav + acentos
-  $lila: #997DA2;     
-  //fondo offcanvas
+/* =========================================================
+   MOD Creaciones — Variables globales (TOKENS)
+   ========================================================= */
 
-  //textos
-  $text:  #111;
-  $muted: #6b5a6b;
-//botones
-  $radius-sm: 12px;
-  $radius-lg: 22px;
+/* =========================
+   1) Colores base (compat)
+   ========================= */
+$bg-page: #ffffff;
 
-//tipografías
-    $font-body: 'Montserrat', sans-serif;
-    $font-title: 'Libre Bodoni', sans-serif;
-    $font-nav: 'Poppins', sans-serif; 
-    
+$cream: #FFFBEF;  // fondo nav, footer y rellenos
+$pink:  #D16BA5;  // acentos, textos destacados, íconos
+$lila:  #997DA2;  // fondo offcanvas
+
+$text:  #111111;
+$muted: #6b5a6b;
+
+/* =========================
+   2) Radios (compat)
+   ========================= */
+$radius-sm: 12px;
+$radius-lg: 22px;
+
+/* =========================
+   3) Tipografías (compat)
+   ========================= */
+$font-body:  "Montserrat", sans-serif;
+$font-title: "Libre Bodoni", serif;
+$font-nav:   "Poppins", sans-serif;
+
+/* =========================================================
+   4) TOKENS PRO (recomendados)
+   ========================================================= */
+
+/* -------------------------
+   a) Paleta extendida
+   ------------------------- */
+$white: #ffffff;
+$black: #000000;
+
+// bordes y overlays (neutros)
+$border: rgba($black, 0.08);
+$overlay-soft: rgba($black, 0.04);
+
+// focus
+$focus-ring: rgba($pink, 0.45);
+
+/* -------------------------
+   b) Sombras
+   (mismo lenguaje visual en todo el sitio)
+   ------------------------- */
+$shadow-sm: 0 8px 18px rgba($black, 0.08);
+$shadow-md: 0 18px 45px rgba($black, 0.10);
+$shadow-lg: 0 26px 65px rgba($black, 0.18);
+
+/* -------------------------
+   c) Spacing (escala)
+   Usás estos para margin/padding
+   ------------------------- */
+$space-1: 0.25rem;  // 4px
+$space-2: 0.5rem;   // 8px
+$space-3: 0.75rem;  // 12px
+$space-4: 1rem;     // 16px
+$space-5: 1.25rem;  // 20px
+$space-6: 1.5rem;   // 24px
+$space-7: 2rem;     // 32px
+$space-8: 3rem;     // 48px
+
+/* -------------------------
+   d) Tipografía (escala)
+   - para jerarquía consistente
+   ------------------------- */
+$fs-xs: 0.75rem;
+$fs-sm: 0.875rem;
+$fs-md: 1rem;
+$fs-lg: 1.125rem;
+
+$lh-tight: 1.15;
+$lh-base: 1.55;
+$lh-relaxed: 1.6;
+
+/* -------------------------
+   e) Transiciones / motion
+   ------------------------- */
+$ease-out: ease;
+$dur-fast: 150ms;
+$dur-base: 250ms;
+
+/* -------------------------
+   f) Breakpoints (Bootstrap-like)
+   (para tus @media sin magia)
+   ------------------------- */
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+/* -------------------------
+   g) Layout / container
+   ------------------------- */
+$container-max: 1100px;
+
+/* -------------------------
+   h) Component tokens
+   ------------------------- */
+// Navbar
+$navbar-bg: $cream;
+$navbar-accent: $pink;
+
+// Offcanvas
+$offcanvas-bg: $lila;
+$offcanvas-text: $cream;
+
+// Buttons
+$btn-bg: $cream;
+$btn-text: $pink;
+$btn-border: rgba($pink, 0.45);
+
+// Cards
+$card-bg: $white;
+$card-border: $border;
+
+// Links
+$link: $pink;
+$link-hover-opacity: 0.85;
+
+/* =========================
+   Breakpoints (Bootstrap)
+   ========================= */
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;

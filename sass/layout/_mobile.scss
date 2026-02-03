@@ -1,6 +1,47 @@
-@media (max-width: 576px) {
-  /* Botones ocupan todo el ancho */
-  .btn-mod {
-    width: 100%;
+@use "../utilities/variables" as *;
+
+/* =========================================================
+   MOBILE ( < $bp-sm )
+   Ajustes para pantallas chicas
+   ========================================================= */
+
+@media (max-width: calc(#{$bp-sm} - 0.02px)) {
+
+  /* BOTONES */
+  .btn-mod { width: 100%; }
+
+  /* HOME */
+  #carouselCategorias {
+    .categoria-card__img { height: 220px; }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 14%;
+      opacity: 0.55;
+
+      &:hover { opacity: 0.8; }
+    }
+  }
+
+  /* HEADER */
+  .brand-logo { height: 42px; }
+
+  /* OFFCANVAS */
+  .offcanvas.offcanvas-start { width: 80vw; }
+
+  /* VELAS */
+  .velas-card {
+    img,
+    .card-img-top { height: 240px; }
+  }
+
+  .mod-modal {
+    .carousel img { height: 240px; }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 22%;
+      opacity: 0.8;
+    }
   }
 }
