@@ -1,13 +1,13 @@
-@use "../utilities/variables" as *;
+@use "../utilities/variables" as v;
 
-/* =========================================================
-   TABLET / MOBILE LARGE ( < $bp-lg )
-   Ajustes para pantallas medianas
-   ========================================================= */
+// =========================================================
+// TABLET / MOBILE LARGE ( < v.$bp-lg )
+// Ajustes para pantallas medianas
+// =========================================================
 
-@media (max-width: calc(#{$bp-lg} - 0.02px)) {
+@media (max-width: (v.$bp-lg - 0.02px)) {
 
-  /* HOME */
+  // HOME
   #carouselCategorias {
     .categoria-card__img { height: 280px; }
 
@@ -15,7 +15,7 @@
     .carousel-control-next { width: 10%; }
   }
 
-  /* CONTACTO */
+  // CONTACTO
   .contact-card {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -29,13 +29,13 @@
     justify-content: center;
   }
 
-  /* OFFCANVAS */
+  // OFFCANVAS
   .offcanvas.offcanvas-start {
     width: 40vw;
     min-width: 260px;
   }
 
-  /* VELAS */
+  // VELAS
   .velas-card {
     img,
     .card-img-top { height: 280px; }

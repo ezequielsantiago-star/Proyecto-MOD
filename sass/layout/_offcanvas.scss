@@ -1,4 +1,4 @@
-@use "../utilities/variables" as *;
+@use "../utilities/variables" as v;
 
 /* =========================================================
    OFFCANVAS — MOD
@@ -6,21 +6,21 @@
    ========================================================= */
 
 .offcanvas {
-  background-color: $lila;
-  color: $cream;
+  background-color: v.$lila;
+  color: v.$cream;
 
   /* Header */
   .offcanvas-header {
-    border-bottom: 1px solid rgba($cream, 0.12);
+    border-bottom: 1px solid rgba(v.$cream, 0.12);
   }
 
   .offcanvas-title {
-    color: $cream;
+    color: v.$cream;
   }
 
   /* Links */
   .nav-link {
-    color: $cream;
+    color: v.$cream;
     font-weight: 600;
 
     /* Área táctil + look */
@@ -29,22 +29,22 @@
     align-items: center;
 
     padding: 0.6rem 0.85rem;
-    border-radius: $radius-sm;
+    border-radius: v.$radius-sm;
 
     transition: background-color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
 
     &:hover {
-      background-color: rgba($cream, 0.10);
+      background-color: rgba(v.$cream, 0.10);
       opacity: 0.95;
       transform: translateX(2px);
     }
 
     &.active {
-      background-color: rgba($cream, 0.14);
+      background-color: rgba(v.$cream, 0.14);
     }
 
     &:focus-visible {
-      outline: 2px solid rgba($cream, 0.60);
+      outline: 2px solid rgba(v.$cream, 0.60);
       outline-offset: 3px;
     }
   }
@@ -62,9 +62,9 @@
     }
 
     &:focus-visible {
-      outline: 2px solid rgba($cream, 0.60);
+      outline: 2px solid rgba(v.$cream, 0.60);
       outline-offset: 3px;
-      border-radius: $radius-sm;
+      border-radius: v.$radius-sm;
     }
   }
 }
@@ -76,11 +76,6 @@
     transition: none;
   }
 
-  .offcanvas .nav-link:hover {
-    transform: none;
-  }
-
-  .offcanvas .btn-close:hover {
-    transform: none;
-  }
+  .offcanvas .nav-link:hover { transform: none; }
+  .offcanvas .btn-close:hover { transform: none; }
 }

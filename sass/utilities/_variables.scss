@@ -7,54 +7,60 @@
    ========================= */
 $bg-page: #ffffff;
 
-$cream: #FFFBEF;  // fondo nav, footer y rellenos
-$pink:  #D16BA5;  // acentos, textos destacados, íconos
-$lila:  #997DA2;  // fondo offcanvas
+$cream: #fffbef;  // fondos (nav/footer/surfaces)
+$pink:  #d16ba5;  // acentos / botones / links
+$lila:  #997da2;  // offcanvas
 
 $text:  #111111;
 $muted: #6b5a6b;
 
-/* =========================
-   2) Radios (compat)
-   ========================= */
-$radius-sm: 12px;
-$radius-lg: 22px;
-
-/* =========================
-   3) Tipografías (compat)
-   ========================= */
-$font-body:  "Montserrat", sans-serif;
-$font-title: "Libre Bodoni", serif;
-$font-nav:   "Poppins", sans-serif;
-
 /* =========================================================
-   4) TOKENS PRO (recomendados)
+   2) TOKENS
    ========================================================= */
 
 /* -------------------------
-   a) Paleta extendida
+   a) Neutros + superficies
    ------------------------- */
 $white: #ffffff;
 $black: #000000;
 
-// bordes y overlays (neutros)
+$surface: $white;          // superficie principal (cards, etc.)
+$surface-alt: $cream;      // superficie secundaria (nav/footer)
+$ink: $text;               // alias semántico
+
+// bordes y overlays
 $border: rgba($black, 0.08);
 $overlay-soft: rgba($black, 0.04);
 
-// focus
-$focus-ring: rgba($pink, 0.45);
+/* -------------------------
+   b) Focus / accesibilidad
+   ------------------------- */
+$focus-color: $pink;
+$focus-ring: rgba($focus-color, 0.45);
 
 /* -------------------------
-   b) Sombras
-   (mismo lenguaje visual en todo el sitio)
+   c) Radios
+   ------------------------- */
+$radius-sm: 12px;
+$radius-md: 16px; // útil para inputs/selects
+$radius-lg: 22px;
+
+/* -------------------------
+   d) Tipografías
+   ------------------------- */
+$font-body:  "Montserrat", sans-serif;
+$font-title: "Libre Bodoni", serif;
+$font-nav:   "Poppins", sans-serif;
+
+/* -------------------------
+   e) Sombras
    ------------------------- */
 $shadow-sm: 0 8px 18px rgba($black, 0.08);
 $shadow-md: 0 18px 45px rgba($black, 0.10);
 $shadow-lg: 0 26px 65px rgba($black, 0.18);
 
 /* -------------------------
-   c) Spacing (escala)
-   Usás estos para margin/padding
+   f) Spacing (escala)
    ------------------------- */
 $space-1: 0.25rem;  // 4px
 $space-2: 0.5rem;   // 8px
@@ -66,8 +72,7 @@ $space-7: 2rem;     // 32px
 $space-8: 3rem;     // 48px
 
 /* -------------------------
-   d) Tipografía (escala)
-   - para jerarquía consistente
+   g) Tipografía (escala)
    ------------------------- */
 $fs-xs: 0.75rem;
 $fs-sm: 0.875rem;
@@ -79,31 +84,48 @@ $lh-base: 1.55;
 $lh-relaxed: 1.6;
 
 /* -------------------------
-   e) Transiciones / motion
+   h) Motion
    ------------------------- */
 $ease-out: ease;
 $dur-fast: 150ms;
 $dur-base: 250ms;
 
 /* -------------------------
-   f) Breakpoints (Bootstrap-like)
-   (para tus @media sin magia)
+   i) Breakpoints (Bootstrap)
+   - Fuente única de verdad
    ------------------------- */
-$bp-sm: 576px;
-$bp-md: 768px;
-$bp-lg: 992px;
-$bp-xl: 1200px;
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Compatibilidad con media queries tradicionales
+$bp-sm: map-get($breakpoints, sm);
+$bp-md: map-get($breakpoints, md);
+$bp-lg: map-get($breakpoints, lg);
+$bp-xl: map-get($breakpoints, xl);
+$bp-xxl: map-get($breakpoints, xxl);
 
 /* -------------------------
-   g) Layout / container
+   j) Layout / container
    ------------------------- */
 $container-max: 1100px;
 
 /* -------------------------
-   h) Component tokens
+   k) Z-index (orden visual)
+   ------------------------- */
+$z-header: 1000;
+$z-offcanvas: 1045; // bootstrap offcanvas
+$z-modal: 1055;     // bootstrap modal
+
+/* -------------------------
+   l) Component tokens
    ------------------------- */
 // Navbar
-$navbar-bg: $cream;
+$navbar-bg: $surface-alt;
 $navbar-accent: $pink;
 
 // Offcanvas
@@ -111,23 +133,18 @@ $offcanvas-bg: $lila;
 $offcanvas-text: $cream;
 
 // Buttons
-$btn-bg: $cream;
+$btn-bg: $surface-alt;
 $btn-text: $pink;
 $btn-border: rgba($pink, 0.45);
 
+// Brand variants (útiles para WA/IG)
+$wa: #25d366;
+$ig: #e1306c;
+
 // Cards
-$card-bg: $white;
+$card-bg: $surface;
 $card-border: $border;
 
 // Links
 $link: $pink;
 $link-hover-opacity: 0.85;
-
-/* =========================
-   Breakpoints (Bootstrap)
-   ========================= */
-$bp-sm: 576px;
-$bp-md: 768px;
-$bp-lg: 992px;
-$bp-xl: 1200px;
-$bp-xxl: 1400px;

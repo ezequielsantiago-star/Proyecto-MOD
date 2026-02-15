@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,10 +48,16 @@
 
         <!-- Accesos rápidos -->
         <div class="d-flex gap-3">
-          <a href="#" class="nav-icon text-decoration-none" aria-label="Iniciar sesión">
+          <a href="contacto.html" class="nav-icon text-decoration-none" aria-label="Ir a Contacto">
             <i class="bi bi-person fs-4" aria-hidden="true"></i>
           </a>
-          <a href="#" class="nav-icon text-decoration-none" aria-label="Carrito">
+
+          <a
+            href="https://wa.me/5491130619003?text=Hola!%20Quiero%20armar%20un%20pedido%20en%20MOD%20Creaciones."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-icon text-decoration-none"
+            aria-label="Consultar por WhatsApp para armar un pedido">
             <i class="bi bi-cart fs-4" aria-hidden="true"></i>
           </a>
         </div>
@@ -85,7 +91,7 @@
   <!-- ================= MAIN ================= -->
   <main>
 
-    <!-- Hero de página (consistente con Index) -->
+    <!-- Hero de página -->
     <section class="page-hero">
       <h1 class="text-bodoni-italic">Productos</h1>
       <p class="text-thin-italic">Explorá nuestras categorías y próximos lanzamientos.</p>
@@ -93,11 +99,13 @@
 
     <!-- ================= CATEGORÍAS ================= -->
     <section class="container my-4" aria-label="Categorías de productos">
+      <h2 class="visually-hidden">Categorías</h2>
+
       <div class="row g-4 justify-content-center">
 
         <!-- Papelería -->
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card categoria-card h-100 shadow-sm position-relative">
+          <article class="card categoria-card h-100 shadow-sm">
             <img
               src="../img/papeleria-creativa.png"
               class="card-img-top categoria-card__img"
@@ -105,15 +113,22 @@
               loading="lazy"
               decoding="async"
             >
-            <div class="card-body text-center">
-              <h2 class="h6 mb-0 categoria-card__title">Papelería Creativa</h2>
-              <!-- Link preparado (cuando exista la página): podés cambiar a papeleria.html -->
-              <a href="#" class="stretched-link" aria-label="Ver Papelería Creativa (próximamente)"></a>
+            <div class="card-body text-center d-flex flex-column">
+              <h3 class="h6 mb-2 categoria-card__title">Papelería Creativa</h3>
+
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm w-100 mt-auto"
+                disabled
+                aria-disabled="true"
+                aria-label="Papelería Creativa (próximamente)">
+                Próximamente
+              </button>
             </div>
           </article>
         </div>
 
-        <!-- Velas -->
+        <!-- Velas  -->
         <div class="col-12 col-sm-6 col-lg-3">
           <article class="card categoria-card h-100 shadow-sm">
             <img
@@ -124,7 +139,7 @@
               decoding="async"
             >
             <div class="card-body text-center d-flex flex-column gap-2">
-              <h2 class="h6 mb-0 categoria-card__title">Velas de Soja</h2>
+              <h3 class="h6 mb-0 categoria-card__title">Velas de Soja</h3>
 
               <div class="producto-actions">
                 <a href="velas-recipientes.html" class="btn-mod btn-mod--sm" aria-label="Ver velas de soja en recipientes">
@@ -139,27 +154,34 @@
           </article>
         </div>
 
-        <!-- Stickers -->
+        <!-- Stickers  -->
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card categoria-card h-100 shadow-sm position-relative">
+          <article class="card categoria-card h-100 shadow-sm">
             <img
               src="../img/sticker.png"
               class="card-img-top categoria-card__img"
-              alt="Stickers"
+              alt="Stickers personalizados"
               loading="lazy"
               decoding="async"
             >
-            <div class="card-body text-center">
-              <h2 class="h6 mb-0 categoria-card__title">Stickers</h2>
-              <!-- Link preparado (cuando exista la página): podés cambiar a stickers.html -->
-              <a href="#" class="stretched-link" aria-label="Ver Stickers (próximamente)"></a>
+            <div class="card-body text-center d-flex flex-column">
+              <h3 class="h6 mb-2 categoria-card__title">Stickers</h3>
+
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm w-100 mt-auto"
+                disabled
+                aria-disabled="true"
+                aria-label="Stickers (próximamente)">
+                Próximamente
+              </button>
             </div>
           </article>
         </div>
 
-        <!-- Agendas -->
+        <!-- Agendas  -->
         <div class="col-12 col-sm-6 col-lg-3">
-          <article class="card categoria-card h-100 shadow-sm position-relative">
+          <article class="card categoria-card h-100 shadow-sm">
             <img
               src="../img/agenda.png"
               class="card-img-top categoria-card__img"
@@ -167,10 +189,17 @@
               loading="lazy"
               decoding="async"
             >
-            <div class="card-body text-center">
-              <h2 class="h6 mb-0 categoria-card__title">Agendas</h2>
-              <!-- Link preparado (cuando exista la página): podés cambiar a agendas.html -->
-              <a href="#" class="stretched-link" aria-label="Ver Agendas (próximamente)"></a>
+            <div class="card-body text-center d-flex flex-column">
+              <h3 class="h6 mb-2 categoria-card__title">Agendas</h3>
+
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm w-100 mt-auto"
+                disabled
+                aria-disabled="true"
+                aria-label="Agendas (próximamente)">
+                Próximamente
+              </button>
             </div>
           </article>
         </div>
@@ -195,7 +224,7 @@
             <img
               src="../img/piezas-de-yeso-ceramico.jpeg"
               class="card-img-top producto__img"
-              alt="Piezas de yeso cerámico"
+              alt="Piezas decorativas de yeso cerámico"
               loading="lazy"
               decoding="async"
             >
@@ -227,7 +256,7 @@
             <img
               src="../img/difusor-de-varilla.jpeg"
               class="card-img-top producto__img"
-              alt="Difusor de varilla"
+              alt="Difusor de varillas aromáticas"
               loading="lazy"
               decoding="async"
             >
@@ -301,7 +330,7 @@
               <span></span><span></span><span></span>
               <a
                 class="social-link social-mail"
-                href="mailto:creacionesdai@gmail.com"
+                href="mailto:modcreaciones.dai@gmail.com"
                 aria-label="Mail"
               >
                 <i class="fa-regular fa-envelope social-icon" aria-hidden="true"></i>

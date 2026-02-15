@@ -1,4 +1,4 @@
-@use "../utilities/variables" as *;
+@use "../utilities/variables" as v;
 
 /* =========================================================
    NAVIGATION / HEADER — MOD
@@ -12,10 +12,10 @@
 
 /* Fondo navbar */
 .navcolor-custom {
-  background-color: $cream;
+  background-color: v.$cream;
 }
 
-/* Logo  */
+/* Logo */
 .brand-logo {
   height: 48px; /* base */
   width: auto;
@@ -28,12 +28,10 @@
 
   /* Links */
   .nav-link {
-    color: $pink;
+    color: v.$pink;
     transition: opacity 0.15s ease;
 
-    &:hover {
-      opacity: 0.85;
-    }
+    &:hover { opacity: 0.85; }
 
     &.active {
       text-decoration: underline;
@@ -41,9 +39,9 @@
     }
 
     &:focus-visible {
-      outline: 2px solid rgba($pink, 0.35);
+      outline: 2px solid rgba(v.$pink, 0.35);
       outline-offset: 3px;
-      border-radius: $radius-sm;
+      border-radius: v.$radius-sm;
     }
   }
 
@@ -56,14 +54,12 @@
     min-width: 44px;
     min-height: 44px;
 
-    color: $pink;
-    border-radius: $radius-sm;
+    color: v.$pink;
+    border-radius: v.$radius-sm;
     transition: opacity 0.15s ease, transform 0.15s ease;
 
     i,
-    .bi {
-      color: inherit;
-    }
+    .bi { color: inherit; }
 
     &:hover {
       opacity: 0.85;
@@ -71,7 +67,7 @@
     }
 
     &:focus-visible {
-      outline: 2px solid rgba($pink, 0.35);
+      outline: 2px solid rgba(v.$pink, 0.35);
       outline-offset: 3px;
     }
   }
@@ -79,7 +75,7 @@
   /* Por si Bootstrap aplica text-white en algo */
   a.text-white,
   i.text-white {
-    color: $pink;
+    color: v.$pink;
   }
 
   /* Toggler */
@@ -93,7 +89,7 @@
     align-items: center;
     gap: 0.55rem;
 
-    color: $pink;
+    color: v.$pink;
 
     min-height: 44px;
     min-width: 44px;
@@ -105,9 +101,9 @@
     }
 
     &:focus-visible {
-      outline: 2px solid rgba($pink, 0.45);
+      outline: 2px solid rgba(v.$pink, 0.45);
       outline-offset: 4px;
-      border-radius: $radius-sm;
+      border-radius: v.$radius-sm;
     }
   }
 
@@ -116,7 +112,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 1;
-    color: $pink;
+    color: v.$pink;
   }
 
   /* Icono hamburguesa (3 líneas custom) */
@@ -131,9 +127,9 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient($pink, $pink) 0 25% / 100% 2px no-repeat,
-        linear-gradient($pink, $pink) 0 50% / 100% 2px no-repeat,
-        linear-gradient($pink, $pink) 0 75% / 100% 2px no-repeat;
+        linear-gradient(v.$pink, v.$pink) 0 25% / 100% 2px no-repeat,
+        linear-gradient(v.$pink, v.$pink) 0 50% / 100% 2px no-repeat,
+        linear-gradient(v.$pink, v.$pink) 0 75% / 100% 2px no-repeat;
     }
   }
 }

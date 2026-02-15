@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,10 +48,16 @@
 
         <!-- Accesos rápidos -->
         <div class="d-flex gap-3">
-          <a href="#" class="nav-icon text-decoration-none" aria-label="Iniciar sesión">
+          <a href="contacto.html" class="nav-icon text-decoration-none" aria-label="Ir a Contacto">
             <i class="bi bi-person fs-4" aria-hidden="true"></i>
           </a>
-          <a href="#" class="nav-icon text-decoration-none" aria-label="Carrito">
+
+          <a
+            href="https://wa.me/5491130619003?text=Hola!%20Quiero%20hacer%20un%20pedido%20en%20MOD%20Creaciones."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-icon text-decoration-none"
+            aria-label="Consultar por WhatsApp para hacer un pedido">
             <i class="bi bi-cart fs-4" aria-hidden="true"></i>
           </a>
         </div>
@@ -85,16 +91,21 @@
   <!-- ================= MAIN ================= -->
   <main class="contact-main">
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="page-hero contact-hero">
       <h1 class="text-bodoni-italic">Contacto</h1>
-      <p class="text-thin-italic">¿Tenés consultas o querés hacer tu pedido? Contactanos.</p>
+      <p class="text-thin-italic">
+        ¿Tenés consultas o querés hacer tu pedido? Contactanos.
+      </p>
+
     </section>
 
     <!-- Tarjeta principal de contacto -->
-    <section class="contact-card" aria-label="Canales de contacto MOD Creaciones">
+    <section class="contact-card" aria-labelledby="contactCardTitle">
 
-      <h2 class="contact-card__title text-bodoni-italic">MOD<br>Creaciones</h2>
+      <h2 id="contactCardTitle" class="contact-card__title text-bodoni-italic">
+        MOD<br>Creaciones
+      </h2>
 
       <div class="contact-card__media">
         <img
@@ -138,7 +149,7 @@
 
           <a
             class="btn-mod btn-mod--md"
-            href="mailto:creacionesdai@gmail.com?subject=Consulta%20MOD%20Creaciones&body=Hola%20Dai!%20Quiero%20consultar%20por..."
+            href="mailto:modcreaciones.dai@gmail.com?subject=Consulta%20MOD%20Creaciones&body=Hola%20Dai!%20Quiero%20consultar%20por..."
             aria-label="Enviar email"
           >
             Email
@@ -202,7 +213,7 @@
               <span></span><span></span><span></span>
               <a
                 class="social-link social-mail"
-                href="mailto:creacionesdai@gmail.com"
+                href="mailto:modcreaciones.dai@gmail.com"
                 aria-label="Mail"
               >
                 <i class="fa-regular fa-envelope social-icon" aria-hidden="true"></i>

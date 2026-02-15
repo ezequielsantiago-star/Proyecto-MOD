@@ -2,13 +2,29 @@
 
 /* =========================================================
    MIXINS — MOD
-   - Reutilizables y consistentes con tokens
+   Reutilizables y consistentes con tokens
    ========================================================= */
+
+/* =========================
+   Responsive: Media Queries
+   ========================= */
+@mixin mq($bp) {
+  @media (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
 
 /* =========================
    Accesibilidad: Focus ring
    ========================= */
-@mixin focus-ring($color: $focus-ring, $offset: 3px, $radius: $radius-sm) {
+// Nota: outline + halo (box-shadow) evita el azul default y mejora accesibilidad
+@mixin focus-ring(
+  $color: $focus-ring,
+  $offset: 3px,
+  $radius: $radius-sm,
+  $shadow-alpha: 0.18,
+  $shadow-size: 0.25rem
+) {
   &:focus {
     outline: none;
   }
@@ -17,6 +33,9 @@
     outline: 2px solid $color;
     outline-offset: $offset;
     border-radius: $radius;
+
+    /* halo suave */
+    box-shadow: 0 0 0 $shadow-size rgba($color, $shadow-alpha);
   }
 }
 
@@ -79,6 +98,7 @@
     box-shadow: $shadow;
   }
 
+  // Focus accesible (teclado)
   @include focus-ring($focus-ring, 3px, $radius-sm);
 
   /* Disabled: button o enlace */

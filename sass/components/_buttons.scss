@@ -1,19 +1,23 @@
-@use "../utilities/variables" as *;
-@use "../utilities/mixin" as *;
+@use "../utilities/variables" as v;
+@use "../utilities/mixin" as m;
 
 /* =========================================================
-   COMPONENTS / BUTTONS — MOD
-   - Botón principal del sistema
-   - Tamaños + modificadores + variantes por canal
+   COMPONENTS: Buttons — MOD
+   Botón principal del sistema + tamaños + variantes
    ========================================================= */
 
-.btn-mod {
-  // Base del sistema (trae layout, tipografía, hover, focus, disabled, reduce-motion)
-  @include btn-mod-base();
+// Colores de canal (si todavía no los tenés como tokens globales)
+$btn-wa: #25d366;
+$btn-ig: v.$pink;
+$btn-mail: v.$lila;
 
-  /* ===========================
+.btn-mod {
+  // Base del sistema (layout, tipografía, hover, disabled, reduce-motion)
+  @include m.btn-mod-base();
+
+  /* =========================
      Tamaños
-     =========================== */
+     ========================= */
   &--sm {
     padding: 0.45rem 1rem;
     font-size: 0.85rem;
@@ -28,69 +32,45 @@
     font-size: 1rem;
   }
 
-  /* ===========================
+  /* =========================
      Modificadores
-     =========================== */
+     ========================= */
   &--block {
     width: 100%;
   }
 
-  /* =========================================================
-     Variantes por canal (solo borde + foco)
-     - Cambie borde / focus para comunicar canal
-     ========================================================= */
-
+  /* =========================
+     Variantes por canal
+     - Se comunica por borde + focus ring
+     ========================= */
   &--wa {
-    border-color: rgba(37, 211, 102, 0.45);
+    border-color: rgba($btn-wa, 0.45);
 
     &:hover {
-      border-color: rgba(37, 211, 102, 0.75);
+      border-color: rgba($btn-wa, 0.75);
     }
 
-    &:focus-visible {
-      outline-color: rgba(37, 211, 102, 0.55);
-    }
+    // Reemplaza el focus base por uno del canal
+    @include m.focus-ring($btn-wa, 0.30, v.$radius-sm);
   }
 
   &--ig {
-    border-color: rgba(209, 107, 165, 0.55);
+    border-color: rgba($btn-ig, 0.55);
 
     &:hover {
-      border-color: rgba(209, 107, 165, 0.85);
+      border-color: rgba($btn-ig, 0.85);
     }
 
-    &:focus-visible {
-      outline-color: rgba(209, 107, 165, 0.65);
-    }
+    @include m.focus-ring($btn-ig, 0.30, v.$radius-sm);
   }
 
   &--mail {
-    border-color: rgba(153, 125, 162, 0.55);
+    border-color: rgba($btn-mail, 0.55);
 
     &:hover {
-      border-color: rgba(153, 125, 162, 0.85);
+      border-color: rgba($btn-mail, 0.85);
     }
 
-    &:focus-visible {
-      outline-color: rgba(153, 125, 162, 0.65);
-    }
+    @include m.focus-ring($btn-mail, 0.30, v.$radius-sm);
   }
-}
-
-/* =========================================================
-   Reset para botones “técnicos”
-   - Para usar <button> como wrapper clickeable (cards, etc.)
-   ========================================================= */
-.btn-reset {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  padding: 0;
-  margin: 0;
-
-  font: inherit;
-  color: inherit;
-  text-align: inherit;
-
-  cursor: pointer;
 }

@@ -1,0 +1,20 @@
+ideas y correcciones 
+
+menu hamburguesa con el inicio productos y contacto .
+
+inicio de sesion y registro de usuario + carrito de compras 
+
+logo en el centro 
+
+izquierda menu hamburguesa con su inicio y todo 
+
+derecha inicio de sesion-registro y carrito de compra 
+.
+
+carrousel con los productos que estan actualmente en cards . y agregar como una breve descripcion de mi de MOD y por ahi agregar los titulos que tengo como certificados . solo por ahi como una opcion.
+
+al momento de agregar los productos al carrito, al poner enviar me manden mensaje un whatsapp con su pedido ya armado. en caso de utilizar la pagina para poder comprar ,que se le enviee al cliente un mail con su pedido y mis datos de tranferencia para que pueda abonar. una vez se realice el pago debera enviar su respectivo comprobante para poder coordinar el envio de su producto 
+
+cambiar boton de compra de productos proximamente por un boton que diga avisame o consultar; que enviee un whatsapp preguntado o consultando disponibilidad.
+
+difusores; a la hora de comprar por pagina aclarar stock de aromas disponibles, como todavia no se va a vender por pagina si no hay algun aroma en stock aclarar que se puede hacer un nuevo pedido con el aroma requerido. 

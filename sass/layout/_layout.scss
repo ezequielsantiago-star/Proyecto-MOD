@@ -1,4 +1,4 @@
-@use "../utilities/variables" as *;
+@use "../utilities/variables" as v;
 
 /* =========================================================
    LAYOUT GENERAL — MOD
@@ -8,19 +8,19 @@
 /* Patrón reutilizable para cabeceras de página */
 .page-hero {
   text-align: center;
-  max-width: 1100px;
+  max-width: v.$container-max;
   margin: 0 auto;
   padding: 1.75rem 1rem 1rem;
 
   h1 {
     margin: 0;
-    color: $text;
+    color: v.$text;
     letter-spacing: 0.2px;
   }
 
   p {
     margin: 0.35rem auto 0;
     max-width: 60ch;
-    color: $muted;
+    color: v.$muted;
   }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +24,7 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- ================= HEADER ================= -->
   <header class="site-header">
     <nav class="navbar navbar-light navcolor-custom">
       <div class="container d-flex align-items-center justify-content-between">
@@ -46,12 +46,18 @@
           <img src="img/mod-creaciones-logo.png" alt="Logo MOD" class="brand-logo">
         </a>
 
-        <!-- Accesos rápidos -->
+        <!-- Accesos rápidos  -->
         <div class="d-flex gap-3">
-          <a href="#" class="nav-icon text-decoration-none" aria-label="Iniciar sesión">
+          <a href="pages/contacto.html" class="nav-icon text-decoration-none" aria-label="Ir a Contacto">
             <i class="bi bi-person fs-4" aria-hidden="true"></i>
           </a>
-          <a href="#" class="nav-icon text-decoration-none" aria-label="Carrito">
+
+          <a
+            href="https://wa.me/5491130619003?text=Hola!%20Quiero%20armar%20un%20pedido%20en%20MOD%20Creaciones."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-icon text-decoration-none"
+            aria-label="Consultar por WhatsApp para armar un pedido">
             <i class="bi bi-cart fs-4" aria-hidden="true"></i>
           </a>
         </div>
@@ -65,9 +71,15 @@
 
           <div class="offcanvas-body">
             <ul class="navbar-nav">
-              <li class="nav-item nav-text-thin"><a class="nav-link" href="index.html">Inicio</a></li>
-              <li class="nav-item nav-text-thin"><a class="nav-link" href="pages/productos.html">Productos</a></li>
-              <li class="nav-item nav-text-thin"><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
+              <li class="nav-item nav-text-thin">
+                <a class="nav-link" href="index.html" aria-current="page">Inicio</a>
+              </li>
+              <li class="nav-item nav-text-thin">
+                <a class="nav-link" href="pages/productos.html">Productos</a>
+              </li>
+              <li class="nav-item nav-text-thin">
+                <a class="nav-link" href="pages/contacto.html">Contacto</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -76,15 +88,19 @@
     </nav>
   </header>
 
-  <!-- MAIN -->
+  <!-- ================= MAIN ================= -->
   <main>
 
+    <!-- HERO -->
     <section class="page-hero">
       <h1 class="text-bodoni-italic">Bienvenidos a MOD Creaciones</h1>
       <p class="text-thin-italic">La creatividad empieza cuando te animás a intentar.</p>
     </section>
-    <!-- CATEGORÍAS HOME -->
+
+    <!-- CARRUSEL: CATEGORÍAS HOME -->
     <section class="container my-4 categorias-home" aria-label="Categorías destacadas">
+      <!-- Título semántico de la sección -->
+      <h2 class="visually-hidden">Categorías destacadas</h2>
 
       <div id="carouselCategorias" class="carousel slide" data-bs-ride="carousel">
 
@@ -101,7 +117,13 @@
           <div class="carousel-item active">
             <a href="pages/productos.html" class="text-decoration-none" aria-label="Ver productos: Velas de soja">
               <article class="card shadow-sm">
-                <img src="img/inicio-velas.jpeg" class="card-img-top categoria-card__img" alt="Collage de velas de soja">
+                <img
+                  src="img/inicio-velas.jpeg"
+                  class="card-img-top categoria-card__img"
+                  alt="Velas de soja artesanales en distintos recipientes"
+                  loading="lazy"
+                  decoding="async"
+                >
               </article>
             </a>
           </div>
@@ -110,7 +132,13 @@
           <div class="carousel-item">
             <a href="pages/productos.html" class="text-decoration-none" aria-label="Ver productos: Stickers">
               <article class="card shadow-sm">
-                <img src="img/inicio-stickers.jpeg" class="card-img-top categoria-card__img" alt="Collage de stickers">
+                <img
+                  src="img/inicio-stickers.jpeg"
+                  class="card-img-top categoria-card__img"
+                  alt="Stickers personalizados con diseños variados"
+                  loading="lazy"
+                  decoding="async"
+                >
               </article>
             </a>
           </div>
@@ -119,7 +147,13 @@
           <div class="carousel-item">
             <a href="pages/productos.html" class="text-decoration-none" aria-label="Ver productos: Papelería">
               <article class="card shadow-sm">
-                <img src="img/inicio-papeleria.jpeg" class="card-img-top categoria-card__img" alt="Collage de papelería creativa">
+                <img
+                  src="img/inicio-papeleria.jpeg"
+                  class="card-img-top categoria-card__img"
+                  alt="Papelería creativa: cuadernos, agendas y accesorios"
+                  loading="lazy"
+                  decoding="async"
+                >
               </article>
             </a>
           </div>
@@ -141,7 +175,7 @@
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
   <footer class="text-thin-italic">
     <div class="footer-inner">
 
@@ -181,7 +215,7 @@
             <li class="iso-pro">
               <span></span><span></span><span></span>
               <a class="social-link social-mail"
-                 href="mailto:creacionesdai@gmail.com"
+                 href="mailto:modcreaciones.dai@gmail.com"
                  aria-label="Mail">
                 <i class="fa-regular fa-envelope social-icon" aria-hidden="true"></i>
               </a>
@@ -195,7 +229,7 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS (bundle incluye Popper) -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,45 +1,44 @@
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 
-// =========================
-// Utilities (variables, mixins, helpers)
-// =========================
+/* =========================================================
+   Utilities
+   ========================================================= */
 @use "utilities/variables";
 @use "utilities/mixin";
 @use "utilities/helpers";
 
-// =========================
-// Base (reset + tipografías + global)
-// =========================
+/* =========================================================
+   Base
+   ========================================================= */
 @use "base/reset";
 @use "base/typography";
 @use "base/global";
 
-// =========================
-// Layout (estructura del sitio)
-// =========================
+/* =========================================================
+   Layout
+   ========================================================= */
 @use "layout/layout";
 @use "layout/navigation";
 @use "layout/offcanvas";
 @use "layout/footer";
 
-// =========================
-// Components (reutilizables)
-// =========================
+/* =========================================================
+   Components
+   ========================================================= */
 @use "components/buttons";
 
-// =========================
-// Pages (estilos específicos por página)
-// =========================
+/* =========================================================
+   Pages
+   ========================================================= */
 @use "pages/home";
 @use "pages/productos";
-@use "pages/velas-shared";
 @use "pages/velas-recipientes";
 @use "pages/velas-moldes";
 @use "pages/contacto";
 
-// =========================
-// Responsive (ajustes por breakpoint)
-// =========================
+/* =========================================================
+   Responsive
+   ========================================================= */
 @use "layout/desktop";
 @use "layout/tablet";
 @use "layout/mobile";

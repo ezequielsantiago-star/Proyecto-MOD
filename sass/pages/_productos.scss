@@ -20,7 +20,6 @@
   user-select: none;
 }
 
-/* Si el título está abajo de la imagen, esto da identidad */
 .categoria-card__title {
   color: $pink;
   font-weight: 600;
@@ -39,7 +38,7 @@
   border-radius: $radius-sm;
   border: 1px solid rgba(0, 0, 0, 0.08);
 
-  /* “pro feel”: sombra leve por defecto + hover más lindo */
+  /* sombra leve por defecto + hover más lindo */
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 
@@ -131,7 +130,6 @@
   margin-top: 0.75rem;
 }
 
-/* Si usás botones full-width dentro de una card */
 .producto .btn-mod--block {
   position: relative;
   z-index: 3;

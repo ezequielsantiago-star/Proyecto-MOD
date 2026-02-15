@@ -1,4 +1,4 @@
-@use "../utilities/variables" as *;
+@use "../utilities/variables" as v;
 
 /* =========================================================
    LAYOUT / FOOTER — MOD
@@ -6,8 +6,8 @@
    ========================================================= */
 
 footer {
-  background-color: $cream;
-  color: $pink;
+  background-color: v.$cream;
+  color: v.$pink;
   padding: 0.7rem;
   text-align: center;
 
@@ -43,7 +43,6 @@ footer {
       inset 0 0 14px rgba(255, 255, 255, 0.22),
       0 4px 10px rgba(0, 0, 0, 0.10);
 
-    // Si el navegador soporta blur, lo aplicamos
     @supports (backdrop-filter: blur(12px)) {
       backdrop-filter: blur(12px);
     }
@@ -121,7 +120,7 @@ footer {
     text-decoration: none;
 
     background: rgba(255, 255, 255, 0.18);
-    color: $pink;
+    color: v.$pink;
 
     box-shadow:
       inset 0 0 12px rgba(255, 255, 255, 0.25),
@@ -130,7 +129,7 @@ footer {
     transition: transform 0.3s ease, opacity 0.3s ease;
 
     &:focus-visible {
-      outline: 2px solid rgba($pink, 0.45);
+      outline: 2px solid rgba(v.$pink, 0.45);
       outline-offset: 4px;
     }
   }
@@ -153,8 +152,8 @@ footer {
     font-size: 0.75rem;
     border-radius: 8px;
 
-    background-color: $cream;
-    color: $pink;
+    background-color: v.$cream;
+    color: v.$pink;
 
     opacity: 0;
     white-space: nowrap;
@@ -169,9 +168,9 @@ footer {
   // =========================
   // COLORES POR RED
   // =========================
-  .social-ig   { color: $pink; }
+  .social-ig   { color: v.$pink; }
   .social-wa   { color: #25D366; }
-  .social-mail { color: $pink; }
+  .social-mail { color: v.$pink; }
 
   // =========================
   // Reduce motion

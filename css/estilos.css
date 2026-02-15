@@ -1,56 +1,65 @@
 @charset "UTF-8";
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
+   Utilities
+   ========================================================= */
+/* =========================================================
    MOD Creaciones — Variables globales (TOKENS)
    ========================================================= */
 /* =========================
    1) Colores base (compat)
    ========================= */
-/* =========================
-   2) Radios (compat)
-   ========================= */
-/* =========================
-   3) Tipografías (compat)
-   ========================= */
 /* =========================================================
-   4) TOKENS PRO (recomendados)
+   2) TOKENS
    ========================================================= */
 /* -------------------------
-   a) Paleta extendida
+   a) Neutros + superficies
    ------------------------- */
 /* -------------------------
-   b) Sombras
-   (mismo lenguaje visual en todo el sitio)
+   b) Focus / accesibilidad
    ------------------------- */
 /* -------------------------
-   c) Spacing (escala)
-   Usás estos para margin/padding
+   c) Radios
    ------------------------- */
 /* -------------------------
-   d) Tipografía (escala)
-   - para jerarquía consistente
+   d) Tipografías
    ------------------------- */
 /* -------------------------
-   e) Transiciones / motion
+   e) Sombras
    ------------------------- */
 /* -------------------------
-   f) Breakpoints (Bootstrap-like)
-   (para tus @media sin magia)
+   f) Spacing (escala)
    ------------------------- */
 /* -------------------------
-   g) Layout / container
+   g) Tipografía (escala)
    ------------------------- */
 /* -------------------------
-   h) Component tokens
+   h) Motion
    ------------------------- */
-/* =========================
-   Breakpoints (Bootstrap)
-   ========================= */
+/* -------------------------
+   i) Breakpoints (Bootstrap)
+   - Fuente única de verdad
+   ------------------------- */
+/* -------------------------
+   j) Layout / container
+   ------------------------- */
+/* -------------------------
+   k) Z-index (orden visual)
+   ------------------------- */
+/* -------------------------
+   l) Component tokens
+   ------------------------- */
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
-   MIXINS — MOD
-   - Reutilizables y consistentes con tokens
+   Utilities
    ========================================================= */
+/* =========================================================
+   MIXINS — MOD
+   Reutilizables y consistentes con tokens
+   ========================================================= */
+/* =========================
+   Responsive: Media Queries
+   ========================= */
 /* =========================
    Accesibilidad: Focus ring
    ========================= */
@@ -62,31 +71,15 @@
    ========================= */
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
-   HELPERS — MOD
-   Utilidades reutilizables (clases chicas)
+   Utilities
    ========================================================= */
-/* Imágenes */
-.object-fit-cover {
-  object-fit: cover;
-}
-
-.object-fit-contain {
-  object-fit: contain;
-}
-
-.object-center {
-  object-position: center;
-}
-
-/* Bordes rápidos */
-.rounded-sm {
-  border-radius: 12px;
-}
-
-.rounded-lg {
-  border-radius: 22px;
-}
-
+/* =========================================================
+   HELPERS — MOD
+   Utilidades chicas y reutilizables
+   ========================================================= */
+/* =========================
+   Imágenes (object-fit)
+   ========================= */
 .u-object-cover,
 .object-fit-cover {
   object-fit: cover;
@@ -102,6 +95,9 @@
   object-position: center;
 }
 
+/* =========================
+   Bordes rápidos
+   ========================= */
 .u-rounded-sm,
 .rounded-sm {
   border-radius: 12px;
@@ -112,15 +108,45 @@
   border-radius: 22px;
 }
 
+/* =========================
+   Texto
+   ========================= */
 .u-text-center {
   text-align: center;
 }
 
-/* Texto */
-.text-center {
-  text-align: center;
+/* =========================
+   Reset de botones (para cards clickeables)
+   ========================= */
+.btn-reset {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  display: block;
+}
+.btn-reset:focus {
+  outline: none;
+}
+.btn-reset:focus-visible {
+  outline: 2px solid #d16ba5;
+  outline-offset: 0.28;
+  border-radius: 12px;
+  /* halo suave */
+  box-shadow: 0 0 0 0.25rem rgba(209, 107, 165, 0.18);
 }
 
+/* =========================================================
+   Base
+   ========================================================= */
+/* =========================================================
+   RESET — MOD
+   Reset suave + accesibilidad
+   ========================================================= */
 /* Box sizing global */
 html {
   box-sizing: border-box;
@@ -128,14 +154,14 @@ html {
   text-size-adjust: 100%;
 }
 
-/* Heredan box-sizing + reset suave */
+/* Heredan box-sizing */
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
 
-/* Reset de márgenes base (controlado) */
+/* Reset de márgenes base */
 body {
   margin: 0;
 }
@@ -150,7 +176,7 @@ svg {
   max-width: 100%;
 }
 
-/* Formularios heredan fuente (mejor consistencia visual) */
+/* Formularios heredan fuente */
 input,
 button,
 textarea,
@@ -164,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-/* Motion: respeta accesibilidad */
+/* Accesibilidad: reduce motion */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
@@ -173,23 +199,37 @@ h1, h2, h3, h4, h5, h6 {
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    transition: none !important;
-    animation: none !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   Utilities
+   ========================================================= */
+/* =========================================================
+   TIPOGRAFÍA — MOD
+   Utilidades + base global
+   ========================================================= */
+/* =========================
+   Utilidades tipográficas
+   ========================= */
+/* Texto fino para navbar / etiquetas */
 .nav-text-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   letter-spacing: 0.4px;
 }
 
+/* Títulos Bodoni italic (hero / títulos destacados) */
 .text-bodoni-italic {
   font-family: "Libre Bodoni", serif;
   font-style: italic;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
+/* Texto fino italic (descripciones / citas) */
 .text-thin-italic {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
@@ -197,14 +237,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
+/* =========================
+   Base tipográfica global
+   ========================= */
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  font-size: 1rem;
   line-height: 1.55;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -212,6 +251,7 @@ body {
   font-kerning: normal;
 }
 
+/* Headings: jerarquía limpia  */
 :where(h1, h2, h3, h4, h5, h6) {
   line-height: 1.25;
   margin: 0;
@@ -224,13 +264,19 @@ h1 {
   letter-spacing: 0.2px;
 }
 
+/* h2..h6 mantienen identidad con Montserrat  */
 h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
 
-p, li {
+/* Texto general */
+p {
   margin: 0;
+  line-height: 1.6;
+}
+
+li {
   line-height: 1.6;
 }
 
@@ -238,6 +284,7 @@ small {
   line-height: 1.4;
 }
 
+/* Navegación / offcanvas con Poppins*/
 .navbar,
 .offcanvas,
 .menu-label,
@@ -247,14 +294,28 @@ small {
 }
 
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   Utilities
+   ========================================================= */
+/* =========================================================
+   BASE GLOBAL — MOD
+   Reglas base compartidas por todo el sitio
+   ========================================================= */
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: #ffffff;
   color: #111111;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
@@ -262,10 +323,12 @@ body {
   overflow-x: hidden;
 }
 
+/* Contenido principal */
 main {
   flex: 1;
 }
 
+/* Medios responsivos */
 img,
 picture,
 video,
@@ -276,11 +339,31 @@ svg {
   display: block;
 }
 
+/* Evita selección accidental de imágenes */
 img {
   user-select: none;
 }
 
+/* =========================
+   Accesibilidad (focus)
+   ========================= */
+a:focus-visible,
+button:focus-visible,
+[role=button]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #d16ba5;
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   Layout
+   ========================================================= */
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   Utilities
+   ========================================================= */
 /* =========================================================
    LAYOUT GENERAL — MOD
    Reglas globales de estructura del sitio
@@ -305,6 +388,9 @@ img {
 
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
+   Utilities
+   ========================================================= */
+/* =========================================================
    NAVIGATION / HEADER — MOD
    Navbar + íconos + botón hamburguesa
    ========================================================= */
@@ -315,10 +401,10 @@ img {
 
 /* Fondo navbar */
 .navcolor-custom {
-  background-color: #FFFBEF;
+  background-color: #fffbef;
 }
 
-/* Logo  */
+/* Logo */
 .brand-logo {
   height: 48px; /* base */
   width: auto;
@@ -331,7 +417,7 @@ img {
   /* Links */
 }
 .navbar .nav-link {
-  color: #D16BA5;
+  color: #d16ba5;
   transition: opacity 0.15s ease;
 }
 .navbar .nav-link:hover {
@@ -355,7 +441,7 @@ img {
   justify-content: center;
   min-width: 44px;
   min-height: 44px;
-  color: #D16BA5;
+  color: #d16ba5;
   border-radius: 12px;
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
@@ -376,7 +462,7 @@ img {
 }
 .navbar a.text-white,
 .navbar i.text-white {
-  color: #D16BA5;
+  color: #d16ba5;
 }
 .navbar {
   /* Toggler */
@@ -389,7 +475,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: #D16BA5;
+  color: #d16ba5;
   min-height: 44px;
   min-width: 44px;
 }
@@ -409,7 +495,7 @@ img {
   font-weight: 700;
   font-size: 1rem;
   line-height: 1;
-  color: #D16BA5;
+  color: #d16ba5;
 }
 .navbar {
   /* Icono hamburguesa (3 líneas custom) */
@@ -424,7 +510,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(#D16BA5, #D16BA5) 0 25%/100% 2px no-repeat, linear-gradient(#D16BA5, #D16BA5) 0 50%/100% 2px no-repeat, linear-gradient(#D16BA5, #D16BA5) 0 75%/100% 2px no-repeat;
+  background: linear-gradient(#d16ba5, #d16ba5) 0 25%/100% 2px no-repeat, linear-gradient(#d16ba5, #d16ba5) 0 50%/100% 2px no-repeat, linear-gradient(#d16ba5, #d16ba5) 0 75%/100% 2px no-repeat;
 }
 
 /* Reduce motion */
@@ -439,25 +525,28 @@ img {
 }
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
+   Utilities
+   ========================================================= */
+/* =========================================================
    OFFCANVAS — MOD
    Menú lateral (Bootstrap Offcanvas)
    ========================================================= */
 .offcanvas {
-  background-color: #997DA2;
-  color: #FFFBEF;
+  background-color: #997da2;
+  color: #fffbef;
   /* Header */
 }
 .offcanvas .offcanvas-header {
   border-bottom: 1px solid rgba(255, 251, 239, 0.12);
 }
 .offcanvas .offcanvas-title {
-  color: #FFFBEF;
+  color: #fffbef;
 }
 .offcanvas {
   /* Links */
 }
 .offcanvas .nav-link {
-  color: #FFFBEF;
+  color: #fffbef;
   font-weight: 600;
   /* Área táctil + look */
   min-height: 44px;
@@ -512,12 +601,15 @@ img {
 }
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
+   Utilities
+   ========================================================= */
+/* =========================================================
    LAYOUT / FOOTER — MOD
    - Layout + Social card + Tooltip
    ========================================================= */
 footer {
-  background-color: #FFFBEF;
-  color: #D16BA5;
+  background-color: #fffbef;
+  color: #d16ba5;
   padding: 0.7rem;
   text-align: center;
 }
@@ -606,7 +698,7 @@ footer .social-link {
   border-radius: 50%;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.18);
-  color: #D16BA5;
+  color: #d16ba5;
   box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.25), 0 3px 6px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -626,8 +718,8 @@ footer .social-text {
   padding: 4px 8px;
   font-size: 0.75rem;
   border-radius: 8px;
-  background-color: #FFFBEF;
-  color: #D16BA5;
+  background-color: #fffbef;
+  color: #d16ba5;
   opacity: 0;
   white-space: nowrap;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -636,13 +728,13 @@ footer .social-text {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 footer .social-ig {
-  color: #D16BA5;
+  color: #d16ba5;
 }
 footer .social-wa {
   color: #25D366;
 }
 footer .social-mail {
-  color: #D16BA5;
+  color: #d16ba5;
 }
 @media (prefers-reduced-motion: reduce) {
   footer .iso-pro,
@@ -664,11 +756,16 @@ footer .social-mail {
   }
 }
 
+/* =========================================================
+   Components
+   ========================================================= */
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
-   COMPONENTS / BUTTONS — MOD
-   - Botón principal del sistema
-   - Tamaños + modificadores + variantes por canal
+   Utilities
+   ========================================================= */
+/* =========================================================
+   COMPONENTS: Buttons — MOD
+   Botón principal del sistema + tamaños + variantes
    ========================================================= */
 .btn-mod {
   display: inline-flex;
@@ -684,8 +781,8 @@ footer .social-mail {
   text-decoration: none;
   cursor: pointer;
   user-select: none;
-  background-color: #FFFBEF;
-  color: #D16BA5;
+  background-color: #fffbef;
+  color: #d16ba5;
   border: 1px solid rgba(209, 107, 165, 0.45);
   transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
 }
@@ -701,6 +798,8 @@ footer .social-mail {
   outline: 2px solid rgba(209, 107, 165, 0.45);
   outline-offset: 3px;
   border-radius: 12px;
+  /* halo suave */
+  box-shadow: 0 0 0 0.25rem rgba(209, 107, 165, 0.18);
 }
 .btn-mod {
   /* Disabled: button o enlace */
@@ -721,9 +820,9 @@ footer .social-mail {
   }
 }
 .btn-mod {
-  /* ===========================
+  /* =========================
      Tamaños
-     =========================== */
+     ========================= */
 }
 .btn-mod--sm {
   padding: 0.45rem 1rem;
@@ -737,18 +836,18 @@ footer .social-mail {
   font-size: 1rem;
 }
 .btn-mod {
-  /* ===========================
+  /* =========================
      Modificadores
-     =========================== */
+     ========================= */
 }
 .btn-mod--block {
   width: 100%;
 }
 .btn-mod {
-  /* =========================================================
-     Variantes por canal (solo borde + foco)
-     - Cambie borde / focus para comunicar canal
-     ========================================================= */
+  /* =========================
+     Variantes por canal
+     - Se comunica por borde + focus ring
+     ========================= */
 }
 .btn-mod--wa {
   border-color: rgba(37, 211, 102, 0.45);
@@ -756,8 +855,15 @@ footer .social-mail {
 .btn-mod--wa:hover {
   border-color: rgba(37, 211, 102, 0.75);
 }
+.btn-mod--wa:focus {
+  outline: none;
+}
 .btn-mod--wa:focus-visible {
-  outline-color: rgba(37, 211, 102, 0.55);
+  outline: 2px solid #25d366;
+  outline-offset: 0.3;
+  border-radius: 12px;
+  /* halo suave */
+  box-shadow: 0 0 0 0.25rem rgba(37, 211, 102, 0.18);
 }
 .btn-mod--ig {
   border-color: rgba(209, 107, 165, 0.55);
@@ -765,8 +871,15 @@ footer .social-mail {
 .btn-mod--ig:hover {
   border-color: rgba(209, 107, 165, 0.85);
 }
+.btn-mod--ig:focus {
+  outline: none;
+}
 .btn-mod--ig:focus-visible {
-  outline-color: rgba(209, 107, 165, 0.65);
+  outline: 2px solid #d16ba5;
+  outline-offset: 0.3;
+  border-radius: 12px;
+  /* halo suave */
+  box-shadow: 0 0 0 0.25rem rgba(209, 107, 165, 0.18);
 }
 .btn-mod--mail {
   border-color: rgba(153, 125, 162, 0.55);
@@ -774,30 +887,31 @@ footer .social-mail {
 .btn-mod--mail:hover {
   border-color: rgba(153, 125, 162, 0.85);
 }
+.btn-mod--mail:focus {
+  outline: none;
+}
 .btn-mod--mail:focus-visible {
-  outline-color: rgba(153, 125, 162, 0.65);
+  outline: 2px solid #997da2;
+  outline-offset: 0.3;
+  border-radius: 12px;
+  /* halo suave */
+  box-shadow: 0 0 0 0.25rem rgba(153, 125, 162, 0.18);
 }
 
 /* =========================================================
-   Reset para botones “técnicos”
-   - Para usar <button> como wrapper clickeable (cards, etc.)
+   Pages
    ========================================================= */
-.btn-reset {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  text-align: inherit;
-  cursor: pointer;
-}
-
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
-   HOME — Carrusel categorías (BASE)
+   Utilities
    ========================================================= */
+/* =========================================================
+   HOME — Carrusel categorías (BASE)
+   - Carrusel home (slides clickeables)
+   - Accesibilidad: focus visible
+   - Motion: respeta prefers-reduced-motion
+   ========================================================= */
+/* Contenedor */
 .categorias-home {
   max-width: 1100px;
   margin: 0 auto;
@@ -823,7 +937,7 @@ footer .social-mail {
   border-radius: 12px;
 }
 #carouselCategorias {
-  /* Card limpia (neutraliza Bootstrap) */
+  /* Card limpia */
 }
 #carouselCategorias .card {
   background: transparent;
@@ -858,24 +972,13 @@ footer .social-mail {
   object-position: center;
   background: transparent;
   user-select: none;
-  transition: transform 0.25s ease;
+  transition: transform 250ms ease;
 }
 #carouselCategorias {
-  /* Micro feedback en hover (no cambia layout) */
+  /* Micro feedback en hover  */
 }
 #carouselCategorias:hover .categoria-card__img {
   transform: scale(1.01);
-}
-#carouselCategorias {
-  /* Respeta reduce motion */
-}
-@media (prefers-reduced-motion: reduce) {
-  #carouselCategorias .categoria-card__img {
-    transition: none;
-  }
-  #carouselCategorias:hover .categoria-card__img {
-    transform: none;
-  }
 }
 #carouselCategorias {
   /* ===========================
@@ -886,15 +989,11 @@ footer .social-mail {
 #carouselCategorias .carousel-control-next {
   width: 7%;
   opacity: 0.35;
-  transition: opacity 0.2s ease;
+  transition: opacity 150ms ease;
 }
 #carouselCategorias .carousel-control-prev:hover,
 #carouselCategorias .carousel-control-next:hover {
   opacity: 0.7;
-}
-#carouselCategorias .carousel-control-prev,
-#carouselCategorias .carousel-control-next {
-  /* Foco accesible teclado */
 }
 #carouselCategorias .carousel-control-prev:focus-visible,
 #carouselCategorias .carousel-control-next:focus-visible {
@@ -910,8 +1009,24 @@ footer .social-mail {
   filter: invert(1);
   background-size: 60%;
 }
+#carouselCategorias {
+  /* Respeta reduce motion */
+}
+@media (prefers-reduced-motion: reduce) {
+  #carouselCategorias {
+    transition: none !important;
+    animation: none !important;
+  }
+  #carouselCategorias:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
 
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
+/* =========================================================
+   Utilities
+   ========================================================= */
 /* =========================================================
    PRODUCTOS — Cards / Categorías (BASE)
    ========================================================= */
@@ -928,9 +1043,8 @@ footer .social-mail {
   user-select: none;
 }
 
-/* Si el título está abajo de la imagen, esto da identidad */
 .categoria-card__title {
-  color: #D16BA5;
+  color: #d16ba5;
   font-weight: 600;
   text-align: center;
 }
@@ -944,7 +1058,7 @@ footer .social-mail {
   background: #fff;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  /* “pro feel”: sombra leve por defecto + hover más lindo */
+  /* sombra leve por defecto + hover más lindo */
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
@@ -986,7 +1100,7 @@ footer .social-mail {
   top: 12px;
   left: 12px;
   z-index: 2;
-  background: #D16BA5;
+  background: #d16ba5;
   color: #fff;
   padding: 6px 10px;
   border-radius: 999px;
@@ -1001,7 +1115,7 @@ footer .social-mail {
    Textos
    =========================== */
 .producto__title {
-  color: #D16BA5;
+  color: #d16ba5;
   font-weight: 700;
   margin-bottom: 0.25rem; /* jerarquía visual */
 }
@@ -1022,7 +1136,6 @@ footer .social-mail {
   margin-top: 0.75rem;
 }
 
-/* Si usás botones full-width dentro de una card */
 .producto .btn-mod--block {
   position: relative;
   z-index: 3;
@@ -1030,54 +1143,53 @@ footer .social-mail {
 
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
+   Utilities
+   ========================================================= */
+/* =========================================================
    VELAS — SHARED
    Base compartida para Recipientes y Moldes
    ========================================================= */
+/* =========================
+   Layout contenedor
+   ========================= */
 .velas-grid {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* ===========================
-   CARD clickeable
-   =========================== */
-.velas-card {
-  background: #fff;
+/* =========================================================
+   superficie MOD reutilizable
+   ========================================================= */
+.mod-modal, .velas-card {
+  background: #ffffff;
   border-radius: 22px;
-  overflow: hidden;
   border: 1px solid rgba(209, 107, 165, 0.18);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* =========================
+   CARD clickeable
+   ========================= */
+.velas-card {
+  transition: transform 150ms ease, box-shadow 150ms ease;
   will-change: transform;
 }
 .velas-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.12);
-}
-.velas-card {
-  /* Si la card se abre con button/link*/
-}
-.velas-card:focus-within {
-  outline: 2px solid rgba(209, 107, 165, 0.35);
-  outline-offset: 4px;
-}
-.velas-card {
-  /* Imagen */
+  box-shadow: 0 26px 65px rgba(0, 0, 0, 0.18);
 }
 .velas-card .card-img-top,
 .velas-card img {
   width: 100%;
-  height: 320px;
+  height: clamp(240px, 32vw, 320px);
   display: block;
   object-fit: cover;
   object-position: center;
   user-select: none;
 }
 .velas-card .card-body {
-  background: #FFFBEF;
-}
-.velas-card {
-  /* Jerarquía interna */
+  background: #fffbef;
 }
 .velas-card h2 {
   color: #111111;
@@ -1087,30 +1199,32 @@ footer .social-mail {
   color: #6b5a6b;
   margin: 0;
 }
-
-/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .velas-card {
-    transition: none;
+    transition: none !important;
+    animation: none !important;
   }
   .velas-card:hover {
-    transform: none;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    transform: none !important;
+    box-shadow: none !important;
   }
 }
-/* ===========================
-   MODAL
-   =========================== */
-.modal-content.mod-modal {
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid rgba(209, 107, 165, 0.2);
-  box-shadow: 0 26px 65px rgba(0, 0, 0, 0.18);
+
+/* Focus visible real para la card */
+.btn-reset:focus-visible .velas-card {
+  border-color: rgba(209, 107, 165, 0.28);
+  box-shadow: 0 0 0 0.25rem rgba(209, 107, 165, 0.18);
 }
 
-/* Agrupamos todo el scope del modal para no repetir */
+/* =========================
+   MODAL
+   ========================= */
+.mod-modal {
+  border-color: rgba(209, 107, 165, 0.2);
+  box-shadow: 0 26px 65px rgba(0, 0, 0, 0.18);
+}
 .mod-modal .modal-header {
-  background: #FFFBEF;
+  background: #fffbef;
   border-bottom: 1px solid rgba(209, 107, 165, 0.18);
 }
 .mod-modal .modal-header .modal-title {
@@ -1123,7 +1237,7 @@ footer .social-mail {
   opacity: 0.9;
 }
 .mod-modal .modal-body {
-  background: #fff;
+  background: #ffffff;
 }
 .mod-modal .modal-body .mod-desc,
 .mod-modal .modal-body .mod-hint {
@@ -1134,22 +1248,17 @@ footer .social-mail {
   margin-bottom: 0;
 }
 .mod-modal {
-  /* ===========================
-     Carrusel dentro del modal
-     =========================== */
+  /* Carrusel */
 }
 .mod-modal .carousel {
-  border-radius: 18px;
+  border-radius: 22px;
   overflow: hidden;
   border: 1px solid rgba(209, 107, 165, 0.18);
-  background: #FFFBEF;
-}
-.mod-modal {
-  /* Bootstrap: imagen suele estar dentro de .carousel-item */
+  background: #fffbef;
 }
 .mod-modal .carousel-item img {
   width: 100%;
-  height: 360px;
+  height: clamp(280px, 40vw, 360px);
   display: block;
   object-fit: cover;
   object-position: center;
@@ -1159,7 +1268,7 @@ footer .social-mail {
 .mod-modal .carousel-control-next {
   width: 14%;
   opacity: 0.55;
-  transition: opacity 0.2s ease;
+  transition: opacity 250ms ease;
 }
 .mod-modal .carousel-control-prev:hover,
 .mod-modal .carousel-control-next:hover {
@@ -1173,31 +1282,49 @@ footer .social-mail {
   filter: invert(1) grayscale(1);
 }
 .mod-modal {
-  /* ===========================
-     Select / Accordion
-     =========================== */
+  /* Select / Accordion */
 }
 .mod-modal .form-select {
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid rgba(209, 107, 165, 0.25);
   color: #111111;
+}
+.mod-modal .form-select:focus {
+  outline: none;
+}
+.mod-modal .form-select:focus-visible {
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 3px;
+  border-radius: 12px;
+  /* halo suave */
+  box-shadow: 0 0 0 0.25rem rgba(209, 107, 165, 0.18);
 }
 .mod-modal .form-select:focus {
   border-color: rgba(209, 107, 165, 0.55);
   box-shadow: 0 0 0 0.2rem rgba(209, 107, 165, 0.15);
 }
 .mod-modal .accordion-item {
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(209, 107, 165, 0.18);
 }
 .mod-modal .accordion-button {
-  background: #FFFBEF;
+  background: #fffbef;
   color: #111111;
   font-weight: 600;
 }
+.mod-modal .accordion-button:focus {
+  outline: none;
+}
+.mod-modal .accordion-button:focus-visible {
+  outline: 2px solid rgba(209, 107, 165, 0.45);
+  outline-offset: 3px;
+  border-radius: 12px;
+  /* halo suave */
+  box-shadow: 0 0 0 0.25rem rgba(209, 107, 165, 0.18);
+}
 .mod-modal .accordion-body {
-  background: #fff;
+  background: #ffffff;
 }
 .mod-modal .accordion-body ul {
   padding-left: 1.2rem;
@@ -1209,24 +1336,38 @@ footer .social-mail {
 .mod-modal .accordion-body li:last-child {
   margin-bottom: 0;
 }
-
-/* Reduce motion (modal controls) */
 @media (prefers-reduced-motion: reduce) {
-  .mod-modal .carousel-control-prev,
-  .mod-modal .carousel-control-next {
-    transition: none;
+  .mod-modal {
+    transition: none !important;
+    animation: none !important;
+  }
+  .mod-modal:hover {
+    transform: none !important;
+    box-shadow: none !important;
   }
 }
+
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
-   CONTACTO — Página (base)
+   Utilities
    ========================================================= */
+/* =========================================================
+   CONTACTO — Página
+   - Card centrada y con jerarquía prolija
+   - Grid consistente + responsive
+   ========================================================= */
+/* =========================
+   Layout general
+   ========================= */
 .contact-main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1rem 3rem;
 }
 
+/* =========================
+   Hero
+   ========================= */
 .contact-hero {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -1241,18 +1382,30 @@ footer .social-mail {
   color: #6b5a6b;
 }
 
-/* Card principal (desktop base: 2 columnas) */
+/* Fix: el subtítulo del hero se rompía en algunos layouts */
+.page-hero.contact-hero > p {
+  width: 100%;
+  max-width: none !important;
+  margin: 0.25rem auto 0;
+  text-align: center !important;
+}
+
+/* =========================
+   Card principal (desktop)
+   ========================= */
 .contact-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 22px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   grid-template-areas: "media  title" "media  content";
-  gap: 1.25rem;
-  align-items: start;
+  /* Clave: separaciones coherentes */
+  column-gap: 1.5rem; /* entre imagen y columna derecha */
+  row-gap: 0.75rem; /* entre title y content */
+  align-items: center;
 }
 
 /* Áreas del grid */
@@ -1268,10 +1421,13 @@ footer .social-mail {
   grid-area: content;
 }
 
-/* Media */
+/* =========================
+   Media (imagen)
+   ========================= */
 .contact-card__media {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .contact-card__img {
@@ -1279,45 +1435,90 @@ footer .social-mail {
   max-width: 520px;
   border-radius: 18px;
   object-fit: cover;
+  user-select: none;
 }
 
-/* Texto */
+/* =========================
+   Columna derecha (centrada)
+   ========================= */
+.contact-card__title {
+  justify-self: center;
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.contact-card__content {
+  justify-self: center;
+  text-align: center;
+  max-width: 520px; /* evita líneas larguísimas */
+}
+
+/* Texto principal */
 .contact-card__text {
   margin: 0 0 0.75rem;
   color: #111111;
   opacity: 0.9;
 }
 
+/* Label */
 .contact-card__label {
   margin: 0 0 0.5rem;
   font-weight: 700;
   color: #111111;
 }
 
+/* Botonera */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0 1.25rem;
+}
+
 /* Info zona/pedidos */
+.contact-info {
+  text-align: center;
+}
 .contact-info p {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.5rem;
   color: #111111;
   opacity: 0.9;
+}
+.contact-info p:last-child {
+  margin-bottom: 0;
 }
 .contact-info strong {
   color: #111111;
   font-weight: 700;
 }
 
-/* Botonera */
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin: 0.25rem 0 1rem;
-  justify-content: center;
+/* =========================
+   Responsive (mobile/tablet)
+   ========================= */
+@media (max-width: 767.98px) {
+  .contact-card {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "media" "content";
+    padding: 1.25rem;
+    row-gap: 1rem;
+    column-gap: 0;
+  }
+  .contact-card__img {
+    max-width: 100%;
+  }
 }
-
+/* =========================================================
+   Responsive
+   ========================================================= */
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
+   Utilities
+   ========================================================= */
+/* =========================================================
    LAYOUT — DESKTOP
-   Breakpoint: >= $bp-lg
+   Breakpoint: >= v.$bp-lg
    ========================================================= */
 @media (min-width: 992px) {
   #carouselCategorias .categoria-card__img {
@@ -1330,11 +1531,11 @@ footer .social-mail {
   .brand-logo {
     height: 44px;
   }
-  footer .footer-inner {
+  .footer-inner {
     gap: 1.25rem;
   }
 }
-/* Desktop grande (>= $bp-xl) */
+/* Desktop grande (>= v.$bp-xl) */
 @media (min-width: 1200px) {
   #carouselCategorias .categoria-card__img {
     height: 420px;
@@ -1346,11 +1547,9 @@ footer .social-mail {
 }
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
-   TABLET / MOBILE LARGE ( < $bp-lg )
-   Ajustes para pantallas medianas
+   Utilities
    ========================================================= */
-@media (max-width: calc(992px - 0.02px)) {
-  /* HOME */
+@media (max-width: 991.98px) {
   #carouselCategorias .categoria-card__img {
     height: 280px;
   }
@@ -1358,7 +1557,6 @@ footer .social-mail {
   #carouselCategorias .carousel-control-next {
     width: 10%;
   }
-  /* CONTACTO */
   .contact-card {
     grid-template-columns: 1fr;
     grid-template-areas: "title" "media" "content";
@@ -1367,12 +1565,10 @@ footer .social-mail {
   .contact-actions {
     justify-content: center;
   }
-  /* OFFCANVAS */
   .offcanvas.offcanvas-start {
     width: 40vw;
     min-width: 260px;
   }
-  /* VELAS */
   .velas-card img,
   .velas-card .card-img-top {
     height: 280px;
@@ -1387,15 +1583,12 @@ footer .social-mail {
 }
 /*! MOD Creaciones — estilos.css | build: utilities → base → layout → components → pages → responsive */
 /* =========================================================
-   MOBILE ( < $bp-sm )
-   Ajustes para pantallas chicas
+   Utilities
    ========================================================= */
 @media (max-width: calc(576px - 0.02px)) {
-  /* BOTONES */
   .btn-mod {
     width: 100%;
   }
-  /* HOME */
   #carouselCategorias .categoria-card__img {
     height: 220px;
   }
@@ -1408,15 +1601,12 @@ footer .social-mail {
   #carouselCategorias .carousel-control-next:hover {
     opacity: 0.8;
   }
-  /* HEADER */
   .brand-logo {
     height: 42px;
   }
-  /* OFFCANVAS */
   .offcanvas.offcanvas-start {
     width: 80vw;
   }
-  /* VELAS */
   .velas-card img,
   .velas-card .card-img-top {
     height: 240px;

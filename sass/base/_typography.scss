@@ -1,54 +1,54 @@
-// == TIPOGRAFÍA — MOD ==
 @use "../utilities/variables" as *;
 
-// ---------------------------------------------------------
-// Utilidades tipográficas (clases)
-// ---------------------------------------------------------
+/* =========================================================
+   TIPOGRAFÍA — MOD
+   Utilidades + base global
+   ========================================================= */
 
-// Texto fino para navbar / etiquetas
+/* =========================
+   Utilidades tipográficas
+   ========================= */
+
+/* Texto fino para navbar / etiquetas */
 .nav-text-thin {
   font-family: $font-nav;
   font-weight: 300;
   letter-spacing: 0.4px;
 }
 
-// Títulos Bodoni italic (hero / títulos destacados)
+/* Títulos Bodoni italic (hero / títulos destacados) */
 .text-bodoni-italic {
   font-family: $font-title;
   font-style: italic;
-  line-height: 1.2;
+  line-height: $lh-tight;
 }
 
-// Texto fino italic (descripciones / citas)
+/* Texto fino italic (descripciones / citas) */
 .text-thin-italic {
   font-family: $font-body;
   font-weight: 300;
   font-style: italic;
-  line-height: 1.6;
+  line-height: $lh-relaxed;
 }
 
-// ---------------------------------------------------------
-// Base tipográfica global
-// ---------------------------------------------------------
-
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
+/* =========================
+   Base tipográfica global
+   ========================= */
 
 body {
   font-family: $font-body;
   font-weight: 400;
-  line-height: 1.55;
-  text-rendering: optimizeLegibility;
+  font-size: $fs-md;
+  line-height: $lh-base;
 
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   font-kerning: normal;
 }
 
-// Headings: jerarquía limpia (sin tocar tamaños de Bootstrap)
+/* Headings: jerarquía limpia  */
 :where(h1, h2, h3, h4, h5, h6) {
   line-height: 1.25;
   margin: 0;
@@ -57,27 +57,31 @@ body {
 h1 {
   font-family: $font-title;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: $lh-tight;
   letter-spacing: 0.2px;
 }
 
-// h2..h6 mantienen identidad con Montserrat (más “marca”)
+/* h2..h6 mantienen identidad con Montserrat  */
 h2, h3, h4, h5, h6 {
   font-family: $font-body;
   font-weight: 700;
 }
 
-// Texto general (hereda font-family desde body)
-p, li {
+/* Texto general */
+p {
   margin: 0;
-  line-height: 1.6;
+  line-height: $lh-relaxed;
+}
+
+li {
+  line-height: $lh-relaxed;
 }
 
 small {
   line-height: 1.4;
 }
 
-// Navegación / offcanvas con Poppins (identidad consistente)
+/* Navegación / offcanvas con Poppins*/
 .navbar,
 .offcanvas,
 .menu-label,

@@ -1,15 +1,14 @@
-@use "../utilities/variables" as *;
+@use "../utilities/variables" as v;
 
 /* =========================================================
    LAYOUT — DESKTOP
-   Breakpoint: >= $bp-lg
+   Breakpoint: >= v.$bp-lg
    ========================================================= */
 
-@media (min-width: $bp-lg) {
+@media (min-width: v.$bp-lg) {
 
   // HOME — Carrusel categorías
   #carouselCategorias {
-
     .categoria-card__img { height: 380px; }
 
     .carousel-control-prev,
@@ -19,14 +18,12 @@
   // NAV — Logo
   .brand-logo { height: 44px; }
 
-  // FOOTER — Separación extra
-  footer {
-    .footer-inner { gap: 1.25rem; }
-  }
+  // FOOTER — Separación extra entre columnas
+  .footer-inner { gap: 1.25rem; }
 }
 
-/* Desktop grande (>= $bp-xl) */
-@media (min-width: $bp-xl) {
+/* Desktop grande (>= v.$bp-xl) */
+@media (min-width: v.$bp-xl) {
 
   // HOME — un poco más de presencia en pantallas grandes
   #carouselCategorias {

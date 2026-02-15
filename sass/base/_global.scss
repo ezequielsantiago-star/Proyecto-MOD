@@ -1,25 +1,38 @@
 @use "../utilities/variables" as *;
 
-// =========================================================
-// BASE GLOBAL — MOD
-// Reglas base compartidas por todo el sitio
-// =========================================================
+/* =========================================================
+   BASE GLOBAL — MOD
+   Reglas base compartidas por todo el sitio
+   ========================================================= */
 
 html {
-  // Mejora legibilidad + evita zooms raros en mobile
+  // Mejora legibilidad
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+
+  // UX: desplazamiento suave
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: $bg-page;
   color: $text;
 
+  // Tipografía base consistente
+  font-family: $font-body;
+  font-size: $fs-md;
+  line-height: $lh-base;
+
+  // Mejor render de tipografías
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
   // Fallback + mejora en mobile moderno
   min-height: 100vh;
   min-height: 100dvh;
 
-  // Layout base para que el footer pueda “bajar” si el contenido es corto
+  // Layout base para que el footer pueda bajar si el contenido es corto
   display: flex;
   flex-direction: column;
 
@@ -27,12 +40,12 @@ body {
   overflow-x: hidden;
 }
 
-// Si usás <main> esencialmente para el contenido principal
+/* Contenido principal */
 main {
   flex: 1;
 }
 
-// Medios responsivos (no solo img)
+/* Medios responsivos */
 img,
 picture,
 video,
@@ -43,7 +56,20 @@ svg {
   display: block;
 }
 
-// Si querés que no se “seleccionen” imágenes al arrastrar
+/* Evita selección accidental de imágenes */
 img {
   user-select: none;
+}
+
+/* =========================
+   Accesibilidad (focus)
+   ========================= */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid $focus-color;
+  outline-offset: 3px;
 }
